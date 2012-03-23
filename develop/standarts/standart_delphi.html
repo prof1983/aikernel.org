@@ -1,0 +1,1603 @@
+<html><head>
+<meta name="KeyWords&quot;" content="Информационные технологии, excel, задачи, решение прикладных задач, решение уравнений, прогнозирование, задачи оптимизации">
+<meta name="Robots" content="all">
+<meta name="Description" content="http://www.citforum.ru, Решение прикладных задач в Excel">
+<meta name="Document-state" content="Static">
+
+<style> 
+ FONT.CodeRemark  {
+ color : #999999;
+ font-size : x-small;
+ }
+ FONT.Header{
+ font-weight : bold;
+ font-size : 11pt;
+ font-family : Arial, Helvetica, sans-serif;
+ color : #000000;
+ word-break : keep-all;
+ }
+</style><title>Стандарт стилевого оформления исходного кода DELPHI</title>
+
+
+<link rel="stylesheet" href="citforum.css">
+<style>
+
+</style>
+
+<meta http-equiv="content-type" content="text/html; charset=Windows-1251">
+<style><!--
+table.u {font-size:8pt}
+table.u a {color:grey;text-decoration:none}
+--></style></head><body topmargin="0" alink="#800000" bgcolor="#ffffff" link="#006890" marginheight="0" text="#000000" vlink="#003860">
+<a name="top"></a>
+
+
+
+
+<!-- counters -->
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><!--TopList COUNTER--><script language="JavaScript"><!--
+d=document;js=10;a=';r='+escape(d.referrer)
+//--></script><script language="JavaScript1.1"><!--
+js=11;a+=';j='+navigator.javaEnabled()
+//--></script><script language="JavaScript1.2"><!--
+js=12;s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+//--></script><script language="JavaScript1.3"><!--
+js=13//--></script><script language="JavaScript"><!--
+d.write('<img src="http://top.list.ru/counter'+
+'?id=26978;js='+js+a+'" alt="" height=1 width=1>')
+if(js>11)d.write('<'+'!-- ')//--></script><!-- <noscript><img
+src="http://top.list.ru/counter?js=na;id=26978"
+height=1 width=1 alt=""></noscript><script language="JavaScript"><!--
+if(js>11)d.write('--'+'>')
+//--><!--TopList COUNTER--></td>
+<td><!--LiveInternet counter--><script language="JavaScript"><!--
+document.write('<img src="http://counter.yadro.ru/hit?r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+';i'+escape('Жж'+document.title)+';'+Math.random()+
+'" width=1 height=1 alt="">')//--></script><!--/LiveInternet--></td>
+<td></td>
+</tr></tbody></table>
+<!-- end of counters -->
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--
+<tr>
+  <td colspan=3><img width=931 height=1><br></td>
+</tr>
+-->
+<tbody><tr valign="top">
+  <td rowspan="6"></td>
+  <td rowspan="6">&nbsp;&nbsp;&nbsp;</td>
+  <td bgcolor="#008080"></td>
+</tr>
+<tr>
+  <td bgcolor="#daecd7"></td>
+</tr>
+<tr>
+  <td bgcolor="#008080">
+    <table border="0" cellpadding="1" cellspacing="1" width="100%">
+    <tbody><tr>
+      <td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://citcity.ru/">Деловая газета CitCity.ru</a></font></td>
+      <td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://citkit.ru/">CITKIT.ru - все об Open Source</a></font></td>
+      <td align="center" bgcolor="#f4f9f3"><a class="head" href="http://forum.citforum.ru/">Форумы</a></td>
+      <td align="center" bgcolor="#f4f9f3"><a class="head" href="http://www.citforum.ru/news.shtml">Все публикации</a></td>
+      <td align="center" bgcolor="#f4f9f3"><a class="head" href="http://www.citmgu.ru/">Учебный центр</a></td>
+      <td align="center" bgcolor="#f4f9f3"><a class="head" href="http://smoking-room.ru/">Курилка</a></td>
+    </tr>
+    </tbody></table>
+  </td>
+</tr>
+<tr>
+  <td></td>
+</tr>
+<tr>
+  <td width="100%">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+      <td align="left" width="21"></td>
+      <td align="left"><font size="2">&nbsp;&nbsp;&nbsp;<a href="http://www.citforum.ru/cdrom.shtml"><b><nobr>CITForum на CD</nobr></b></a></font></td>
+	  <td align="center"><font size="2">&nbsp;&nbsp;&nbsp;<nobr><a href="http://www.citforum.ru/subscribe.shtml"><b>Подписка на новости портала</b></a></nobr></font></td>
+      <td align="right"><font size="2"><b><nobr>Море(!) аналитической информации!</nobr></b> :: <a href="http://www.citforum.ru/">CITFORUM.RU</a></font></td>
+    </tr>
+    </tbody></table>
+  </td>
+</tr>
+</tbody></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="5" width="100%">
+<tbody><tr><td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td bgcolor="#008080"></td></tr>
+<tr><td bgcolor="#daecd7"></td></tr>
+<tr><td bgcolor="#008080">
+
+<table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/consulting/">IT-консалтинг</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/SE/">Software Engineering</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/programming/">Программирование</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/database/">СУБД</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/security/">Безопасность</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/internet/">Internet</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/nets/">Сети</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/operating_systems/">Операционные системы</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/hardware/">Hardware</a></font></td>
+<!--
+<td bgcolor=#F4F9F3 align=center><font size=-1><a class=head href=/faq/>FAQ (ЧаВО)</a></font></td>
+<td bgcolor=#F4F9F3 align=center><font size=-1><a class=head href=/howto/>HOWTO</a></font></td>
+--> 
+</tr>
+</tbody></table>
+
+</td></tr>
+</tbody></table>
+
+</td></tr>
+<tr><td>
+<table border="0" cellpadding="0" cellspacing="5" width="100%">
+<tbody><tr valign="top">
+
+
+<td valign="top" width="200">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--date-->
+<tbody><tr><td bgcolor="#008080"></td></tr>
+<tr><td bgcolor="#daecd7"></td></tr>
+<tr><td bgcolor="#008080">
+<table border="0" cellpadding="0" cellspacing="1" width="100%">
+<tbody><tr><td bgcolor="#f4f9f3">
+<p class="topic1" align="center"><b>04.07.2007</b>
+</p></td></tr>
+</tbody></table>
+</td></tr>
+<!--/date-->
+
+
+<tr><td bgcolor="#008080"></td></tr>
+<tr><td bgcolor="#daecd7"></td></tr>
+<tr><td bgcolor="#008080"><table border="0" cellpadding="1" cellspacing="1" width="100%"><tbody><tr><td align="center" bgcolor="#ffffff">
+<form method="get" action="http://www.google.ru/custom">
+<table border="0" cellpadding="1" cellspacing="0">
+  <tbody><tr valign="bottom">
+    <td><a href="http://www.google.ru/search"></a></td>
+    <td><input name="sa" value="Поиск" type="submit"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><input name="q" size="25" maxlength="255" value="" type="text"></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <input name="sitesearch" value="" type="radio">WWW
+      <input name="sitesearch" value="citforum.ru" checked="checked" type="radio">CITForum.ru
+    </td>
+  </tr>
+</tbody></table>
+<input name="cof" value="LW:140;ALC:#800000;L:http://www.citforum.ru/pictures/logos/citlogo8.gif;LC:#006890;LH:44;AH:left;VLC:#003860;S:http://www.citforum.ru/;AWFID:a524ad3720194500;" type="hidden">
+<input name="domains" value="citforum.ru" type="hidden">
+</form>
+</td></tr></tbody></table>
+</td></tr>
+
+
+
+<tr><td bgcolor="#008080"></td></tr>
+<tr><td bgcolor="#daecd7"></td></tr>
+<tr><td bgcolor="#008080">
+<table border="0" cellpadding="8" cellspacing="1" width="100%">
+<tbody><tr><td align="center" bgcolor="white">
+</td></tr>
+<tr><td bgcolor="#ffffff">
+<font size="2">
+</font><p><font size="2"><b>Новости мира IT:</b>
+</font></p><ul class="column">
+
+<font size="2"><li>04.07 - <a href="http://citcity.ru/16294/">Apple купила доменное имя iPhone.com</a></li><li>04.07 - <a href="http://citcity.ru/16293/">Проникновение сотовой связи к концу 2007 г превысит 50 проц от численности населения Земли</a></li><li>04.07 - <a href="http://citcity.ru/16292/">МойКруг и «Ведомости» стали партнерами</a></li><li>04.07 - <a href="http://citcity.ru/16291/">Хакерские группы пытаются взломать iPhone</a></li><li>04.07 - <a href="http://citcity.ru/16290/">Российские власти закрыли Allofmp3</a></li><li>04.07 - <a href="http://citcity.ru/16289/">Москва: сделан важный шаг на пути к ЭЦП</a></li><li>03.07 - <a href="http://citcity.ru/16288/">Разработан прототип невидимого руткита</a></li><li>03.07 - <a href="http://citcity.ru/16287/">Состоялся релиз дистрибутива Slackware Linux 12</a></li><li>03.07 - <a href="http://citcity.ru/16286/">SAP признала обвинения Oracle в хищении информации</a></li><li>03.07 - <a href="http://citcity.ru/16285/">Adobe закончила работы над пакетом Creative Suite 3</a></li><li>03.07 - <a href="http://citcity.ru/16284/">МГТС будет оказывать универсальные услуги связи в Москве</a></li><li>03.07 - <a href="http://citcity.ru/16283/">Yahoo запускает «интеллектуальную» систему рекламы</a></li><li>03.07 - <a href="http://citcity.ru/16282/">Microsoft нанесла 3D-удар по Google Earth</a></li><li>03.07 - <a href="http://citcity.ru/16281/">Российский рынок BI растет в 5 раз быстрее мирового</a></li><li>03.07 - <a href="http://citcity.ru/16280/">Конкурент PDF может быть стандартизирован</a></li><li>03.07 - <a href="http://citcity.ru/16279/">Сбербанк внедряет "Электронную сберкассу"</a></li><li>03.07 - <a href="http://citcity.ru/16278/">Хакеры взломали сайт корпорации Microsoft</a></li><li>02.07 - <a href="http://citcity.ru/16277/">Минобороны США разрабатывает "параллельную Землю"</a></li><li>02.07 - <a href="http://citcity.ru/16276/">Ученые работают над проблемой телепортации</a></li><li>02.07 - <a href="http://citcity.ru/16275/">За три дня Apple удалось продать полмиллиона iPhone</a></li><li>02.07 - <a href="http://citcity.ru/16274/">Недельный отчет Panda Software о вирусах и вторжениях</a></li><li>02.07 - <a href="http://citcity.ru/16273/">Компания Intel объявила о выпуске новой материнской платы</a></li><li>02.07 - <a href="http://citcity.ru/16272/">Лаборатория Касперского: Обзор вирусной активности за июнь 2007</a></li><li>02.07 - <a href="http://citcity.ru/16271/">Air France внедрила услугу регистрации на рейсы по SMS</a></li><li>02.07 - <a href="http://citcity.ru/16270/">Сотрудники Apple получат по бесплатному iPhone</a></li><li>02.07 - <a href="http://citcity.ru/16269/">Проект Longhorn Reloaded остановлен</a></li><li>02.07 - <a href="http://citcity.ru/16268/">МТС и МГТС предложат услугу единого счета</a></li><li>02.07 - <a href="http://citcity.ru/16267/">Microsoft и AMD предложили недорогие компьютеры студентам Индии</a></li><li>29.06 - <a href="http://citcity.ru/16266/">Apple осталась без доменного имени iPhone.com</a></li><li>29.06 - <a href="http://citcity.ru/16265/">Mozilla представляет повые релизы Lightning и Sunbird 0.5</a>
+</li></font></ul>
+<p><font size="2"><a target="_blank" href="http://citcity.ru/"><b>Все новости на CitCity.ru</b></a>
+</font>
+</p><p align="right"><a href="http://citcity.ru/rss/citforum.xml"></a>
+</p></td></tr>
+</tbody></table>
+</td></tr>
+
+
+</tbody></table>
+</td>
+
+
+<td width="98%">
+
+
+
+
+<div align="right"><i>2003 г</i></div>
+
+<!-- start -->
+<h3 align="center">
+Стандарт стилевого оформления исходного кода DELPHI
+</h3>
+<p align="center">
+<a href="mailto:at@nvn.lukoil.com">Александр В. Ткаченко</a>, <a href="http://www.delphikingdom.com/" target="_blank">www.delphikingdom.com</a>
+</p><div align="justify">
+<strong>Содержание:</strong>
+<ol>
+	<li><a href="#01">ФАЙЛЫ ИСХОДНОГО КОДА</a>
+	</li><li><a href="#02">СОГЛАШЕНИЕ ОБ ИМЕНОВАНИЯХ</a>				 
+	</li><li><a href="#03">ИСПОЛЬЗОВАНИЕ ПРОБЕЛОВ</a>
+	</li><li><a href="#04">КОММЕНТАРИИ</a>
+	</li><li><a href="#05">КЛАССЫ</a>
+	</li><li><a href="#06">ИНТЕРФЕЙСЫ</a>
+	</li><li><a href="#07">ОПЕРАТОРЫ</a>
+	</li><li><a href="#08">ДОПОЛНЕНИЯ</a>
+</li></ol>
+<p></p><h4>
+ВВЕДЕНИЕ</h4><p></p>
+<p>Этот стандарт документирует стилевое оформление для форматирования исходного кода Delphi. Оригинал статьи создан <strong>Чарльзом Калвертом</strong> и расположен на <strong><a href="http://community.borland.com/soapbox/techvoyage/article/1,1795,10280,00.html" target="_blank">"Borland Community site"</a></strong>.
+В стандарте использованы материалы команды разработчиков Delphi,
+сообщества разработчиков библиотеки JEDI. Стандарт так же дополнен
+некоторыми правилами, созданными на основе собственного опыта
+разработки.</p>
+<p>Object Pascal является замечательно спроектированным языком. Одним
+из его многочисленных достоинств является легкая читабельность.
+Предлагаемый стандарт позволит еще более повысить легкость чтения кода
+Object Pascal. Следование довольно простым соглашениям, приведенным в
+этом стандарте, позволит разработчикам понять, что унифицированное
+оформление намного повышает читабельность и понятность кода.
+Использование стандарта намного облегчит жизнь во время этапов
+разработки и тестирования, когда довольно часто приходится подменять
+друг друга и разбираться в чужом коде.</p>
+<p>Процесс перехода с собственного стиля оформления на предлагаемый
+может оказаться непростым, но человеческий мозг довольно легко
+адаптируется к стандартам и находит пути для быстрого запоминания
+предлагаемых правил. В дальнейшем, следование стандарту не вызывает
+затруднений. Для более комфортабельного перехода на этот стандарт
+предагается воспользоваться свободно распространяемой утилитой для
+форматирования исходных текстов <a href="http://www.dow.wau.nl/aew/delforexp.html" target="_blank">"delforexp"</a>.</p>
+<p>Хочется отметить, что в компании Borland, на Web-сайте компании
+Borland, на CD, купленных у компании Borland, везде где есть исходный
+код, стандарт форматирования является законом.</p>
+<p>Этот документ не является попыткой определить грамматику языка
+Object Pascal. Например, если Вы попытаетесь поставить точку с запятой
+перед выражением else, то компилятор не позволит Вам этгого сделать.
+Этот документ говорит Вам, как нужно поступать, когда есть возможность
+выбора из многих вариантов при оформлении Вашего исходного кода.</p>
+<a name="01"></a><p></p><h4>
+ФАЙЛЫ ИСХОДНОГО КОДА</h4><p></p>
+<p>Исходный код Object Pascal подразделяется на модули и файлы проекта,
+которые подчиняются одинаковым соглашениям. Файл проекта Delphi имеет
+расширение DPR. Этот файл является главным исходным файлом для всего
+проекта. Любые модули, используемые в проекте, всегда будут иметь
+расширение PAS. Дополнительные файлы, используемые в проекте
+(командные, html, DLL и т.д.) могут играть важную роль, но эта глава
+описывает форматирование только PAS и DPR файлов.</p>
+
+<p><font class="Header">Именование исходных файлов</font></p>
+<p>Язык Object Pascal поддерживает длинные имена файлов. Если при
+создании имени Вы используете несколько слов, то необходимо
+использовать заглавную букву для каждого слова в имени: MyLongName.pas.
+Этот стиль оформления известен как InfixCaps или CamelCaps. Расширения
+файлов должны быть в нижнем регистре. Исторически, некоторые исходные
+файлы Delphi именуются по шаблону 8.3, но в настоящее время
+разработчики не обязаны придерживаться этого ограничения.</p>
+<p>Если Вы осушествляете перевод заголовочных файлов C/C++, то
+паскалевский эквивалент должен иметь тоже самое имя и расширение PAS.
+Например Windows.pas. Если правила грамматики языка Object Pascal
+требуют объединения нескольких транслированных файлов в один, то
+используйте имя того файла, в который Вы вкладываете остальные.
+Например: если WinBase.h вкладывается в Windows.h, то результирующее
+имя будет Windows.pas.</p>
+Все файлы модулей, созданные в организации ХХХ должны иметь префикс ХХХ			 
+
+<p><font class="Header">Организация исходных файлов</font>	</p>	
+Все модули Object Pascal могут содержать следующие элементы в определенном порядке:
+<ul>
+	<li>Информация о правах (<strong>Copyright/ID</strong>);</li>
+	<li>Имя модуля (<strong>Unit Name</strong>);</li>
+	<li>Объявление включаемых файлов (<strong>Include files</strong>);</li>
+	<li>Секцию интерфейса (<strong>Interface section</strong>);</li>
+	<li>Дополнительные определения (<strong>Additional defines</strong>);</li>
+	<li>Объявление используемых модулей (<strong>Uses clause</strong>);</li>
+	<li>Реализацию (<strong>Implementation</strong>)</li>
+	<li>Объявление используемых модулей (<strong>Uses clause</strong>);</li>
+	<li>Закрывающий оператор и точку (<strong>A closing end and a period</strong>).</li>
+</ul>
+Для визуального разделения элементов между ними должна быть хотя бы одна пустая строка.
+<p>Дополнительные элементы могут быть структурированы в порядке,
+который Вы сочтете нужным, но нужно соблюдать обязательные условия: в
+начале файла всегда копирайт, затем имя модуля, затем условные
+директивы и определения, директивы компилятора и файлы включения, затем
+определение подключений.</p>
+
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">{************************************************************}
+{                                                            }
+{                 Модуль ХХХ                                 }
+{       Copyright (c) 2001  ООО ХХХХ                         }
+{               отдел/сектор                                 }
+{                                                            }
+{  Разработчик: ХХ ХХ                                        }
+{  Модифицирован: 25 июня 2001                               }
+{                                                            }
+{************************************************************}</font>
+
+unit Buttons;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>Директивы компилятора не следует напрямую включать в исходный код.
+Для этого следует воспользоваться определением включений и подключить
+глобальный для проекта файл с директивами компилятора:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">{$I NX.INC}</font>
+interface</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>В случае необходимости, можно напрямую переопределить глобальные
+директивы компилятора. Следует помнить, что переопределяющие директивы
+должны быть документированы и Вы должны постараться ограничиться только
+локальным переопределением. Например для одной процедуры:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">{$S-,W-,R-}
+{$C PRELOAD}</font>
+
+interface
+
+uses
+  Windows, Messages, Classes, Controls, Forms, Graphics, StdCtrls, 
+ExtCtrls, CommCtrl;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>Секции определения типов и констант Вы можете располагать
+относительно друг друга как Вам угодно.
+Секция реализации должна начинаться с ключевого слова implementation,
+затем объявление используемых модулей (Uses clause), затем любые
+включение файлов или другие директивы.</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>implementation
+
+uses
+  Consts, SysUtils, ActnList, ImgList;
+<font class="CodeRemark">
+{$R BUTTONS.RES}</font>
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+
+<p><font class="Header">Копирайт и комментарий</font></p>
+Пример заголовка для модуля:			
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>		   
+<font class="CodeRemark">{************************************************************}
+{                                                            }
+{                 Модуль ХХХ                                 }
+{       Copyright (c) 2001  ООО ХХХХ                         }
+{               отдел/сектор                                 }
+{                                                            }
+{  Разработчик: ХХ ХХ                                        }
+{  Модифицирован: 25 июня 2001                               }
+{                                                            }
+{************************************************************}</font>
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+
+
+Следует обратить внимание на элементы заголовка:
+<ul>
+	<li>Назначение модуля;</li>
+	<li>Копирайт;</li>
+	<li>Разработчик;</li>
+	<li>Дата последней модификации для исполняемой версии.</li>
+</ul>	   
+
+<p><font class="Header">Объявление модуля</font></p>			 
+<p>Каждый исходный файл должен содержать объявление модуля. Слово unit
+является ключевым, поэтому оно должно быть написано в нижнем регистре.
+Имя модуля может содержать символы как в верхнем, так и в нижнем
+регистре и должно быть таким же, как и имя используемое для этого файла
+операционной системой. Например:</p>
+<pre>unit MyUnit;</pre>
+Этот модуль будет назван <strong>MyUnit.pas</strong>, когда он будет сохранен операционной системой
+
+<p><font class="Header">Объявление используемых модулей</font></p>
+<p>Внутри модуля объявление используемых модулей должно начинаться со
+слова uses в нижнем регистре. Затем следуют наименования модулей с
+сохранением регистра символов:</p>
+<pre>uses MyUnit;</pre>
+<p>Каждый используемый модуль должен отделяться от следующего с помощью
+запятой. Объявление используемых модулей должно заканчиваться точкой с
+запятой. Список используемых модулей необходимо располагать на
+следующей строке после слова uses. Если используются модули из разных
+проектов или производителей, то необходимо сгруппировать модули по
+проектам или производителям и каждую новую группу начинать с новой
+строки и снабжать комментариями:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>uses
+	Windows, SysUtils, Classes, 
+	Graphics, Controls, Forms, TypInfo	<font class="CodeRemark">// модули Delphi</font>
+	, XХХMyUnit1, ХХXMyUnit2; 	<font class="CodeRemark">// модули ХХХ</font></pre></td></tr></tbody></table></td></tr></tbody></table></p>
+Если список используемых модулей не умещается по ширине в 80 символов, то его необходимо перенести на следующую строку.
+
+<p><font class="Header">Объявление классов и интерфейсов</font></p>
+
+<p>Объявление класса начинается с двух пробелов, затем идет
+идентификатор класса с префиксом Т в нотации InfixCaps. Ни в коем
+случае в исходных файлах Object Pascal нельзя использовать табуляцию:</p>
+<pre>TMyClass</pre>
+Следом за идентификатором класса идет пробел, знак равенства, пробел и слово class в нижнем регистре:
+<pre> TMyClass = class </pre>
+Если необходимо определить родителя класса, то следует добавить открывающую скобку, имя класса-родителя и закрывающую скобку:
+<pre>  TMyClass = class(TObject)</pre>
+<p>Объявления областей видимости начинаются с двух пробелов и,
+следовательно, области видимости распологаются на одном уровне с
+идентификатором класса:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>  TMyClass = class(TObject)
+  private
+  protected
+  public
+  published
+  end;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>Данные всегда должны располагаться только в приватной секции и
+названия переменных должны всегда начинаться с префикса F. Все
+объявления внутри класса должны начинаться с четырех пробелов:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>  TMyClass = class(TObject)
+  private
+    FMyData: Integer;
+    function GetData: Integer;
+    procedure SetData(Value: Integer);
+  public
+  published
+    property MyData: Integer read GetData write SetData;
+  end;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>Оформление объявлений интерфейсов подчиняется тем же правилам, что и
+оформление классов. Отличие будет в использовании ключевых слов
+специфичных для интерфейсов
+</p>			  
+
+<a name="02"></a>
+<p></p><h4>
+СОГЛАШЕНИЕ ОБ ИМЕНОВАНИЯХ</h4><p></p>
+			 
+<p>Исключая зарезервированные слова и директивы, которые всегда пишутся
+в нижнем регистре, все идентификаторы Object Pascal должны использовать
+InfixCaps:</p>
+<pre>MyIdentifier MyFTPClass</pre>
+<p>Самое главное исключение для всех правил состоит в использовании
+оттранслированных заголовочных файлов С/С++. В этом случае всегда
+используются соглашения, принятые в файле источнике. Например будет
+использоваться WM_LBUTTONDOWN, а не wm_LButtonDown.
+</p>
+<p>Для разделения слов нельзя использовать символ подчеркивания. Имя
+класса должно быть именем существительным или фразой с именем
+существительным. Имена интерфейсов или классов должны отражать главную
+цель их создания:</p>
+<strong>Правильно:</strong>
+<pre>AddressForm 
+ArrayIndexOutOfBoundsException </pre>
+<strong>Неправильно:</strong>
+<pre>ManageLayout (глагол) 
+delphi_is_new_to_me (подчерк) </pre>				 
+
+<p><font class="Header">Именование модулей</font></p> 
+Смотрите пункт 2.1.		
+
+<p><font class="Header">Именование классов и интерфейсов</font></p>
+Смотри объявление классов и интерфейсов.
+<p><font class="Header">Именование полей</font></p>
+<p>При именовании полей всегда необходимо использовать InfixCaps.
+Всегда объявлять переменные только в приватных частях и использователь
+свойства для доступа к переменным. Для переменных использовать префикс
+F.</p>
+<p>Имена процедур для установки/получения значений свойств должны
+составляться по правилу: для получения - Get+имя свойства; для
+установки - Set+имя свойства.</p>
+<ul>
+	<li>Не используйте все заглавные буквы для констант, за исключением оттранслированных заголовочных файлов.</li>
+	<li>Не используйте Венгерскую нотацию, за исключением оттранслированных заголовочных файлов.</li>
+</ul>
+<strong>Правильно</strong>
+<pre>  FMyString: string;</pre>
+<strong>Неправильно</strong>
+<pre>  lpstrMyString: string;</pre>
+<strong>Исключение для Венгерской нотации делается в случае объявления перечислимого типа:</strong>
+<pre>  TBitBtnKind = (bkCustom, bkOK, bkCancel, bkHelp,
+    bkYes, bkNo, bkClose, bkAbort, bkRetry,
+    bkIgnore, bkAll);
+<em>bk обозначает ButtonKind</em></pre>
+<p>Когда Вы раздумываете над именами переменных, то имейте в виду, что
+нужно избегать однобуквенных имен, кроме как для временных переменных и
+переменных цикла.</p>
+<p>Переменные цикла именуются <strong>I</strong> и <strong>J</strong>. Другие случаи использования однобуквенных переменных это <strong>S</strong> (строка) и <strong>R</strong>
+(результат). Однобуквенные имена должны всегда использовать символ в
+верхнем регистре, но лучше использовать боле значимые имена. Не
+рекомендуется использовать переменную <strong>l</strong> (эль), потому что она похожа на <strong>1</strong> (единица).</p>
+<p><font class="Header">Именование методов</font></p>
+<p>При именовании полей всегда необходимо использовать стиль InfixCaps.
+Не допускается использование символов подчеркивания для разделения
+слов. В имени метода всегда должна содержаться команда к действию или
+глагольная фраза</p>
+<strong>Правильно:</strong>
+<pre>ShowStatus 
+DrawCircle 
+AddLayoutComponent </pre>
+<strong>Неправильно:</strong>
+<pre>MouseButton (Существительное, не описывает функцию) 
+drawCircle (Начинается с маленькой буквы) 
+add_layout_component (Используются символы подчерка) 
+ServerRunning (Глагольная фраза, но без команды) </pre>
+<p>Обратите внимание на последний пример (ServerRunning) - непонятно,
+что делает этот метод. Этот метод может использоваться для запуска
+сервера (лучше StartServer) или для проверки работы сервера (лучше
+IsServerRunning).</p>
+<p>Методы для установки или получения значений свойств должны именоваться Get+имя  свойства и - Set+имя  свойства.
+<br><strong>Например: </strong>
+</p><pre>GetHeight, SetHeigh</pre>
+<p></p>
+<p>Методы для теста/проверки булевских свойств класса должны именоваться с префиксом Is+имя свойства.
+<br><strong>Например:</strong>
+</p><pre>IsResizable, IsVisible</pre>
+<p></p>
+  
+<p><font class="Header">Именование локальных переменных</font></p>
+<p>Имена всех локальных переменных должны подчиняться тем же правилам,
+которые установлены для именования полей, исключая префикс F. </p>
+<p><font class="Header">Зарезервированные слова</font></p>
+<p>Зарезервированные слова и директивы должны быть все в нижнем
+регистре. Производные типы должны начинаться с большой буквы (Integer),
+однако string - это зарезервированное слово и оно должно быть в нижнем
+регистре.</p>
+<p><font class="Header">Объявление типов</font></p>
+<p>Все объявления типов должны начинаться с префикса Т и должны
+придерживаться правил, приведенных при описании оформления модуля или
+описании оформления класса.</p>
+
+<a name="03"></a>
+<p></p><h4>
+ИСПОЛЬЗОВАНИЕ ПРОБЕЛОВ</h4><p></p>
+<p><font class="Header">Использование пустых строк</font></p>
+<p>Пустые строки могут повысить читабельность путем группирования
+секций кода, которые логически связаны между собой. Пустые строки
+должны использоваться в следующих местах:</p>
+<ul>
+	<li>После блока копирайта;</li>
+	<li>После декларации пакета;</li>
+	<li>После секции импорта;</li>
+	<li>Между объявлениями классов;</li>
+	<li>Между реализациями методов; </li>
+</ul>
+<p><font class="Header">Использование пробелов</font></p>
+<p>Язык Object Pascal является очень легким для понимания языком,
+поэтому нет особой необходимости в использовании большого количества
+пробелов. Следующие пункты дадут Вам понимание того, в каком случае
+необходимо использовать пробелы.
+</p>
+<p><font class="Header">Пробелы, запрещенные к использованию</font></p>
+<ul>
+	<li>До или после оператора .(точка);</li>
+	<li>Между именем метода и открывающей скобкой;</li>
+	<li>Между унарным оператором и его операндом;</li>
+	<li>Между выражением приведения (cast) и приводимым выражением;</li>
+	<li>После открывающей скобки или перед закрывающей;</li>
+	<li>После открывающей квадратной скобки [ или перед закрывающей ];</li>
+	<li>Перед точкой с запятой;</li>
+</ul>
+<strong>Примеры правильного использования:</strong>
+<pre>function TMyClass.MyFunc(var Value: Integer);
+MyPointer := @MyRecord;
+MyClass := TMyClass(MyPointer);
+MyInteger := MyIntegerArray[5];</pre>
+<strong>Примеры неправильного использования:</strong>
+<pre>function TMyClass.MyFunc( var Value: Integer ) ;
+MyPointer := @ MyRecord;
+MyClass := TMyClass ( MyPointer ) ;
+MyInteger := MyIntegerArray [ 5 ] ;</pre>
+
+<p><font class="Header">Использование отступов</font></p>
+<p>Всегда необходимо использовать два пробела для всех уровней отступа.
+Другими словами, первый уровень отступает на два пробела, второй на
+четыре и так далее. Никогда не используйте символы табуляции.</p>
+<p>Существует несколько исключений из этого правила. Зарезервированные
+слова unit, uses, type, interface, implementation, initialization и
+finalization всегда должны примыкать к левой границе. Также должны быть
+отформатированы финальный end и end, завершающий исходный модуль. В
+файле проекта выравнивание по левой границе применяется к словам
+program, главным begin и end. Код внутри блока begin..end должен иметь
+отступ два символа.</p>
+
+<p><font class="Header">Перенос строк</font></p>
+<p>Все строки должны быть ограничены 80 столбцами. Строки, длиннее чем
+80 столбцов должны быть разделены и перенесены. Все перенесенные строки
+должны быть выровнены по первой строке и иметь отступ в два символа.
+Выражение begin всегда должно находиться на своей отдельной строке.</p>
+<strong>Пример: </strong><br>
+Правильно
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>function CreateWindowEx(dwExStyle: DWORD;
+  lpClassName: PChar; lpWindowName: PChar;
+	  dwStyle: DWORD; X, Y, nWidth, nHeight: Integer;
+	  hWndParent: HWND; hMenu: HMENU; hInstance: HINST;
+	  lpParam: Pointer): HWND; stdcall;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>Никогда не разрывайте строку между параметром и его типом, кроме
+параметров, перечисляемых через запятую. Двоеточие для всех объявлений
+переменных не должно содержать перед собой пробелов и иметь один пробел
+после перед именем типа.
+</p>
+	
+<strong>Правильно</strong>
+<pre>procedure Foo(Param1: Integer; Param2: Integer);</pre>
+<strong>Неправильно</strong>
+<pre>procedure Foo( Param :Integer; Param2:Integer );</pre>
+<p>Нельзя переносить строки в тех местах, где не допускаются пробелы,
+например между именем метода и открывающей скобкой или между именем
+массива и открывающей квадратной скобкой. Никогда нельзя помещать
+выражение begin на строку, содержащую другой код.</p>
+
+<strong>Неправильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>while (LongExpression1 or LongExpression2) do begin
+<font class="CodeRemark">  // DoSomething
+  // DoSomethingElse;</font>
+end;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<strong>Правильно</strong>
+<pre>while (LongExpression1 or LongExpression2) do 
+begin
+<font class="CodeRemark">  // DoSomething
+  // DoSomethingElse;</font>
+end;
+if (LongExpression1) or 
+  (LongExpression2) or 
+  (LongExpression3) then 
+</pre>
+В случае с логическими операторами предпочтительнее будет следующий вариант:
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>if (LongExpression1) 
+  or (LongExpression2) 
+  or (LongExpression3) then 
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>		 
+
+<a name="04"></a>
+<p></p><h4>
+КОММЕНТАРИИ</h4><p></p>
+<p>Язык Object Pascal поддерживает два типа комментариев: блочные и
+однострочные. Общие соображение по использованию комментариев могут
+быть следующими:</p>
+<ul>
+	<li>Помещайте комментарий недалеко от начала модуля для пояснения его назначения;</li>
+	<li>Помещайте комментарий перед объявлением класса;</li>
+	<li>Помещайте комментарий перед объявлением метода;</li>
+	<li>Избегайте очевидных комментариев: <font class="codeInstr">(i := i + 1 // добавить к i единицу)</font>;</li>
+	<li>Помните, что вводящий в заблуждение комментарий хуже чем его отсутствие;</li>
+	<li>Избегайте помещать в комментарий информацию, которая со временем может быть не верна;</li>
+	<li>Избегайте разукрашивать комментарии звездочками или другими символами;</li>
+	<li>Для временных (отсутствующие в релизе) комментариев используйте "TODO".</li>
+</ul>
+ 
+<p><font class="Header">Блочные комментарии</font></p>				   
+<p>Object Pascal поддерживает два типа блочных комментариев. Наиболее
+часто используемый блочный комментарий - это пара фигурных скобок:<strong> { }</strong>.
+Команда разработчиков Delphi предпочитает использовать этот комментарий
+как можно проще и как запасной. Используйте в таких комментариях
+пробелы для форматирования текста и не используйте символы зведочка
+"*". При переносе строк необходимо сохранять отступы и выравнивание</p>
+Пример из DsgnIntf.pas:
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">{ TPropertyEditor
+
+  Edits a property of a component, or list of components,
+  selected into the Object Inspector.  The property
+  editor is created based on the type of the
+  property being edited as determined by the types
+  registered by...
+
+  etc...
+
+    GetXxxValue
+      Gets the value of the first property in the
+      Properties property.  Calls the appropriate
+      TProperty GetXxxValue method to retrieve the
+      value.
+
+    SetXxxValue Sets the value of all the properties
+      in the Properties property.  Calls the appropriate
+      TProperty SetXxxxValue methods to set the value. }
+</font></pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>В блочный комментарий всегда заключается информация о модуле: копирайт, дата модификации и так далее.
+Блочный комментарий, описывающий метод должен идти перед объявлением метода.</p>
+<strong>Правильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">{ TMyObject.MyMethod
+
+  This routine allows you to execute code. }</font>
+
+procedure TMyObject.MyMethod;
+begin
+end;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<strong>Неправильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>procedure TMyObject.MyMethod;
+<font class="CodeRemark">{******************************************************
+  TMyObject.MyMethod
+
+  This routine allows you to execute code.
+*******************************************************}</font>
+begin
+end;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>	  
+			
+<p>Второй тип блочного комментария содержит два символа: скобку и звездочку: <strong>(* *)</strong>.
+Этот тип комментария используется при разработке исходного кода. Его
+преимуществом является то, что он поддерживает вложенные комментарии,
+правда комментарии должны быть разного типа. Вы можете использовать это
+свойство для комментирования больших кусков кода, в котором встречаются
+другие комментарии:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">(* procedure TForm1.Button1Click(Sender: TObject);
+begin
+  DoThis; // Start the process
+  DoThat; // Continue iteration
+  { We need a way to report errors here, perhaps using
+    a try finally block ??? }
+  CallMoreCode; // Finalize the process
+end; *)
+</font></pre></td></tr></tbody></table></td></tr></tbody></table></p>
+				  
+<p><font class="Header">Однострочные комментарии</font></p>
+<p>Однострочный комментарий состоит из символов // со следующим за ними
+текстом комментария. После символов // должен идти пробел и затем
+текст. Однострочные комментарии должны иметь отступы такие же, как и
+код, в котором они встречаются. Однострочные комментарии можно
+сгруппировать, чтобы сформировать большой комментарий.</p>
+<p>Однострочный комментарий может начинаться с новой строки и может
+продолжать код, который он комментирует. В этом случае между кодом и
+комментарием должен быть хотя бы один пробел. Если больше одного
+комментария следует за кодом, то они должны быть выровнены по одному
+столбцу.</p>
+Пример однострочного строкового комментария:
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">// Open the table</font>
+Table1.Open; 
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>Пример комментария в коде:
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>if (not IsVisible) then
+  Exit;          <font class="CodeRemark">// nothing to do</font>
+Inc(StrLength);  <font class="CodeRemark">// reserve space for null terminator</font></pre></td></tr></tbody></table></td></tr></tbody></table></p>
+Необходимо избегать использовать комментарии в коде для каждой строки модуля.				   
+
+<a name="05"></a> 
+<p></p><h4>
+КЛАССЫ</h4><p></p>
+
+<p><font class="Header">Структура тела класса</font></p>
+Тело класса при его декларации подчинено следующей структуре:
+<ul>
+	<li>Объявление полей;</li>
+	<li>Объявление методов;</li>
+	<li>Объявление свойств.</li>
+</ul>
+Поля, свойства и методы в вашем классе должэны быть упорядочены в алфавитном порядке.
+<p><font class="Header">Уровни доступа</font></p>
+Исключая код, вставленный IDE, директивы видимости должны быть объявлены в следующем порядке:
+<ul>
+	<li>Приватные (скрытые) члены класса (<strong>private</strong>);</li>
+	<li>Защищенные члены класса (<strong>protected</strong>);</li>
+	<li>Общедоступные члены класса (<strong>public</strong>);</li>
+	<li>Публикуемые члены класса (<strong>published</strong>)</li>
+</ul>
+<p>Таким образом, в Object Pascal существует четыре уровня доступа для
+членов класса: published, public, protected и private - в порядке
+уменьшения видимости. По умолчанию, уровень доступа - published. В
+общем, члены класса должны давать наименьший уровень доступа, который
+подходит для этого члена. Например, член, к которому имеют доступ
+классы из одного модуля должен иметь уровень доступа private. Кроме
+того, объявляя члены класса с наименьшим уровнем доступа, Вы позволяете
+компилятору воспользоваться дополнительными возможностями для
+оптимизации. С другой стороны, если Вы планируете в дальнейшем
+порождать дочерние классы от Вашего класса, то нужно использовать
+уровень доступа protected.</p>
+<p>Никогда не указывайте уровень доступа public для данных. Данные
+всегда должны быть объявлены в приватной секции и доступ к ним должен
+осуществляться с помощью методов или свойств.</p>
+
+<p><font class="Header">Объявление конструктора</font></p>
+Все методы класса должны быть упорядочены по алфавиту. Однако Вы можете
+поместить объявления конструктора и деструктора перед всеми остальными
+методами.
+Если у класса существует более чем один конструктор и если они имеют
+одинаковые имена, то они должны располагаться в порядке увеличения
+числа параметров
+<p><font class="Header">Объявление методов</font></p>
+По возможности, объявление метода должно располагаться на одной строке:
+<br>Например:
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>procedure ImageUpdate(Image img, infoflags: Integer,
+  x: Integer, y: Integer, w: Integer, h: Integer)</pre></td></tr></tbody></table></td></tr></tbody></table></p>				
+  
+<a name="06"></a>
+<p></p><h4>
+ИНТЕРФЕЙСЫ</h4><p></p>			 
+
+<p>Все основные правила форматирования для классов применяются и для форматирования интерфейсов.
+Интерфейсы декларируются в той же манере, что и классы.</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>InterfaceName = interface([Inherited Interface])
+InterfaceBody
+end;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>Отступ для интерфейса должен быть равен двум пробелам. Тело
+интерфейса имеет отступ четыре пробела. Закрывающий end должен иметь
+отступ в два пробела. Объявление класса заканчивается точкой с запятой.
+У интерфейса не существует полей, однако свойства могут присутствовать.</p>
+<p>Все методы интерфейса являются абстрактными и общедоступными,
+поэтому не требуется включать слова public и abstract в объявление
+метода.</p>
+<p><font class="Header">Структура тела интерфейса</font></p>
+Тело интерфейса при его декларации подчинено следующей структуре:
+<ul>
+	<li>Объявление методов интерфейса;</li>
+	<li>Объявление свойств интерфейса.</li>
+</ul>
+   
+Стили для объявления свойств и методов интерфейса аналогичным стилям для класса.	  <br>
+
+<a name="07"></a>
+<p></p><h4>
+ОПЕРАТОРЫ</h4><p></p>
+<p>Операторы - это одна или более строк кода, разделенных точкой с
+запятой. Простые операторы имеют одну точку с запятой, а составные
+могут иметь более чем одну точку с запятой и, таким образом, состоят из
+множества простых операторов.</p>
+Это простой оператор:
+<pre>A := B; </pre>
+Это составной или структурированный оператор:
+<pre>begin
+  B := C;
+  A := B;
+end;</pre>
+<p><font class="Header">Простые операторы</font></p>
+<p>Простые операторы содержат одну точку с запятой. Если Вам необходимо
+разделить операторы, то перенесите продолжение оператора на следующую
+строку с отступом в два пробела:</p>
+<pre>MyValue :=
+  MyValue + (SomeVeryLongStatement / OtherLongStatement);</pre>
+  	 
+<p><font class="Header">Составные операторы</font></p>
+Составные операторы всегда заканчиваются точкой с запятой.
+<pre>begin
+  MyStatement;
+  MyNext Statement;
+  MyLastStatement;
+end;</pre>
+<p><font class="Header">Присвоения и выражения</font></p>
+Каждое присвоение и каждое выражение должно располагаться на разных строках.
+<br><strong>Правильно</strong>
+<pre>a := b + c; 
+Inc(Count); </pre>
+<strong>Неправильно</strong>
+<pre>a := b + c; Inc(Count);</pre>
+<p><font class="Header">Объявление локальных переменных</font></p>
+Локальные переменные должны иметь стиль Camel Caps. Для локальных переменных префикс F не требуется.
+<pre>var
+  MyData: Integer;
+  MyString: string;</pre>
+Все переменные с их типами, особенно поля класса, должны быть объявлены на различных строках.
+
+<p><font class="Header">Объявление массивов</font></p>
+В объявлении массива перед и после квадратных скобок должны стоять пробелы.
+<pre>type
+  TMyArray = array [0..100] of Char;</pre>
+<p><font class="Header">Оператор if</font></p>	   
+Оператор if всегда должен располагаться по крайней мере на двух строках
+<br><strong>Неправильно</strong>
+<pre>if A &lt; B then DoSomething; </pre>
+<strong>Правильно</strong>
+<pre>if A &lt; B then 
+  DoSomething;</pre> 
+<p>В случае составного оператора необходимо поместить каждый оператор на новую строку.</p>
+<strong>Неправильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>  if A &lt; B then begin
+    DoSomething;
+    DoSomethingElse;
+  end else begin
+    DoThis;
+    DoThat;
+  end;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<strong>Правильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>  if A &lt; B then
+  begin
+    DoSomething;
+    DoSomethingElse;
+  end
+  else
+  begin
+    DoThis;
+    DoThat;
+  end;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>Все остальные варианты расположения операторов не рекомендуются и не одобряются, хотя и являются синтаксически правильными.
+Избегайте использования круглых скобок в простых проверках. Например:</p>
+<strong>Правильно</strong>
+<pre>  if I &gt; 0 then 
+    DoSomething;
+</pre>
+<strong>Неправильно</strong>
+<pre>  if (I &gt; 0) then
+    DoSomething;</pre>
+	
+<p><font class="Header">Оператор for</font></p>
+<strong>Неправильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>for i := 0 to 10 do begin
+    DoSomething; 
+    DoSomethingElse;
+  end;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<strong>Правильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>  for i := 0 to 10 do
+  begin
+    DoSomething;
+    DoSomethingElse;
+  end;
+
+  for I := 0 to 10 do
+    DoSomething;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>	
+<p><font class="Header">  Оператор while</font></p>
+<strong>Неправильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>  while x &lt; j  do begin
+    DoSomething;
+    DoSomethingElse;
+  end;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<strong>Правильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>  while x &lt; j do
+  begin
+    DoSomething;
+    DoSomethingElse;
+  end;			
+  while x &lt; j do
+    Something;
+  
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>	
+
+<p><font class="Header">Оператор repeat until</font></p>
+<strong>Правильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>  repeat
+    x := j;
+    j := UpdateValue;
+  until j &gt; 25;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+
+<p><font class="Header">Оператор case</font></p>
+<p>Несмотря на то, что существует множество синтаксически правильных конструкций, одобренной и рекомендованной считается следующая:</p>
+<strong>Правильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre> case ScrollCode of
+    SB_LINEUP, SB_LINEDOWN:
+      begin
+        Incr := FIncrement div FLineDiv;
+        FinalIncr := FIncrement mod FLineDiv;
+        Count := FLineDiv;
+      end;
+    SB_PAGEUP, SB_PAGEDOWN:
+      begin
+        Incr := FPageIncrement;
+        FinalIncr := Incr mod FPageDiv;
+        Incr := Incr div FPageDiv;
+        Count := FPageDiv;
+      end;
+  else
+    Count := 0;
+    Incr := 0;
+    FinalIncr := 0;
+  end;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>  
+			
+<p><font class="Header">Оператор try</font></p>
+<p>Несмотря на то, что существует множество синтаксически правильных конструкций, одобренной и рекомендованной считается следующая:</p>
+<strong>Правильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>try
+  try
+    EnumThreadWindows(CurrentThreadID, @Disable, 0);
+    Result := TaskWindowList;
+  except 
+    EnableTaskWindows(TaskWindowList);
+    raise;
+  end; 
+finally
+  TaskWindowList := SaveWindowList; 
+  TaskActiveWindow := SaveActiveWindow;
+end; 
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>  	
+	 
+<a name="08"></a>
+<p></p><h4>
+ДОПОЛНЕНИЯ</h4><p></p>  
+<p>В этой части собраны дополнения, которые не вошли в стандарт
+Borland. Эти дополнения взяты из правил JCL и опыта российских
+разработчиков.</p>
+<p><font class="Header"> Const, Var и Type</font></p>
+<p>Зарезервированные слова var, const и type всегда пишутся на новой
+строке и не допускают появления на этой же строке какого-либо текста. </p>
+<strong>Правильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>type
+  TMyType = Integer;
+
+const
+  MyConstant = 100;
+
+var
+  MyVar: Integer;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<strong>Неправильно</strong>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>type TMyType = Integer;
+
+const MyConstant = 100;
+
+var MyVar: Integer;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+
+<p>Процедуры должны иметь только по одной секции type, const и var в следующем порядке:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>procedure SomeProcedure;
+type
+  TMyType = Integer;
+const
+  ArraySize = 100;
+var
+  MyArray: array [1..ArraySize] of TMyType;
+begin
+  ...
+end;</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+  			   
+<p><font class="Header">Директивы условной компиляции</font></p>
+<p>Все директивы условной компиляции должны быть собраны в одном модуле
+ХХX.INC. Этот файл предназначен для определения глобальных директив.
+Оператор include должен быть помещен между ключевыми словами unit и
+interface. Никто не может мождифицировать файл ХХX.INC по собственному
+желанию.</p>
+<p><font class="Header">Строковые ресурсы</font></p>
+<p>Все строковые ресурсы должны иметь вид <strong>"Rs"[Category][Name]. [Category]</strong>
+должно быть аббревиатурой или названием категории кода, где
+используется строка. [Name] должно быть именем строки ресурса.
+Например, конструктор TJclCriticalSectionEx.CreateEx вызывает
+исключительную ситуацию при ошибке инициализации. Сообщение об ошибке
+объявляется в глобальном модуле ХХXResources.pas с именем
+RsynchInitCriticalSection.</p>
+<p>Все строки должны быть исключены из кода и заменены на константы.
+Исключением из этого правила являются строки, которые являются
+какими-либо командами или от них будет зависеть поведение экземпляров
+класса. Такие строки должны быть явно объявлены в каком-либо из методов
+класса.</p>
+
+<p><font class="Header">Исключения</font></p>
+<p>Все исключения должны начинаться с префикса EХХХ. Все исключения должны быть отнаследованны от класса ENхError.
+При возбуждении исключительной ситуации предпочтительным является ее создание с помощью метода CreateRes:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>raise EХХХSomeException.CreateRes(@RsSomeResourceString);</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+	
+<p><font class="Header">Категории и разделение алгоритмов</font></p>
+<p>Обычно, содержимое каждого созданного модуля есть набор классов,
+функций и процедур, принадлежащих к одной категории. Например, ХХХLogin
+содержит все, что относится к идентификации и персонификации
+пользователя. Для ясного восприятия исходного кода следует
+придерживаться следующего правила: в интерфейсной части модуля каждая
+группа функций, относящихся к одной субкатегории должны отделяться от
+другой группы функций тремя строками шириной 80 столбцов с описанием
+субкатегории на второй строке:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>1	
+2			Информация о последней попытке идентификации
+3	
+procedure GetLastUserName(var ZUser: string);
+procedure GetLastDatabase(var ZDatabase: string);</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+
+<p>В секции реализации каждая подкатегория или класс должен разделяться
+строкой, состоящей из символов равенства (=), закомментированных
+однострочным комментарием и пустой строкой перед и после группы функций:</p>
+
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">//=================================================</font>
+
+procedure GetLastUserName(var ZUser: string);
+begin
+...
+end;
+procedure GetLastDatabase(var ZDatabase: string);
+begin
+...
+end;
+
+<font class="CodeRemark">//==================================================</font>
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+
+<p>Каждая функция из одной группы или методы класса должны разделяться
+между собой строкой, состоящей из символов минуса (-),
+закомментированных однострочным комментарием и пустой строкой перед и
+после функции или метода:</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre><font class="CodeRemark">//==================================================</font>
+
+procedure GetLastUserName(var ZUser: string);
+begin
+...
+end;
+
+<font class="CodeRemark">//--------------------------------------------------</font>
+
+procedure GetLastDatabase(var ZDatabase: string);
+begin
+...
+end;
+
+<font class="CodeRemark">//==================================================</font>
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>	
+
+<p><font class="Header">Ассемблер</font></p>
+<p><font class="Header">Локальные процедуры</font></p>
+<p>Локальные функции и процедуры должны иметь стандартный отступ в два
+пробела вправо от их владельца и сама процедура должна выделяться
+пустыми строками по одной перед и после локальной процедуры. Если
+"внешняя" процедура имеет локальные переменные, то они должны
+декларироваться перед локальной процедурой, независимо от того, будет
+ли в локальной процедуре осуществляться доступ к ним или нет. Однако
+общие соображения таковы, что локальных процедур следует избегать.</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>procedure SomeProcedure;
+var
+  I: Integer;
+
+  procedure LocalProcedure;
+  begin
+    ...
+  end;
+
+begin
+  ...
+  LocalProcedure;
+  ...
+end;
+</pre></td></tr></tbody></table></td></tr></tbody></table></p>
+				
+<p><font class="Header">Объявление параметров</font></p>
+Когда объявляется список параметров для процедуры, функции или метода пользуйтесь следующими рекомендациями:
+<ul>
+	<li>Комбинируйте формальные параметры одного типа в одно выражение;</li>
+	<li>Не
+используйте префикс А, кроме случаев, когда вызывается метод класса,
+который работает со свойством, которе имеет идентичное имя;</li>
+	<li>Придерживайтесь
+следующего порядка в параметрах: сначала входные параметры, затем
+входные/выходные, затем выходные. Параметры, имеющие значение по
+умолчанию по правилам Object Pascal помещаются в конец списка;</li>
+	<li>Используйте const для параметров, которые не изменяются при работе вызываемых методов, процедур или функций.</li>
+</ul>
+  			  	
+<p><font class="Header">Инициализация глобальных переменных</font></p>
+<p>Глобальные переменные, как и члены класса всегда инициализируются
+нулем. Это трудно для понимания в случае разных типов. Например Integer
+инициализируется в 0, а pointer в nil. Для этого рекомендуется
+указывать в комментарии как инициализируется переменная.</p>
+<p><table bgcolor="#999999" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr bgcolor="#ffffff"><td><pre>var
+  MyGlobalVariable: Pointer <font class="CodeRemark">// = nil;</font></pre></td></tr></tbody></table></td></tr></tbody></table></p>
+<p>Несмотря на то, что глобальные переменные разрешены языком Object Pascal, используйте их лишь в самых крайних случаях.</p>
+</div>
+<!--end-->
+<p>&nbsp;
+
+</p><center>
+<hr width="25%">
+<iframe src="%D1%F2%E0%ED%E4%E0%F0%F2%20%F1%F2%E8%EB%E5%E2%EE%E3%EE%20%EE%F4%EE%F0%EC%EB%E5%ED%E8%FF%20%E8%F1%F5%EE%E4%ED%EE%E3%EE%20%EA%EE%E4%E0%20DELPHI_files/citforum_bottom.htm" framespacing="0" frameborder="no" height="600" scrolling="no" width="500"></iframe>
+
+
+
+</center>
+<p align="right"><small>Размещение рекламы - pr@citforum.ru, ICQ 232284597</small>
+
+
+</p></td>
+
+
+<td>
+
+<table align="right" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr>
+<td bgcolor="#008080"><img src="%D1%F2%E0%ED%E4%E0%F0%F2%20%F1%F2%E8%EB%E5%E2%EE%E3%EE%20%EE%F4%EE%F0%EC%EB%E5%ED%E8%FF%20%E8%F1%F5%EE%E4%ED%EE%E3%EE%20%EA%EE%E4%E0%20DELPHI_files/1x1.gif" border="0" height="1" width="1"></td>
+<td bgcolor="#daecd7"><img src="%D1%F2%E0%ED%E4%E0%F0%F2%20%F1%F2%E8%EB%E5%E2%EE%E3%EE%20%EE%F4%EE%F0%EC%EB%E5%ED%E8%FF%20%E8%F1%F5%EE%E4%ED%EE%E3%EE%20%EA%EE%E4%E0%20DELPHI_files/1x1.gif" border="0" height="1" width="2"></td>
+<td>
+
+<table border="0" cellpadding="0" cellspacing="0" width="240">
+
+<tbody><tr><td align="center"></td></tr><tr><td bgcolor="#008080"><img src="%D1%F2%E0%ED%E4%E0%F0%F2%20%F1%F2%E8%EB%E5%E2%EE%E3%EE%20%EE%F4%EE%F0%EC%EB%E5%ED%E8%FF%20%E8%F1%F5%EE%E4%ED%EE%E3%EE%20%EA%EE%E4%E0%20DELPHI_files/1x1.gif" alt="" border="0" height="1" width="1"></td></tr>
+<tr><td bgcolor="#daecd7"><img src="%D1%F2%E0%ED%E4%E0%F0%F2%20%F1%F2%E8%EB%E5%E2%EE%E3%EE%20%EE%F4%EE%F0%EC%EB%E5%ED%E8%FF%20%E8%F1%F5%EE%E4%ED%EE%E3%EE%20%EA%EE%E4%E0%20DELPHI_files/1x1.gif" alt="" border="0" height="3" width="1"></td></tr>
+<tr><td bgcolor="#008080">
+<!--subscribe small-->
+   <table border="0" cellpadding="1" cellspacing="1" width="100%">
+   <form action="http://citforum.ru/anketa/subscribe.php" method="post"></form>
+   <tbody><tr><td bgcolor="#ffffff">
+    <center>
+     <table border="0" cellpadding="1" cellspacing="0">
+     <tbody><tr><td align="center">
+      <font size="2"></font><p><font size="2"><b>Подписка на новости IT-портала CITForum.ru</b><br>
+<i>(<a href="http://citforum.ru/">библиотека</a>, <a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>, <a target="_blank" href="http://citcity.ru/">CitCity</a>)</i></font></p><p>
+<font size="2">      <input name="e_mail" size="15" value="e@mail" type="text"><input value="OK" type="submit">
+     </font></p></td></tr>
+     </tbody></table>
+    </center>
+   </td></tr>
+   
+   </tbody></table>
+<!--/subscribe small-->
+</td></tr>
+
+<tr><td style="padding-left: 5px;">
+<font size="2">
+</font><p><font size="2"><b>Новые публикации:</b>
+
+
+</font></p><p><font size="2"><b>4 июля</b>
+</font></p><p><font size="2">Лекции из курса А.Марченко "Введение в программирование на C# 2.0":
+<li><a href="http://www.citforum.ru/programming/csharp/gdi_plus/">GDI+</a>
+</li><li><a href="http://www.citforum.ru/programming/csharp/ado_dot_net/">Основы ADO .NET</a>
+<p></p></li><li>К статье <a href="http://www.citforum.ru/consulting/articles/ofsa/">OFSA. Основные принципы</a> добавлена
+</li><li><a href="http://www.citforum.ru/consulting/articles/ofsa/ofsa_5.shtml">Часть 5. FDM как хранилище данных финансовой информации</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/445/">Чем удобна Вынь-да?</a>
+
+<p><b>28 июня</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/SE/testing/schnitman/">Особенности применения технологии UniTESK для тестирования функций мобильности в протоколе IPv6</a>
+</li><li><a href="http://www.citforum.ru/operating_systems/rubanov/">Разработка ОС реального времени для цифрового сигнального процессора</a>
+<p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/16252/">Карьера! Как много в этом слове...
+О планировании карьеры, плане профессионального развития и не только...</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/442/">Памятка начинающему снобу</a>
+
+<p><b>26 июня</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/programming/windows/machine_code/">Win32 в машинных кодах</a>
+<p></p></li><li><a href="http://www.citforum.ru/SE/testing/zelenov/">Верификация компиляторов - систематический подход</a>
+</li><li><a href="http://www.citforum.ru/SE/testing/kamkin/">Использование контрактных спецификаций для автоматизации функционального тестирования моделей аппаратного обеспечения</a>
+</li><li><a href="http://www.citforum.ru/SE/testing/gingina/">Тестирование трансляторов: проблема построения оракула для генератора</a>
+
+<p><b>21 июня</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/SE/testing/mutilin/">Тестирование компонентов, взаимодействующих посредством удаленного вызова методов</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><b><a target="_blank" href="http://citkit.ru/articles/434/">Открытые стандарты и новые формы международного сотрудничества</a></b>
+</li><li><a target="_blank" href="http://citkit.ru/articles/435/">Zenwalk: хроника последнего обновления</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/437/">Заметки сноба, или Беру свои слова обратно</a> (дискуссия про анонимусов)
+
+<p><b>19 июня</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/SE/testing/silakov/">Текущее состояние и перспективы развития инфраструктуры LSB</a>
+<p></p></li><li><a href="http://www.citforum.ru/SE/testing/kichigin/">Об одном методе сокращения набора тестов</a>
+<p></p></li><li><a href="http://www.citforum.ru/SE/testing/vlasov/">Методика автоматизированной проверки возвращаемых кодов ошибок при тестировании программных интерфейсов</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/431/">Zenwalk: управление пакетами</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/430/">Linux - должен?</a> (дискуссионный клуб)
+
+<p><b>14 июня</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/SE/project/distributed_team/">Пересекая границы: специфика разработки ПО распределенной командой</a>
+</li><li><a href="http://www.citforum.ru/SE/project/terehov/">Групповая разработка и организация коллектива</a>. Лекция из курса "Введение в технологию программирования"
+</li><li><a href="http://www.citforum.ru/computer/2007-05/">Компьютерные технологии на благо каждого человека</a>. Обзор майского номера журнала Computer
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/426/">5 лет спустя</a> (дискуссия Windows vs Linux)
+
+<p><b>7 июня</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/database/oracle/vldb/">Конфигурирование сервера Oracle для сверхбольших баз данных</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/423/">Wi-Fi. Linux. Краткий курс</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/424/">Wi-Fi. Linux. Краткий курс - 2</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/422/">Установка win-модемов для Unix</a>
+
+<p><b>5 июня</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/programming/delphi/openoffice/">Процедуры и функции для работы с OpenOffice</a>
+</li><li><a href="http://www.citforum.ru/programming/delphi/recognition_1/">Реализация простейшего алгоритма распознавания графических образов</a>
+</li><li><a href="http://www.citforum.ru/programming/delphi/recognition_2/">Распознавание образов методом потенциальных функций</a>
+</li><li><a href="http://www.citforum.ru/programming/delphi/mdi/">Эффективный способ применения интерфейсов в MDI приложениях</a>
+<p></p></li><li>Статья из серии "<a href="http://www.citforum.ru/programming/unix/borovsky/"><b>Программирование для Linux</b></a>":
+</li><li><a href="http://www.citforum.ru/programming/unix/threads_2/">Потоки - продолжение</a>
+
+<p><b>31 мая</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/security/cryptography/oracle_password/">Шифрование паролей в СУБД Oracle</a>
+<p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/16022/">Основы хранилищ данных и BI по Ральфу Кимбаллу</a>
+</li><li><a target="_blank" href="http://citcity.ru/16021/">Хранилище данных в реальном времени. Технологические решения</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/420/">V4L: как увидеть бабушку в Киеве</a>
+
+<p><b>24 мая</b>
+</p><p></p></li><li>Статьи из серии "<a href="http://www.citforum.ru/programming/unix/borovsky/"><b>Программирование для Linux</b></a>":
+<ul>
+<li><a href="http://www.citforum.ru/programming/unix/linux_api/">Linux API - работаем с файловой системой</a>
+</li><li><a href="http://www.citforum.ru/programming/unix/ipc_intro/">Linux API - Введение в межпроцессное взаимодействие</a>
+</li><li><a href="http://www.citforum.ru/programming/unix/svid_ipc_objects/">Объекты SVID IPC</a>
+</li><li><a href="http://www.citforum.ru/programming/unix/sockets/">Сокеты</a>
+</li><li><a href="http://www.citforum.ru/programming/unix/signals/">Сигналы</a>
+</li><li><a href="http://www.citforum.ru/programming/unix/proc_&amp;_threads/">Процессы и потоки</a>
+</li><li><a href="http://www.citforum.ru/programming/unix/threads/">Потоки</a>
+</li></ul>
+<p></p></li><li><a href="http://www.citforum.ru/database/postgres/fts/">Введение в полнотекстовый поиск в PostgreSQL</a>
+
+<p><b>22 мая</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/database/articles/oodbms3/">В защиту статьи "Архитектуры ООСУБД"</a>
+<p></p></li><li><a href="http://www.citforum.ru/hardware/microcon/comp_bus/">Современные внутренние шины - смена приоритетов!</a>
+<p>Обзор журнала Computer:
+</p></li><li><a href="http://www.citforum.ru/computer/2007-04/">Модель зрелости для управления данными</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/415/">Zenwalk: настройка Xfce</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/416/">RPM: руководство к использованию</a>
+
+<p><b>17 мая</b>
+</p><p></p></li><li><a href="http://www.citforum.ru/database/articles/oodbms_architectures/"><b>Дискуссия об архитектурах ООСУБД</b></a><br>
+Перевод: Сергей Кузнецов 
+<ul><li><a href="http://www.citforum.ru/database/articles/oodbms1/">Архитектуры ООСУБД. Анализ реализаций</a>
+</li><li><a href="http://www.citforum.ru/database/articles/oodbms2/">Еще раз об архитектурах ООСУБД</a>
+</li></ul> 
+<p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15890/">Прогнозы развития рынка аналитических приложений управления эффективностью бизнеса</a>
+</li><li><a target="_blank" href="http://citcity.ru/15891/">"Зеленые" технологии входят в моду, или Компьютер vs природа: примирение?</a>
+
+
+<p><b>15 мая</b>
+</p><p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15817/">Описание структуры БД: роскошь или необходимость?</a>
+</li><li><a target="_blank" href="http://citcity.ru/15815/">Вопросы информационной безопасности при аутсорсинге IT-процессов компании</a>
+</li><li><a target="_blank" href="http://citcity.ru/15818/">Подготовка предприятия к выделению ряда бизнес-процессов на аутсорсинг </a>
+</li><li><a target="_blank" href="http://citcity.ru/15863/">Системы интернет-банкинга в России</a>
+</li><li><a target="_blank" href="http://citcity.ru/15861/">Бизнес и IT. Единство и противоречия</a>
+</li><li><a target="_blank" href="http://citcity.ru/15862/">Задачи CIO и финансового директора все чаще пересекаются</a>
+
+<p><b>3 мая</b>
+</p></li><li><a href="http://www.citforum.ru/consulting/articles/staryh/">Профиль стандартов и спецификаций информационно-образовательных сред. Общая структура и принципы построения</a>
+<p>Обзоры журнала Computer:
+</p></li><li><a href="http://www.citforum.ru/computer/2007-03/">Ускорение и перестройка: будущее научных приложений?</a>
+</li><li><a href="http://www.citforum.ru/computer/2007-02/">Как поймать в сети злоумышленника?</a>
+</li><li><a href="http://www.citforum.ru/computer/2007-01/">Физиологическая и социальная сложность программного обеспечения</a>
+<p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15772/">Боевые сухопутные роботы</a>
+
+<p><b>26 апреля</b>
+</p></li><li><a href="http://www.citforum.ru/database/oracle/passwd/">Как взломать парольную защиту Oracle или как ее обойти</a>
+</li><li><a href="http://www.citforum.ru/database/oracle/repositary_xml_db/">Что дает репозитарий XML DB и как с ним работать</a>
+</li><li><a href="http://www.citforum.ru/database/oracle/xml_registration/">Как зарегистрировать схему XML в XML DB и как этим воспользоваться</a>
+</li><li><a href="http://www.citforum.ru/database/oracle/servlets_db/">Технология сервлетов СУБД для доступа к данным БД</a>
+<p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15688/">Кевин Митник: поймай меня, если сможешь...</a>
+
+<p><b>24 апреля</b>
+</p></li><li><a href="http://www.citforum.ru/database/mssql/mssql_2005_security/">Безопасность в Microsoft SQL Server 2005</a>
+</li><li><a href="http://www.citforum.ru/internet/perl/ten_tips/">Десять практических рекомендаций разработчикам на Perl</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/408/">Совместимость Linux: есть ли проблема?</a>
+<p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15670/">Microsoft мертва</a>
+
+<p><b>19 апреля</b>
+</p></li><li><a href="http://www.citforum.ru/seminars/cbd2007/ensemble_bam_bi/">Решение задач BAM и BI на платформе для интеграции и разработки приложений InterSystems Ensemble</a> (текст доклада конференции "<a target="_blank" href="http://www.citforum.ru/seminars/cbd2007/">Корпоративные базы данных-2007</a>")
+</li><li><a href="http://www.citforum.ru/hardware/articles/solid_sensor/">Твердотельные датчики изображения</a>
+<p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15642/">Рынок ERP: обгоняем Европу по темпам, отстаем по методологии</a>
+</li><li><a target="_blank" href="http://citcity.ru/15644/">Аутсорсинг центра технической поддержки пользователей</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/406/">Не Window vs Linux, но борьба за юзера</a>
+
+<p><b>17 апреля</b>
+</p><p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15616/">SOA от Oracle</a>
+</li><li><a target="_blank" href="http://citcity.ru/15621/">Как рассчитать стоимость ИТ-услуги</a>
+</li><li><a target="_blank" href="http://citcity.ru/15620/">Basel II: Международная конвергенция измерения капитала и стандартов капитала</a>
+</li><li><a target="_blank" href="http://citcity.ru/15619/">SOX: Хотите на фондовый рынок - извольте соответствовать</a>
+</li><li><a target="_blank" href="http://citcity.ru/15618/">Конвергентные услуги на базе IP</a>
+</li><li><a target="_blank" href="http://citcity.ru/15617/">Управление структурой и качеством сервиса в IP-сетях</a>
+
+
+
+<p><b>12 апреля</b>
+</p></li><li><a href="http://www.citforum.ru/hardware/articles/ups_leaders/">О лидерах рынка ИБП и новых концепциях</a>
+</li><li><a href="http://www.citforum.ru/hardware/data/esata/">eSATA: ком, хотевший быть блином</a>
+</li><li><a href="http://www.citforum.ru/hardware/notebook/subnote_test/">Портативные ноутбуки: многоядерность везде</a>
+</li><li><a href="http://www.citforum.ru/hardware/microcon/45_nm/">45 нм: все только начинается</a>
+</li><li><a href="http://www.citforum.ru/hardware/microcon/intel_pat/">Intel PAT - еще один способ продавать материнские платы</a>
+
+<p><b>10 апреля</b>
+</p><p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15521/">Автоматизация документооборота. Аутсорсинг.</a>
+</li><li><a target="_blank" href="http://citcity.ru/15563/">Безопасность Skype в корпоративной среде</a>
+</li><li><a target="_blank" href="http://citcity.ru/15560/">Honeypot: приманка для злоумышленника</a>
+</li><li><a target="_blank" href="http://citcity.ru/15562/">Безопасность телекомов</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/402/">Zenwalk: послеустановочные настройки</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/404/">Windows vs Unix - еще одно мнение</a>
+
+<p><b>5 апреля</b>
+</p><p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15525/">Массовая IP-телефония в России: не все так просто</a>
+</li><li><a target="_blank" href="http://citcity.ru/15524/">IP-коммуникации - связь нынешнего дня</a>
+</li><li><a target="_blank" href="http://citcity.ru/15523/">IP-телефония для маленьких и побольше</a>
+</li><li><a target="_blank" href="http://citcity.ru/15522/">"Хостинг АТС" - массовое VoIP-решение?</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/400/">После установки: Zenwalk as is</a>
+
+<p><b>3 апреля</b>
+</p></li><li><a href="http://www.citforum.ru/database/articles/impedance_mismatch/">Интеграция языков программирования с базами данных: в чем состоит проблема?</a>
+</li><li><a href="http://www.citforum.ru/hardware/data/hdd_industry/">Индустрия жестких дисков: дальше - больше</a>
+</li><li><a href="http://www.citforum.ru/hardware/microcon/intel_tera-scale/">Терафлоповое будущее Intel</a>
+<p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15501/">FTTx: обозримое будущее Интернета</a>
+</li><li><a target="_blank" href="http://citcity.ru/15500/">Куда движется рынок информационной безопасности?</a>
+</li><li><a target="_blank" href="http://citcity.ru/15499/">Иллюзия приватности</a>
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/398/">Zenwalk: установка</a>
+
+
+<p><b>29 марта</b>
+</p><p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15460/">ITIL и информационная безопасность</a>
+</li><li><a target="_blank" href="http://citcity.ru/15459/">CobiT: давайте разберемся!</a>
+</li><li><a target="_blank" href="http://citcity.ru/15458/">Интервью Джима Грея</a>
+</li><li><a target="_blank" href="http://citcity.ru/15457/">Интервью Дэвида Девитта</a>
+
+<p><b>27 марта</b>
+</p><p><b><a target="_blank" href="http://citcity.ru/">CitCity</a>:</b>
+</p></li><li><a target="_blank" href="http://citcity.ru/15420/">Интервью Майкла Стоунбрейкера</a>
+
+<p><b><a target="_blank" href="http://citkit.ru/">CITKIT.ru</a>:</b>
+</p></li><li><a target="_blank" href="http://citkit.ru/articles/393/">Zenwalk: предыстория вопроса</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/394/">Zenwalk: введение в тему</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/392/">Вступление к Zenwalk Linux Manual</a>
+</li><li><a target="_blank" href="http://citkit.ru/articles/396/">Слепые и зрячие (дискуссия Windows vs Linux)</a>
+
+<p align="right"><b><a href="http://www.citforum.ru/news.shtml">Все публикации</a> &gt;&gt;&gt;</b>
+
+
+</p><hr size="1">
+
+</li></font></p></td></tr>
+<tr><td align="center"></td></tr>
+<tr><td style="padding-left: 5px;">
+
+</td></tr><tr><td style="padding-left: 5px;">
+<br> 
+<!--<a target=_blank href="http://smoking-room.ru"><img src="/pictures/kurilka234x60.gif" border="1"></a><br>  
+-->
+<a target="_blank" href="http://smoking-room.ru/"></a><br>  
+
+
+
+</td></tr>
+</tbody></table>
+
+</td>
+</tr></tbody></table>
+
+</td>
+ <!--no_right-->
+
+</tr>
+</tbody></table>
+</td>
+
+</tr></tbody></table>
+
+
+
+
+
+
+<p>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td bgcolor="#008080"></td></tr>
+<tr><td bgcolor="#daecd7"></td></tr>
+<tr><td bgcolor="#008080">
+
+<table border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody><tr>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/consulting/">IT-консалтинг</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/SE/">Software Engineering</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/programming/">Программирование</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/database/">СУБД</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/security/">Безопасность</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/internet/">Internet</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/nets/">Сети</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/operating_systems/">Операционные системы</a></font></td>
+<td align="center" bgcolor="#f4f9f3"><font size="-1"><a class="head" href="http://www.citforum.ru/hardware/">Hardware</a></font></td>
+<!--
+<td bgcolor=#F4F9F3 align=center><font size=-1><a class=head href=/faq/>FAQ (ЧаВО)</a></font></td>
+<td bgcolor=#F4F9F3 align=center><font size=-1><a class=head href=/howto/>HOWTO</a></font></td>
+--> 
+</tr>
+</tbody></table>
+
+</td></tr>
+</tbody></table>
+
+</p><p>
+
+<table width="100%">
+<tbody><tr><td>
+<a href="http://www.citforum.ru/about/"><font size="2">Информация для рекламодателей</font></a> 
+</td><td><font size="2">PR-акции, размещение рекламы - <a href="mailto:pr@citforum.ru">pr@citforum.ru</a>, тел. +7 495 4119920, ICQ 232284597</font>
+</td><td align="right"><font size="2">Пресс-релизы - <a href="mailto:pr@citcity.ru">pr@citcity.ru</a></font>
+</td></tr></tbody></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td></td></tr>
+<tr><td bgcolor="#008080"></td></tr>
+<tr><td bgcolor="#daecd7"></td></tr></tbody></table>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%"><tbody><tr>
+<td><font size="2">
+<a href="http://www.citforum.ru/feedback.php?page=/programming/delphi/style_delphi/&amp;server=www.citforum.ru">Послать комментарий</a><br>
+<a href="http://www.citforum.ru/how.shtml">Информация для авторов</a>
+</font></td>
+<td><a href="http://top100.rambler.ru/cgi-bin/stats_top100.cgi?13078"></a></td>
+<td><!--TopList LOGO--><a target="_top" href="http://top.list.ru/jump?from=26978"></a><!--TopList LOGO--></td>
+<td>
+<!--LiveInternet logo--><a href="http://www.liveinternet.ru/click" target="_blank"></a><!--/LiveInternet-->
+</td>
+<td align="right" valign="bottom"><font face="Arial, sans-serif" size="1">This Web server launched on February 24, 1997<br>
+Copyright © 1997-2000 CIT, © 2001-2007 <a href="http://www.citforum.ru/info.shtml">CIT Forum</a></font></td>
+</tr></tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="#daecd7"></td></tr><tr><td bgcolor="#008080"></td></tr></tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td align="center"><font face="Arial, sans-serif" size="1"><b>Внимание!</b>
+Любой из материалов, опубликованных на этом сервере, не может быть
+воспроизведен в какой бы то ни было форме и какими бы то ни было
+средствами без письменного разрешения владельцев авторских прав. <a href="http://www.citforum.ru/copyright.shtml">Подробнее...</a></font></td></tr></tbody></table>
+
+</p><hr>
+
+<table class="u" width="100%"><tbody><tr><td>
+
+
+Большой выбор техники из Китая, у нас Вы можете выбрать грузовики <a href="http://www.yuejin-motors.ru/">Yuejin NJ1080DAW</a>, грузовые автомобили Yuejin отличаются невысокой ценой, надежностью и высокой ремонтопригодностью. <br><br>
+
+</td></tr></tbody></table>
+
+
+</body></html>
