@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+  <meta http-equiv="Content-Language" content="ru">
+  <title>Messages</title>
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+<tr><td width=100><img src="../img/logo.gif"></td><td>
+<font size=2>
+<a href="../index.html">Prof.AR</a> &rarr;
+<a href="index.html">Разработчикам</a> &rarr;
+<b>Messages</b>
+</font>
+</td></tr></table>
+<hr>
+
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+<tr><td valign=top width=100>
+<nobr><font size=2>
+</font></nobr>
+
+</td><td>
+
+<h1>Messages</h1>
+<p>Спецификация передачи сообщений внутри программы</p>
+
+<p>Сообщения внутри программы делятся на 3 типа:</p>
+<ol>
+  <li>
+    <b>Простые лог-сообщения</b>
+    <br>Любая тесктовая строка предназначения для записи и вывода в лог. Строка не должна начинаться с символа "<" или с символов "###".
+    <br>Если строка "-", то это отчеркивание.
+    <br>Если строка "=", то это двойное отчеркивание.
+  </li>
+  <li>
+    <b>Лог-сообщения с префиксом ###</b>
+    <br>Лог сообщение с префиксом ### интерпретируется как команда с параметрами, т.е.
+    <br><i>###<Команда> [Параметр1] [Параметр2] ... [ПараметрN]</i>
+    <br>Пример:
+    <br><i>###AddToNode 1 Сообщение</i>
+    <br>Означает: добавить "Сообщение" в лог. Прикрепить к ноду с ID=1
+    <br>На данный момент номенклатура команд разрабытывается.
+  </li>
+  <li>
+    <b>Лог-сообщения и команды в виде XML строки</b>
+    <br>Пример:
+    <br><i>< AddToNode NodeID="1" /></i>
+    <br>На данный момент номенклатура команд разрабатывается.
+  </li>
+</ol>
+
+</td></tr></table>
+
+<font size=2>
+<hr><a href="mailto:Prof5@mail.ru">E-mail</a>
+<br>&copy; <a href="http://prof1983.narod.ru/">Prof</a> 2005-2007
+<br>27.02.2007
+</font>
+</body>
+</html>

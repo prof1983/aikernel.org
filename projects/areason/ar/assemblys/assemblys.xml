@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="Windows-1251" ?>
+<Assemblys>
+  <Assembly>
+    <Index>5</Index>
+    <Name>AR</Name>
+    <Title>AR 0.1.0.24</Title>
+    <Version>0.1.0.24</Version>
+    <AutorName>Prof</AutorName>
+    <AutorEMail>prof5@mail.ru</AutorEmail>
+    <AutorIcq>196372856</AutorIcq>
+    <AuthorMsn>loginov_slava_1983@hotmail.com</AuthorMsn>
+  </Assembly>
+  <Assembly>
+    <Index>4</Index>
+    <Name>AR</Name>
+    <Title>AR 0.0.0.14</Title>
+    <Version>0.0.0.14</Version>
+    <AutorName>Prof</AutorName>
+    <AutorEMail>prof5@mail.ru</AutorEmail>
+    <AutorIcq>196372856</AutorIcq>
+    <AuthorMsn>loginov_slava_1983@hotmail.com</AuthorMsn>
+  </Assembly>
+  <Assembly>
+    <Index>3</Index>
+    <Name>AR</Name>
+    <Title>AR 0.0.0.10</Title>
+    <Version>0.0.0.10</Version>
+    <AutorName>Prof</AutorName>
+    <AutorEMail>prof5@mail.ru</AutorEmail>
+    <AutorIcq>196372856</AutorIcq>
+    <AuthorMsn>loginov_slava_1983@hotmail.com</AuthorMsn>
+  </Assembly>
+  <Assembly>
+    <Index>2</Index>
+    <Name>AR</Name>
+    <Title>AR 0.0.0.9</Title>
+    <Version>0.0.0.9</Version>
+    <AutorName>Prof</AutorName>
+    <AutorEMail>prof5@mail.ru</AutorEmail>
+    <AutorIcq>196372856</AutorIcq>
+    <AuthorMsn>loginov_slava_1983@hotmail.com</AuthorMsn>
+  </Assembly>
+  <Assembly>
+    <Index>1</Index>
+    <Name>AR</Name>
+    <Title>AR 0.0.0.1</Title>
+    <Description>Первая публичная версия</Description>
+    <Version>0.0.0.1</Version>
+    <AuthorName>Prof</AuthorName>
+    <AuthorEmail>prof5@mail.ru</AuthorEmail>
+    <AuthorIcq>196372856</AuthorIcq>
+    <AuthorMsn>loginov_slava_1983@hotmail.com</AuthorMsn>
+  </Assembly>
+</Assemblys>

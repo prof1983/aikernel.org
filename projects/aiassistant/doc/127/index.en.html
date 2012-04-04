@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AIAssistant - Структура программы AIAssistant</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+<body>
+
+<h2>Структура программы AIAssistant</h2>
+<p>На рисунке изображена структура первой версии программы AIAssistant.</p>
+<p>
+  <img src="aiassistant1.gif">
+  <br><a href="aiassistant1.rar">aiassistant1.rar</a>
+</p>
+<p>
+  Программа имеет ядро.
+  К ядру подключаются следующие компоненты:
+  <ul>
+    <li>
+      <b>LogicalModule</b> - модуль логического вывода.
+      Задачи LogicalModule:
+      <ul>
+        <li>Произвести логический вывод по запросу.</li>
+      </ul>
+    </li>
+    <li>
+      <b>ChatAgent</b> - агент чат-бот.
+      Задачи ChatAgent:
+      <ul>
+        <li>Дать ответ на введеное пользователем сообщение.</li>
+        <li>Выдавать некоторые сообщения - приглашение к разговору, при длительном молчании пользователя.</li>
+      </ul>
+    </li>
+    <li>
+      <b>ManagerAgent</b> - агент для наблюдения и управления за компонентами, подкоючеными к ядру.
+      Задачи ManagerAgent:
+      <ul>
+        <li>периодический опрос состаяния остальных компонентов системы.</li>
+        <li>в случае "зависания" какого-либо компонента (если компонент не отвечает в течение длительного времени) - перезапустить компонент.</li>
+        <li>установка оптимальных приоритетов для присоединеных агентов.</li>
+      </ul>
+    </li>
+    <li>
+      <b>ChatAgentForm</b> - форма для ввода/вывода текстовых сообщений для ChatAgent.
+    </li>
+    <li>
+      <b>ManagerAgentForm</b> - форма для просмотра и управления подключеными компонентами системы.
+    </li>
+    <li>
+      <b>KnowlegeBase</b> - база знаний.
+      Задачи KnowlegeBase:
+      <ul>
+        <li>Вернуть фрейм из източника знаний по запросу.</li>
+      </ul>
+    </li>
+    <li>
+      <b>MemorySource</b> - источник знаний, находящийся в оперативной памяти.
+      Все фреймы загружаются в память из файла в начале работы программы и сохраняются в файл при завершении работы и периодически в процессе работы.
+    </li>
+  </ul>  
+</p>
+
+<p>
+  Каждый компонент системы имеет два метода:
+  <br>protected <b>SendMessage()</b> - отправка сообщения ядру из компонента.
+  <br>public <b>AddMessage()</b> - этот метод вызавает ядро при поступлении сообщения для компонента.
+</p>
+<p>
+  Предлагаю такие варианты этих методов:
+  <font color="blue">
+  <br>protected int SendMessage(string msg);
+  <br>protected int SendMessageA(AclMessage msg);
+  <br>public int AddMessage(string msg);
+  <br>public int AddMessageA(AclMessage msg);
+  </font>
+</p>
+<p>
+  SendMessage и AddMessage используются для передачи сообщений в виде строки текста.
+  <br>SendMessageA и AddMessageA используется для передачи эеземпляров (объектов) ACL сообщений.
+</p>
+
+
+<p><font size=2>
+<hr>&copy; <a href="mailto:prof1983@yandex.ru">Prof1983</a> 2003-2010
+<br>22.04.2007 - 19.10.2010
+</font>
+</body>
+</html>

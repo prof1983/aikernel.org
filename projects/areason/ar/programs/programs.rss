@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1251"?><rss version="2.0">
+<channel>
+<title>Программы // prof-ar.narod.ru (AR)</title>
+<link>http://prof-ar.narod.ru/</link>
+<description>Программы // prof-ar.narod.ru (AR)</description>
+<language>ru-ru</language>
+<copyright>Copyright 2007 Prof</copyright>
+<pubDate>Wed, 28 Feb 2007 10:12:18 +0200</pubDate>
+<lastBuildDate>Wed, 28 Feb 2007 10:12:18 +0200</lastBuildDate>
+<category>category1</category>
+<category>category2</category>
+<ttl>1</ttl>
+<image>
+<title>Программы // prof-ar.narod.ru (AR)</title>
+<url>http://prof-ar.narod.ru/img/logo.gif</url>
+<link>http://prof-ar.narod.ru/</link>
+<width>83</width>
+<height>31</height>
+<description>Программы // prof-ar.narod.ru (AR)</description>
+</image>
+
+<item>
+<title>AROrganizer</title>
+<link>http://prof-ar.narod.ru/programs/29/index.html</link>
+<description>
+Органайзер&lt;br /&gt;Категория: &amp;raquo; нет &quot;категории&quot; /&gt;&lt;br
+/&gt;Бюджет: &lt;br 1$ /&gt;&lt;br
+</description>
+<comments>http://prof-ar.narod.ru/programs/29/index.html</comments>
+<guid>http://prof-ar.narod.ru/programs/29/index.html</guid>
+<pubDate>Wed, 28 Feb 2007 09:54:51 +0200</pubDate>
+</item>
+
+<item>
+<title></title>
+<link></link>
+<description>
+Заказчик: (oxygensoftware)&lt;br /&gt;Категория: Программирование &amp;raquo; Разработка прикладного ПО&lt;br /&gt;Бюджет: &lt;br /&gt;&lt;br /&gt;Задача: извлечение информации из файла .nbu, создаваемого Nokia PC Suite.&lt;br /&gt;
+&lt;br /&gt;
+Исходные данные: файл бекапа .nbu, созданный с помощью Nokia PC Suite версии 6.82 и выше. Файл может содержать информацию из любого телефона, поддерживаемого PC Suite 6.82: Series60 v2/v3, Series80, Series40.&lt;br /&gt;
+&lt;br /&gt;
+Требуется: извлечь из файла содержащуюся в нем информацию в читаемом виде:&lt;br /&gt;
+- для контактов: список строк, каждая из которых представляет из себя vCard, соответствующий контакту;&lt;br /&gt;
+- для календаря: список строк, каждая из которых представляет из себя vCalendar, соответствующий событию календаря;&lt;br /&gt;
+- для заметок: список строк, каждая из которых - заметка;&lt;br /&gt;
+- для сообщений: список строк, каждая из которых - vMsg, соответствующий сообщению; дполнительная информация о папках сообщений;&lt;br /&gt;
+- для WAP-закладок: список закладок;&lt;br /&gt;
+- для файлов: информация обо всех файлах из архива: путь к файлу, имя файла, дата/время файла, тело файла.&lt;br /&gt;
+&lt;br /&gt;
+В качестве результата принимаются исходники работающей программы на Delphi версии 5 или 2006.</description>
+<comments>http://weblancer.net/projects/17364.html#bids</comments>
+<guid>http://weblancer.net/projects/17364.html</guid>
+<pubDate>Tue, 27 Feb 2007 10:55:25 +0200</pubDate>
+</item>
+
+</channel>

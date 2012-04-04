@@ -1,0 +1,142 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<title>Freims</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+
+<body>
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+<tr><td width=100><img src="../../img/logo.gif"></td><td>
+<font size=2>
+<a href="../../index.html">Prof.AR</a> &rarr;
+<a href="../index.html">Документация</a> &rarr;
+<a href="index.html">SDK</a> &rarr;
+<a href="">Freims</a>
+</font>
+</td></tr></table>
+<hr>
+
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+<tr><td valign=top width=100>
+<nobr><font size=2>
+<a href="index.html">Главная</a>
+<br><a href="core.html">Core</a>
+<br><a href="plugin.html">Plugin</a>
+<br><a href="types.html">Types</a>
+<br><a href="events.html">Events</a>
+<br><b>Freims</b>
+</font></nobr>
+</td><td>
+
+<h1>Freims</h1>
+<p>Фреймы
+
+<h2>Базовые фреймы</h2>
+<ul>
+<li>0 <a href="TAIBase.html">TAIBase</a> - Базовый фрейм. Записываются значения переменных для запуска работы программы. Имеет определенную структуру. Не готово. 
+<li>1 <a href="TAIType.html">TAIType</a> - Базовый фрейм для любых типов. Имеет определенную структуру. 
+<li>2 <a href="TAITypeRecord.html">TAITypeRecord</a> - Тип с именоваными полями (записями). 
+<li>3 <a href="TAITypeObject.html">TAITypeObject</a> - Обектный тип с именоваными параметрами и методами. + ParentType 
+<li>4 <a href="TAITypeInterface.html">TAITypeInterface</a> - Объектный тип с множественной наследовательностью. 
+<li>8 <a href="TAIBit.html">TAIBit</a> - Бит. Значения: 0, 1. 
+<li>9 <a href="TAIBitString.html">TAIBitString</a> - Строка битов 
+<li>10 <a href="TAIBool.html">TAIBool</a> - Boolean - Логический тип. Значения: False(0), True(1). 
+<li>11 <a href="TAIBitFuzzy.html">TAIBitFuzzy</a> - Не четкий бит. Значения: 0..1 
+<li>12 <a href="TAIBoolFuzzy.html">TAIBoolFuzzy</a> - Не четкий логический тип. Значения: False(0)..True(1) 
+</ul>
+
+<h2>Целочисленные без знака</h2>
+<ul>
+<li>UInt 
+<li>UInt08 - Byte 
+<li>UInt16 
+<li>UInt32 
+<li>UInt64 
+Целочисленные со знаком
+<li>Int 
+<li>Int08 - SByte 
+<li>Int16 
+<li>Int32 
+<li>Int64 
+Символы
+<li>Char 
+<li>Char08 
+<li>Char16 
+=== Объектные типы === 
+
+Не целочисленные
+<li>Float 
+<li>Float32 - Single 
+<li>Sloat64 - Double 
+Дата и время
+<li>DateTime 
+<li>DateTime32 
+<li>DateTime64 
+Ассоциации и связи
+<li>Connect - Связь фрейма с фреймом 
+<li>Connects - Множественная связь нескольких фреймов 
+<li>Association - Ассоциация фрейма с фреймом 
+<li>Associations - Множественная ассоциативная связь нескольких фреймов 
+Строки
+<li>String - Строка 
+<li>Word - Слово 
+<li>Words 
+<li>WordsComb - Словосочетание 
+<li>SemanticUnit - Смысловая единица 
+<li>SugPart - Часть предложения 
+<li>Sug - Suggestion - Предложение 
+Объекты
+ООП - объектно-ориентированное программирование. 
+
+<li>Property - Свойство для объекта. 
+<li>Method - Метод для объекта. 
+<li>Object - Объект. Объекты имеют в своем составе свойства (property) и методы. Обекты могут наследовать смойства и методы от родительского объекта. 
+<li>Interface - Объект с множественной наследовательностью. 
+<li>ObjectGraph - Объект с графическим представлением. 
+<li>ObjectGraph2D 
+<li>ObjectGraph3D 
+Правила
+<li>Rule - Правило. Используется для логического вывода и нечеткого вывода. 
+<li>RuleFuzzy - Нечеткое правило. 
+<li>Rules - Несколько связанных правил. 
+Задания
+<li>Task - Задание. 
+<li>Tasks - Несколько связанных заданий (задача). 
+Действия
+<li>Action - Действие 
+<li>Actions - Последовательность действий или действия, которые выполняются параллельно. Расценивается и вызывается как одно действие. 
+Источник фреймов
+<li>Source - Источник фреймов 
+<li>Sources - Несолько связанных источников 
+Типы для БЗ
+<li>TKB 
+<li>TKBMemory 
+<li>TKBFile 
+<li>TKBFileCashe 
+<li>TKBNet 
+<li>TKBNetCasheMemory 
+<li>TKBNetCasheFile 
+<li>TKBNetCasheFileMemory 
+Глобальные типы
+<li>TAR - Тип для объекта AR (ИР, Искуственный Разум). В него входят агенты (Agent), которые могут использовать различные срества AI (ИИ, Искуственный Интеллект). Внутреннее "Я" системы. 
+<li>TWorld - Тип для объекта World. В него входят все константы, переменные, объекты и т.д. внешнего по онтошению к AR мира. World - внутреннее представление о внешнем мире. 
+<li>TAgent - Тип для объектов Agent (агенты). 
+<li>TModule - Тип для объектов, реализующих отдельные системы ИИ. Модуль имеет переменные (интерфейс) ввода/вывода и внутрениие механизмы (алгоритмы) реализующие вывод информации в зависимости от входных данных. Модуль использует фреймы БЗ. 
+<li>TAgentMain - Тип для главного агента. 
+<li>TModuleMain - Тип для главного модуля. 
+
+<h2>События плугинов</h2>
+<ul>
+</ul>
+
+</td></tr></table>
+
+<font size=2>
+<hr><a href="mailto:Prof5@mail.ru">E-mail</a>
+<br>&copy; Prof 2005
+<br>28.09.2005
+</font>
+</body>
+</html>

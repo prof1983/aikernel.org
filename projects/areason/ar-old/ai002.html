@@ -1,0 +1,159 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Искусственный Разум">
+<title>ИИ от Prof - UAIFreimA</title>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+
+<h1>UAIFreimA</h1>
+<p class="aut"><a href="../about/about016.html">Prof</a> 
+<p class="inf">Описание модуля UAIFreimA. Описание модуля Delphi для представления знаний в ИИ для обработки и хранения.
+<table align="center" bgcolor="#F8F8FF" width="50%"><tr><td>Фрейм - основа для создания любого объекта, основная частица знаний для AI.</td></tr></table>
+
+<pre>
+<b>const</b>
+  AssociationUseLength = 3;      {Число записей использований в теле ассоциации}
+  FreimAssociationLength = 5;    {Число ассоциаций, записываемых в теле фрейма TAIFreim2.Association}
+  FreimDataLength = 248;         {Длина данных, записываемых в теле фрейма TAIFreim2.Data}
+  FreimUseLength = 3;            {Число записей использований в теле фрейма TAIFreim2.Use}
+<b>type</b>
+  TAIAssociationType = UInt032;  {Тип ассоциативной связи}
+  {0 - не обоснованая связь
+   1 - ответ вводимый пользователем на строку, выведеную AI
+
+   2 - ассоциация с ф-файлом и наоборот
+   3 - ф-заголовок-родитель (для всех)
+   4 - ф-заголовок-предок (для всех)
+   5 - ф-абзац(заголовок) следующий (для поврорения последовательности)
+   6 - ф-абзац(заголовок) предыдущий (для поврорения последовательности)
+   7 - связь ключевого слова с ответом
+   8 - ключевое слово синоним
+   9 - вторая часть составного ключевого слова
+  }
+  TAIFreimAtribute = UInt032; {Атрибуты фрейма}
+  { 000x - различные атрибуты
+   $01 - сжатый
+   $02 - нет смысла сжимать
+   $04 - идентификатор не по главной БЗ (главная БЗ только у меня). Сделано для совместимости с локальными БЗ.
+   $08 -
+    00x0 - язык
+   $00 - не определен
+   $10 - английский
+   $20 - русский (кодировка win-1251)
+   $30 - смешанный
+  }
+  TAIFreimType = UInt032;        {Тип фрейма}
+  {1 - ф-слово
+   2 - ф-предложение
+   3 - ф-действие
+   ----
+   4 - ф-название документа
+   5 - ф-заголовок1
+   6 - ф-заголовок2
+   7 - ф-заголовок3
+   8 - ф-заголовок4
+   9 - ф-заголовок5
+   10 - ф-заголовок6
+   11 - ф-описание документа
+   12 - ф-текст темы (от заголовка до следующего заголовка того же уровня или выше)
+   13 - ф-абзац
+
+   14 - ф-главная часть слова (корень)
+   15 - ф-суффикс
+   16 - ф-окончание
+   17 - ф-приставка
+   18 - ф-буква (символ)
+
+   19 - ф-файл (путь к файлу)
+   20 - ф-ключевое слово(выражение)
+  }
+  TAIUseType = UInt032;
+  {1 - создание (запись времени создания)
+   2 - использован
+  }
+
+  PAIUse = ^TAIUse;
+  TAIUse = <b>record</b> {32}
+    HUser: THandle064;           {Идентификатор пользователя}
+    DateTime: TDateTime064;      {Дата/время использования}
+    UseType: TAIUseType;         {Тип использования}
+    Reserved1: UInt032;          {Зарезервировано}
+    Reserved2: UInt064;          {Зарезервировано}
+  end;
+
+  PAIAssociation2 = ^TAIAssociation2;
+  TAIAssociation2 = <b>record</b> {128}{Тип ассоциации}
+    H: THandle064;               {Идентификатор ассоциируемого фрейма}
+    AType: TAIAssociationType;   {Тип ассоциативной связи}
+    Weight: Int032;              {Вес связи}
+    Reliance: UInt032;           {Уверенность}
+    UseCount: UInt032;           {Колличество записей об использовании}
+    Use: array[0..AssociationUseLength - 1] of TAIUse;  {Первые 2 записи об использовании}
+    PUse: Pointer;               {Указатель на массив использований(если в памяти) или колличество доп. записей(если в файле)}
+    Reserved1: UInt032;          {Заререзвировано}
+  end;
+
+  PAIFreim2 = ^TAIFreim2;
+  TAIFreim2 = <b>record</b> {1024}
+    Handle: THandle064;          {Идентификатор фрейма}
+    FreimType: TAIFreimType;     {Тип фрейма}
+    AssociationCount: UInt032;   {Колличество ассоциаций}
+    DataCount: UInt032;          {Размер данных}
+    UseCount: UInt032;           {Колличество использований}
+    Association: array[0..FreimAssociationLength - 1] of TAIAssociation2; {Первые 5 ассоциации}
+    Data: array[0..FreimDataLength - 1] of Char; {Начало данных (первые 248 байт)}
+    Use: array[0..FreimUseLength - 1] of TAIUse;  {Первые 3 записи об использовании}
+    PAssociation: Pointer;       {Указатель на ассоциации}
+    PData: Pointer;              {Указатель на данные}
+    PUse: Pointer;               {Указатель на использования}
+    Atrubute: TAIFreimAtribute;  {Атрибыты фрейма (сжатый, ...)}
+  end;
+</pre>
+
+<h2>История создания</h2>
+<pre>
+0.0.0.12 - 06.11.2009 - Добавлен атрибут языка в TAIFreimAtribute
+0.0.0.11 - 05.11.2009 - AssociationUseLength
+0.0.0.10 - 04.11.2009 - Расширены значения типа TAIAssociationType; Удалены: TAIFreim, TAIAssociation
+0.0.0.9 - 28.10.2009 - TAIFreimAtribute, FreimAssociationLength
+0.0.0.8 - 27.10.2009 - TAIFreim2.Atrubute, FreimDataLength
+0.0.0.7 - 25.10.2009 - Изменены TAIUse, TAIAssociation2, TAIFreim2
+0.0.0.6 - 25.10.2009 - TAIAssociation2, TAIFreim2, TAIFreim2Mem, TAIUse, TAIUseType
+0.0.0.5 - 20.10.2009 - Изменен тип TAIAssociation
+0.0.0.4 - 17.10.2009 - Расширены значения типа TAIAssociationType
+0.0.0.3 - 16.10.2009 - Добавлены типы: TAIFreimMem, TAIAssociation
+0.0.0.2 - 11.10.2009 - Расширены значения типа TAIFreimType.
+0.0.0.1 - 11.12.2008 - Созданы типы: TAIAssociationType, TAIFreim, TAIFreimType.
+</pre>
+
+<h2>v 0.0.0.1</h2>
+
+<h3>Другое</h3>
+<ul>
+<li><b>type</b> <a href="ai004.html">TAIAssociation</a> 
+<li><b>type</b> <a href="ai005.html">TAIAssociationType</a> 
+<li><b>type</b> <a href="ai010.html">TAIFreim</a> 
+<li><b>type</b> <a href="ai006.html">TAIFreimType</a> 
+<li><b>type</b> <a href="ai007.html">TAIResult</a> 
+<li><b>type</b> <a href="ai008.html">TAISource</a> 
+<li><b>type</b> <a href="ai009.html">TAIUse</a> 
+</ul>
+
+<h2>Другие типы</h2>
+<blockquote><font face="Courier New, Courier, mono">
+<b>type</b> THandle032 = <b>type</b> UInt032;
+<br><b>type</b> THandle064 = <b>type</b> UInt064;
+</font></blockquote>
+<p>
+
+<!---p><a href="units.rar">Скачать исходники (Delphi)</a>  (11,6 kb)--->
+<p><font size=2>
+<hr>&copy; AIKernel 2003-2011
+<br>09.11.2009 - 09.04.2011
+</font>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1251"?><rss version="2.0">
+<channel>
+<title>Программы // prof-ar.narod.ru (AR)</title>
+<link>http://prof-ar.narod.ru/</link>
+<description>Программы // prof-ar.narod.ru (AR)</description>
+<language>ru-ru</language>
+<copyright>Copyright 2007 Prof</copyright>
+<pubDate>Wed, 28 Feb 2007 10:12:18 +0200</pubDate>
+<lastBuildDate>Wed, 28 Feb 2007 10:12:18 +0200</lastBuildDate>
+<category>category1</category>
+<category>category2</category>
+<ttl>1</ttl>
+<image>
+<title>Программы // prof-ar.narod.ru (AR)</title>
+<url>http://prof-ar.narod.ru/img/logo.gif</url>
+<link>http://prof-ar.narod.ru/</link>
+<width>83</width>
+<height>31</height>
+<description>Программы // prof-ar.narod.ru (AR)</description>
+</image>
+
+<item>
+<title>AROrganizer</title>
+<link>http://prof-ar.narod.ru/programs/29/index.html</link>
+<description>
+Органайзер&lt;br /&gt;Категория: &amp;raquo; нет &quot;категории&quot; /&gt;&lt;br
+/&gt;Бюджет: &lt;br 1$ /&gt;&lt;br
+</description>
+<comments>http://prof-ar.narod.ru/programs/29/index.html</comments>
+<guid>http://prof-ar.narod.ru/programs/29/index.html</guid>
+<pubDate>Wed, 28 Feb 2007 09:54:51 +0200</pubDate>
+</item>
+</channel>

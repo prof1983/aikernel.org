@@ -1,0 +1,62 @@
+Описание структуры XML файла
+
+Идея: данные между агентами передавать в виде XML файлов, Каждый файл имеет свой тип (структуру).
+Описание структуры можно делать в виде DTD файлов, но DTD не имеют структуры XML.
+
+Пример
+
+XML файл с данными:
+=================================================================================
+<Example id="1234">
+  <book>
+    <title>Title1</title>
+    <author>Author1</author>
+    <section id="1" difficulty="2">
+  </book>
+  <figure width="100" height="200">
+    <title>Title1</title>
+    <image source="Source1" />
+  </figure>
+</Example>
+=================================================================================
+
+Описание на DTD:
+=================================================================================
+  <!ELEMENT book (title, author+, section+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT section (title, (p | figure | section)* )>
+  <!ATTLIST section
+      id         ID    #IMPLIED
+      difficulty CDATA #IMPLIED>
+  <!ELEMENT p (#PCDATA)>
+  <!ELEMENT figure (title, image)>
+  <!ATTLIST figure
+       width   CDATA   #REQUIRED
+       height  CDATA   #REQUIRED >
+  <!ELEMENT image EMPTY>
+  <!ATTLIST image
+       source  CDATA   #REQUIRED >
+=================================================================================
+
+Предлагаю такое описание (на XML):
+=================================================================================
+<Struct id="1235">
+  <element name="book">
+    <element name="title" />
+    <element name="author" />
+    <element name="section">
+      <attribute name="id" />
+      <attribute name="difficulty" />
+    </element>
+  </element>
+  <element name="figure">
+    <attribute name="width" />
+    <attribute name="height" />
+    <element name="title" />
+    <element name="image">
+      <attribute name="source" />
+    </element>
+  </element>
+</Struct>
+=================================================================================

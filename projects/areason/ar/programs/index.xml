@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<programs>
+  <program name="AR_Actions" id="0001"></program>
+  <program name="AR_Appearance" id="0002"></program>
+  <program name="AR_Articles" id="0003"></program>
+  <program name="AR_Builder" id="0004"></program>
+  <program name="AR_Chat" id="0005"></program>
+  <program name="AR_Commands" id="0006"></program>
+  <program name="AR_Crypto" id="0007"></program>
+  <program name="AR_Devinus" id="0008"></program>
+  <program name="AR_Export" id="0009"></program>
+  <program name="AR_Logic" id="0010"></program>
+  <program name="AR_LogViewer" id="0011"></program>
+  <program name="AR_Manager" id="0012"></program>
+  <program name="AR_Miranda" id="0013"></program>
+  <program name="AR_Network" id="0014"></program>
+  <program name="AR_Neuro" id="0015"></program>
+  <program name="AR_OpenGL" id="0016"></program>
+  <program name="AR_Planing" id="0017"></program>
+  <program name="AR_Plugins" id="0018"></program>
+  <program name="AR_Programming" id="0019"></program>
+  <program name="AR_Reports" id="0020"></program>
+  <program name="AR_Robot" id="0021"></program>
+  <program name="AR_State" id="0022"></program>
+  <program name="AR_Tasks" id="0023"></program>
+  <program name="AR_Video" id="0024"></program>
+  <program name="AR_Wave" id="0025"></program>
+  <program name="AR_WeBots" id="0026"></program>
+  <program name="AR_Developer" id="0027"></program>
+  <program name="ARResume" id="28">Резюме</program>
+  <program name="AROrganizer" id="29">Органайзер</program>
+</programs>

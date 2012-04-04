@@ -1,0 +1,122 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<title>Events</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+
+<body>
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+<tr><td width=100><img src="../../img/logo.gif"></td><td>
+<font size=2>
+<a href="../../index.html">Prof.AR</a> &rarr;
+<a href="../index.html">Документация</a> &rarr;
+<a href="index.html">SDK</a> &rarr;
+<a href="">Events</a>
+</font>
+</td></tr></table>
+<hr>
+
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+<tr><td valign=top width=100>
+<nobr><font size=2>
+<a href="index.html">Главная</a>
+<br><a href="core.html">Core</a>
+<br><a href="plugin.html">Plugin</a>
+<br><a href="types.html">Types</a>
+<br><b>Events</b>
+<br><a href="freims.html">Freims</a>
+</font></nobr>
+</td><td>
+
+<h1>Events</h1>
+<p>События
+
+<h2>События ядра</h2>
+<pre>
+<a href=""></a>
+  <a href="">Event_AgentAdd         = 'EventAgentAdd';</a>
+  <a href="">Event_AgentClose       = 'EventAgentClose';</a>
+  <a href="">Event_AgentDelete      = 'EventAgentDelete';</a>
+  <a href="">Event_AgentOpen        = 'EventAgentOpen';</a>
+
+  <a href="">Event_ClearAgents      = 'EventClearAgents';</a>
+  <a href="">Event_ClearEvents      = 'EventClearEvents';</a>
+  <a href="">Event_ClearPlugins     = 'EventClearPlugins';</a>
+  <a href="">Event_ClearSources     = 'EventClearSources';</a>
+
+  <a href="">Event_ConnectAdd       = 'EventConnectAdd';</a>
+  <a href="">Event_ConnectDelete    = 'EventConnectDelete';</a>
+  <a href="">Event_ConnectGet       = 'EventConnectGet';</a>
+
+  <a href="">Event_DataClear        = 'EventDataClear';</a>
+  <a href="">Event_DataGetDataSize  = 'EventDataGetDataSize';</a>
+  <a href="">Event_DataGetDataType  = 'EventDataGetDataType';</a>
+  <a href="">Event_DataReadBool     = 'EventDataReadBool';</a>
+  <a href="">Event_DataReadFloat32  = 'EventDataReadFloat32';</a>
+  <a href="">Event_DataReadFloat64  = 'EventDataReadFloat64';</a>
+  <a href="">Event_DataReadInt08    = 'EventDataReadInt08';</a>
+  <a href="">Event_DataReadInt16    = 'EventDataReadInt16';</a>
+  <a href="">Event_DataReadInt32    = 'EventDataReadInt32';</a>
+  <a href="">Event_DataReadInt64    = 'EventDataReadInt64';</a>
+  <a href="">Event_DataReadUInt08   = 'EventDataReadUInt08';</a>
+  <a href="">Event_DataReadUInt16   = 'EventDataReadUInt16';</a>
+  <a href="">Event_DataReadUInt32   = 'EventDataReadUInt32';</a>
+  <a href="">Event_DataReadUInt64   = 'EventDataReadUInt64';</a>
+  <a href="">Event_DataWriteBool    = 'EventDataWriteBool';</a>
+  <a href="">Event_DataWriteFloat32 = 'EventDataWriteFloat32';</a>
+  <a href="">Event_DataWriteFloat64 = 'EventDataWriteFloat64';</a>
+  <a href="">Event_DataWriteInt08   = 'EventDataWriteInt08';</a>
+  <a href="">Event_DataWriteInt16   = 'EventDataWriteInt16';</a>
+  <a href="">Event_DataWriteInt32   = 'EventDataWriteInt32';</a>
+  <a href="">Event_DataWriteInt64   = 'EventDataWriteInt64';</a>
+  <a href="">Event_DataWriteUInt08  = 'EventDataWriteUInt08';</a>
+  <a href="">Event_DataWriteUInt16  = 'EventDataWriteUInt16';</a>
+  <a href="">Event_DataWriteUInt32  = 'EventDataWriteUInt32';</a>
+  <a href="">Event_DataWriteUInt64  = 'EventDataWriteUInt64';</a>
+
+  <a href="">Event_EventConnect     = 'EventEventConnect';</a>
+  <a href="">Event_EventDisconect   = 'EventEventDisconect';</a>
+
+  <a href="">Event_FreimGetCountConnects  = 'EventFreimGetCountConnects';</a>
+  <a href="">Event_FreimGetDataSize       = 'EventFreimGetDataSize';</a>
+  <a href="">Event_FreimGetDateTimeCreate = 'EventFreimGetDateTimeCreate';</a>
+  <a href="">Event_FreimGetSource         = 'EventFreimGetSource';</a>
+  <a href="">Event_FreimGetType           = 'EventFreimGetType';</a>
+  <a href="">Event_FreimSetSource         = 'EventFreimSetSource';</a>
+  <a href="">Event_FreimSetType           = 'EventFreimSetType';</a>
+
+  <a href="">Event_GetAgentInfo     = 'EventGetAgentInfo';</a>
+  <a href="">Event_GetCountAgents   = 'EventGetCountAgents';</a>
+  <a href="">Event_GetCountEvents   = 'EventGetCountEvents';</a>
+  <a href="">Event_GetCountPlugins  = 'EventGetCountPlugins';</a>
+  <a href="">Event_GetCountSources  = 'EventGetCountSources';</a>
+  <a href="">Event_GetEventInfo     = 'EventGetEventInfo';</a>
+  <a href="">Event_GetPluginInfo    = 'EventGetPluginInfo';</a>
+  <a href="">Event_GetSourceInfo    = 'EventGetSourceInfo';</a>
+
+  <a href="">Event_SearchAgents     = 'EventSearchAgents';</a>
+  <a href="">Event_SearchEvents     = 'EventSearchEvents';</a>
+  <a href="">Event_SearchPlugins    = 'EventSearchPlugins';</a>
+  <a href="">Event_SearchSources    = 'EventSearchSources';</a>
+
+  <a href="">Event_SourceAdd        = 'EventSourceAdd';</a>
+  <a href="">Event_SourceClose      = 'EventSourceClose';</a>
+  <a href="">Event_SourceDelete     = 'EventSourceDelete';</a>
+  <a href="">Event_SourceOpen       = 'EventSourceOpen';</a>
+</pre>
+
+<h2>События плугинов</h2>
+<ul>
+</ul>
+
+</td></tr></table>
+
+<font size=2>
+<hr><a href="mailto:Prof5@mail.ru">E-mail</a>
+<br>&copy; Prof 2005
+<br>28.09.2005
+</font>
+</body>
+</html>

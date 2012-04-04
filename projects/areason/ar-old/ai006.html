@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Искусственный Разум">
+<title>ИИ от Prof - TAIFreimType</title>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+
+<h1>TAIFreimType</h1>
+<i>Тип фрейма</i>
+
+<font face="Courier New, Courier, mono">
+<p>TAIFreimType = <b>type</b> UInt032
+</font>
+
+<p><b>Описание</b>
+<br>Размер: 4 байта
+
+<dl>
+<dt><b>Значения</b></dt>
+  <dd>1 - фрейм-слово
+  <dd>2 - фрейм-предложение
+  <dd>3 - фрейм-действие
+  <dd>
+
+  <dd>-1 - Объект (предмет,существо). Стол, стул, Вася.
+  <dd>-2 - Связь объектов
+  <dd>-3 - Действие. Есть, мыть.
+  <dd>-4 - Свойство. Красное, хрупкое. В блоке Data находятся данные:
+    <dd>&nbsp;&nbsp;1) Тип данных
+    <dd>&nbsp;&nbsp;2) Сами данные
+  <dd>---$0201; Базовые действия для взаимодействия с внешней средой
+  <dd>-$FF01 - строка символов (текст) - введено временно
+  <dd>-$FF02 - строка символов (слово)
+  <dd>-$FF03 - фрейм-буква
+  <dd>-$FF04 - фрейм-слово
+  <dd>-$FF05 - фрейм-смысловая единица
+  <dd>-$FF06 - фрейм-предложение(одна или несколько смысловых единиц)
+  <dd>-$FF07 - фрейм-абзац
+  <dd>-$FF08 - фрейм-смысл
+</dl>
+
+<p><font size=2>
+<hr>&copy; AIKernel 2003-2011
+<br>05.12.2008 - 09.04.2011
+</font>
+</body>
+</html>

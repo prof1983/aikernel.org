@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<Plugins>
+  <Plugin>
+    <Index>1</Index>
+    <Name>Plugin1</Name>
+    <Title>Ïåðâûé ïðèìåð ïëóãèíà</Title>
+    <Coment></Coment>
+    <Version>0.0.0.1</Version>
+    <AutorName>Prof</AutorName>
+    <AutorEmail>prof5@mail.ru</AutorEmail>
+    <AutorIcq>196372856</AutorIcq>
+    <HomePage>http://prof-ar.narod.ru/plugins/1/index.html</HomePage>
+    <Files>
+      <File>
+        <Index>1</Index>
+        <Name>Plugin1.dll</Name>
+        <URL>http://prof-ar.narod.ru/plugins/1/Plugin1.dll</URL>
+      </File>
+    </Files>
+  </Plugin>
+  <Plugin>
+    <Index>2</Index>
+    <Name>LogViewer</Name>
+    <Title>LogViewer 0.0.0.1</Title>
+    <Coment></Coment>
+    <Version>0.0.0.1</Version>
+    <AutorName>Prof</AutorName>
+    <AutorEmail>prof5@mail.ru</AutorEmail>
+    <AutorIcq>196372856</AutorIcq>
+    <HomePage>http://prof-ar.narod.ru/plugins/2/index.html</HomePage>
+  </Plugin>
+  <Plugin>
+    <Index>3</Index>
+    <Name>Server</Name>
+    <Title>Server 0.0.0.1</Title>
+    <Coment></Coment>
+    <Version>0.0.0.1</Version>
+    <AutorName>Prof</AutorName>
+    <AutorEmail>prof5@mail.ru</AutorEmail>
+    <AutorIcq>196372856</AutorIcq>
+    <HomePage>http://prof-ar.narod.ru/plugins/3/index.html</HomePage>
+  </Plugin>
+</Plugins>

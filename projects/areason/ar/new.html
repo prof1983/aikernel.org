@@ -1,0 +1,106 @@
+<html>
+<body>
+<h1>2005.10.29</h1>
+
+<h2>Руководство по созданию модуля AR</h2>
+<p>Модуль AR - программа, подключаемая к ядру (ядрам) AR.
+<ul>
+<li>Методы подключения
+</ul>
+
+<h3>Подключение</h3>
+<p>Все подключения выполняются в виде класса. Родительский класс TARConnection. Ядро всегда рассматривается как сервер подключений.
+<p>Функции работы с подключением
+<ul>
+<li>Create
+<li>ConfigureLoad
+<li>Initialize
+<li>Finalize
+<li>ConfigureSave
+<li>Free
+</ul>
+<p>Дополнительные функции работы с классом TARConnectionClient
+<ul>
+<li>SendToCore - послать команду ядру
+<li>ReseiveFromCore - Принять команду от ядра
+</ul>
+<p>События
+<ul>
+<li>OnAfterSend - Выполняется после отправки сообщения
+<li>OnBeforeSend - Выполняется перед отправкой сообщения
+<li>OnAfterReseive - Выполняется после приема сообщения
+<li>OnBeforeReseive - Выполняется перед приемом сообщения
+<li>OnReseive - Пришли данные от ядра
+</ul>
+
+<p>Дополнительные функции работы с классом TARConnectionServer
+<ul>
+<li>SendFromCore - Послать команду от ядра
+<li>ReceiveToCore - Принять команду от клиента
+</ul>
+<p>События
+<ul>
+<li>OnAfterSend - Выполняется после отправки сообщения
+<li>OnBeforeSend - Выполняется перед отправкой сообщения
+<li>OnAfterReseive - Выполняется после приема сообщения
+<li>OnBeforeReseive - Выполняется перед приемом сообщения
+<li>OnReseive - Пришли данные от ядра
+</ul>
+
+<h3>Методы подключения</h3>
+<ul>
+<li>Unit - подключение при компиляции (TARConnectionUnit)
+<li>Socket - Терез TCP/IP соединение (TARConnectionTcpIPClient, TARConnectionTcpIPServer)
+<li>Plugin - в виде DLL плугина (TARConnectionPluginClient, TARConnectionPluginServer)
+</ul>
+<h3>Unit - Подключение при компиляции</h3>
+<p>Модуль выполняются в виде класса. Родительский класс TARModule.
+<p>Функции создания и удаления модуля.
+<ol>
+<li>Create - Создание объекта. При создании указывается Node конфигураций (AConfig) и Node записи лога выполнения (ALog). AConfig и ANode имеют структуру XML.
+<li>ConfigureLoad - загрузка конфигураций. 
+<li>Initialize - Инициализация объекта.
+<li>Finalize - Завершение работы объекта.
+<li>ConfigureSave - Сохранение конфигураций в AConfig.
+<li>Free - Удаление объекта. Освобождение памяти.
+</ol>
+<p>Функции подключения. Для подключения к ядру
+
+<h3>Socket - Терез TCP/IP соединение</h3>
+<p>Модули подключаются через Socket. Вызавается клиентом. Указывается Host и Port сервера ядра AR. Для подключения через Socket созданы 2 класса: TARConnectionTcpIPClient и TARConnectionTcpIPServer.
+<p>Для соединения/Разъединеия используйте функции Connect/Disconnect или Initialize/Finalize.
+
+<h3>Plugin - в виде DLL плугина</h3>
+<p>Вызывается сервером (по команде ядро подключается к dll). Указывается имя dll файла и его расположение (путь).
+<p>Функции, которые должны быть реализованы в dll.
+<ul>
+<li>AR_Plugin_Info - Возвращает информацию о плугине, а так же необходимую версию ядра.
+<li>AR_Plugin_Load - Загрузка модуля - создание соединение.
+<li>AR_Plugin_UnLoad - Выгрузка модуля - завершение соединения.
+</ul>
+
+<h2>Соединение ядер между собой</h2>
+<p>Соединение ядер происходит через какой либо модуль. Модуль является ретранслятором между двумя ядрами. При этом команды посланые ядром №1 будут посылаться модулю и приниматься ядром №2 как команды от модуля. И наоборот.
+
+
+<h2>Agent Applications</h2>
+<p><a href="http://www.agentbuilder.com/AgentTechnology/agentApplications.html">Agent Applications</a>
+<ul>
+<li><a href="http://www.agentbuilder.com/Documentation/PMail/index.html">P-Mail - A Private EMail System</a>
+  <br>P-Mail is an email and instant messaging system that uses software agents to implement the mail client. The system is designed to ensure that messages remain private. Privacy is assured because messages never reside on any server device. P-Mail is a peer-to-peer messaging service. The message moves from the sending machine agent to the receiving machine agent and is never stored on any intermediate machine. P-Mail is a good example of a peer-to-peer processing application that has significant advantages over the client-server approach. This is also a good example of agents created using the AgentBuilder toolkit
+<li><a href="http://www.agentbuilder.com/Documentation/EPRI/index.html">Intelligent Agents for Buying and Selling Electric Power in a Dynamic Auction</a>
+  <br>Acronymics, Inc. personnel and Alternative Energy Systems Consultants (AESC) under contract to the Electric Power Research Institute (EPRI) have developed a prototype electronic auction for use in buying and selling electric power. This system uses a network of intelligent software agents and each agent represents a stakeholder in the marketplace. A stakeholder wants to buy or sell electricity. This research has shown how communicating, cooperating agents can implement an auction mechanism that does not require a central authority or auctioneer. Markets form and dissolve based on the needs of the various stakeholders. This system was developed using the AgentBuilder Pro product. A demonstration version of the system is available for download.
+<li><a href="">Smart*DER: Intelligent Agents For Distributed Control and Monitoring of Energy Resources</a>
+  <br>Under contract to the California Energy Commission (CEC), Alternative Energy Systems Consultants (AESC) and Acronymics, Inc. personnel have developed intelligent agents that communicate and collaborate to schedule operation of distributed energy resources in the California energy market.
+  <br><a href="http://www.aesc-inc.com/">Alternative Energy Systems Consultants (AESC)</a>
+  <br><a href="http://www.acronymics.com/">Acronymics, Inc</a>
+<li><a href="http://www.agentbuilder.com/Documentation/appnote/buyerSeller.html">Shopping Agents</a>
+  <br>Shopping agents are an ideal application for AgentBuilder agents. These agents can be used to locate merchandise, compare prices, place orders, etc. An AgentBuilder Application Note provides a detailed description of how to construct a shopping agent. You can watch the execution of these agents running as a Java applet.
+<li><a href="">Custom Agent Application</a>
+  <br>Acronymics, Inc. personnel have developed a number of custom agent applications. Our clients use these for searching the internet, finding resumes, retrieving and analyzing documents, shopping, etc. 
+  <br>For more information on any of these agents and agent applications, please contact informationAgent@agentbuilder.com with Subject line: "Agent Applications."
+<li><a href=""></a>
+  <br>
+</ul>
+</body>
+</html>

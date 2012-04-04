@@ -1,0 +1,294 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+  <meta http-equiv="Content-Language" content="ru">
+  <title>ARL</title>
+  <link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+
+<body>
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+<tr><td width=100><img src="../../img/logo.gif"></td><td>
+<font size=2>
+<a href="../../index.html">Prof.AR</a> &rarr;
+<a href="../index.html">Документация</a> &rarr;
+<a href="">ARL</a>
+</font>
+</td></tr></table>
+<hr>
+
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+<tr><td valign=top width=100>
+<nobr><font size=2>
+</font></nobr>
+</td><td>
+
+<h1>ARL</h1>
+<p></p>
+
+<h2>Разделы</h2>
+<ul>
+</ul>
+
+<h3>Пример записи условия:</h3>
+<pre>
+(для простого условия x > y)
+<if condition="$x gt $y">
+  <then>
+    ...
+  </then>
+  <else>
+    ...
+  </else>
+</if>
+или
+(для сложного условия)
+<if>
+  <condition>
+    (System.Input($s) == "InputText")
+  </condition>
+  <then>
+    ...
+  </then>
+  <else>
+    ...
+  </else>
+</if>
+
+Пример записи вызова метода:
+<do method="System.Out" text="ExampleText" />
+или
+<System.Out text="ExampleText" />
+или
+{ System.Out(text="ExampleText"); }
+</pre>
+
+<h2>Типы</h2>
+<pre>
+Прототип: [.NET]
+
+  Типы-значения
+    Встроеные типы-значения
+      System.Boolean
+      System.Char     - UTF-16
+      System.Int8
+      System.Int16
+      System.Int32
+      System.Int64
+      System.IntPtr
+      System.UInt8
+      System.UInt16
+      System.UInt32
+      System.UInt64
+      System.UIntPtr
+      System.Float32
+      System.Float64
+      System.DateTime - Дата/время
+      System.Decimal
+      System.TimeSpan
+      System.Guid
+  Ссылочные типы
+    Объектные типы (Object)
+      System.Object
+        System.Type
+      System.String    - UTF-16
+    Интерфейсные типы (Interface)
+      System.INullableValue
+    Указательные типы (Pointer)
+
+  Перечисления
+    System.Enum
+  Исключительное событие
+    System.Exception
+  Событие
+    System.Delegate
+  Тип значения
+    System.ValueType
+  Массив
+    System.Array
+
+Объект может содержать:
+- атрибуты
+- методы (статические и экземпляра)
+- свойства
+- константы
+- события
+
+Объект System.Object содержит следующие методы:
+- Equals - возвращает true, если два объекта равны.
+- Finalize - вызывается при сборке мусора
+- GetHashCode - возвращает хэш-код
+- GetType - Возвращает метаданные типа данных. Статический метод класса Type.
+- MemberwiseClone - клонирует видимую часть объекта
+- ReferenceEquals - возвращает true, если обе объектные ссылки, переданые методу относятся к одному объекту.
+- ToString - возвращает строку, которая представляет этот объект
+
+Методы объекта System.String:
+- Compare - производит сравнение с учетом и без учета регистра
+- Concat - возвращает новую строку
+- ToLower, ToUpper
+- Format - Заменяет символы подстановки и возвращает строковое представление каждого объекта.
+- IndexOf - возвращает индекс местоположения первого искомого символа или подстроки.
+- Insert - возвращает новую строку
+- Lenght - возвращает длину строки
+
+Методы класса System.Type
+- BaseType - возвращает объект типа Type базового типа
+- FindInterface - Возвращает массив объектов типа Type, представляющих интерфейсные типы, которые поддурживаются данным типом.
+- FindMembers - Возвращает массив объектов типа MemberInfo, представляющих интерфейсные типы, которые поддерживаются данным типом.
+- AssemblyQualifiedName - Возвращает полное имя данного типа
+- GetConstructors - Возвращает массив объектов типа ConstructorInfo, представляющих конструкторы данного типа
+- GetMethods - Возвращает массив объектов типа MethodInfo, представляющие открытые методы данного типа
+- GetNestedTypes - Возвращает массив объектов типа Type, представляющих вложенные типы данного типа
+- IsAbstract - является абстрактным
+- IsInterface - является интерфейсом
+- InvokeMember - вызывает член данного типа
+- IsPublic - является открытым
+- IsSealed - является опечатаным
+- IsValueType - является типом значения
+
+Стандартные атрибуты:
+- Obsolve - устаревший
+- DllImport - импортировать из библиотеки .DLL
+- ClsCompliant
+- WebMethod
+- Guid
+- ProgID
+
+Иерархия классов описания метаданных:
+System.Object
+  System.MemberInfo
+    System.FieldInfo
+      System.FieldBuilder
+    System.MethodBase
+      System.ConstructorInfo
+        System.ConstructorBuilder
+      System.MethodInfo
+        System.MethodBuilder
+    System.PropertyInfo
+      System.PropertyBuilder
+    System.Type
+      System.EnumBuilder
+      System.TypeBuilder
+      System.TypeDelegator
+</pre>
+
+<h2>Пример кода на языке ARL</h2>
+&lt;&gt;
+<pre>
+&lt;arl version="0.1"&gt;
+  &lt;namespace name="System"&gt;
+    &lt;class name="ValueType"&gt;
+      &lt;description&gt;
+        &lt;about lang="ru"&gt;Базовый тип для любого элемента.&lt;/about&gt;
+      &lt;/description&gt;
+    &lt;/class&gt;
+    &lt;class name="Boolean" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="Int8" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="Int16" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="Int32" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="Int64" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="UInt8" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="SByte" type="UInt8" /&gt;
+    &lt;class name="UInt16" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="UInt32" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="UInt64" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="Float32" type="ValueType" isValueType="true" /&gt;
+    &lt;class name="Float64" type="ValueType" isValueType="true" /&gt;
+
+    &lt;class name="Object"&gt;
+      &lt;method name="Equals" description="возвращает true, если два объекта равны."&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+      &lt;method name="Finalize" description="вызывается при сборке мусора"&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+      &lt;method name="GetHashCode" description="возвращает хэш-код"&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+      &lt;method name="GetType" description="Возвращает метаданные типа данных. Статический метод класса Type."&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+      &lt;method name="MemberwiseClone" description="клонирует видимую часть объекта"&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+      &lt;method name="ReferenceEquals" description="возвращает true, если обе объектные ссылки, переданые методу относятся к одному объекту."&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+      &lt;method name="ToString" description="возвращает строку, которая представляет этот объект"&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+    &lt;/class&gt;
+    &lt;class name="String" isSealed="true"&gt;
+      &lt;method name="Compare" description="производит сравнение с учетом и без учета регистра"&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+      &lt;method name="Concat" description="возвращает новую строку"&gt;
+        &lt;params>&lt;/params&gt;
+        &lt;code>&lt;/code&gt;
+      &lt;/method&gt;
+      &lt;method name="ToLower" /&gt;
+      &lt;method name="ToUpper" /&gt;
+      &lt;method name="Format" description="Заменяет символы подстановки и возвращает строковое представление каждого объекта."&gt;
+      &lt;/method&gt;
+      &lt;method name="IndexOf" description="возвращает индекс местоположения первого искомого символа или подстроки."&gt;
+      &lt;/method&gt;
+      &lt;method name="Insert" description="возвращает новую строку"&gt;
+      &lt;/method&gt;
+      &lt;method name="Lenght" description="возвращает длину строки"&gt;
+      &lt;/method&gt;
+    &lt;/class&gt;
+
+    &lt;class name="MemberInfo" type="Object"&gt;
+    &lt;/class&gt;
+    &lt;class name="FieldInfo" type="MemberInfo"&gt;
+    &lt;/class&gt;
+    &lt;class name="FieldBuilder" type="FieldInfo"&gt;
+    &lt;/class&gt;
+    &lt;class name="MethodBase" type="MemberInfo"&gt;
+    &lt;/class&gt;
+    &lt;class name="ConstructorInfo" type="MethodBase"&gt;
+    &lt;/class&gt;
+    &lt;class name="ConstructorBuilder" type="ConstructorInfo"&gt;
+    &lt;/class&gt;
+    &lt;class name="MethodInfo" type="MethodBase"&gt;
+    &lt;/class&gt;
+    &lt;class name="MethodBuilder" type="MethodInfo"&gt;
+    &lt;/class&gt;
+    &lt;class name="PropertyInfo" type="MemberInfo"&gt;
+    &lt;/class&gt;
+    &lt;class name="PropertyBuilder" type="PropertyInfo"&gt;
+    &lt;/class&gt;
+    &lt;class name="Type" type="MemberInfo"&gt;
+    &lt;/class&gt;
+    &lt;class name="EnumBuilder" type="Type"&gt;
+    &lt;/class&gt;
+    &lt;class name="TypeBuilder" type="Type"&gt;
+    &lt;/class&gt;
+    &lt;class name="TypeDelegator" type="Type"&gt;
+    &lt;/class&gt;
+  &lt;/namespace&gt;
+  &lt;namespace name="Org.AR"&gt;
+    &lt;class name="Agent" type="System.Object"&gt;
+    &lt;/class&gt;
+  &lt;/namespace&gt;
+&lt;/arl&gt;
+</pre>
+
+</td></tr></table>
+
+<font size=2>
+<hr><a href="mailto:prof5@mail.ru">E-mail</a>
+<br>&copy; <a href="http://prof1983.narod.ru/">Prof</a> 2007
+<br>09.04.2007
+</font>
+</body>
+</html>

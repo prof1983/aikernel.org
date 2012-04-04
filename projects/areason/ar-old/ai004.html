@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Искусственный Разум">
+<title>ИИ от Prof - TAIAssociation</title>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+
+<h1>TAIAssociation</h1>
+
+<font face="Courier New, Courier, mono">
+<p>TAIAssociation = <b>record</b>
+<br>&nbsp;&nbsp;<i>Handle</i>: THandle064;
+<br>&nbsp;&nbsp;<i>TypeAssociation</i>: TAIAssociationType;
+<br>&nbsp;&nbsp;<i>Weight</i>: Int008;
+<br>&nbsp;&nbsp;<i>Reliance</i>: UInt008;
+<br>&nbsp;&nbsp;<i>CountUse</i>: UInt016;
+<br>&nbsp;&nbsp;<i>Use</i>: Pointer;
+<br><b>end</b>;
+</font>
+
+<p><b>Описание</b>
+<br>Размер: 16 байт - для записи на диск; 20 байт - в памяти.
+
+<dl>
+<dt><b>Параметры</b>
+<dt><i>Handle</i>: THandle064
+  <dd>Идентификатор фрейма с которым ассоциирован
+<dt><i>TypeAssociation</i>: <a href="ai005.html">TAIAssociationType</a> 
+  <dd>Тип ассоциации:
+<dt><i>Weight</i>: Int008
+  <dd>Вес связи: -128 - абсолютно не верно, 0 - не известно, 127 - абсолютно верно
+<dt><i>Reliance</i>: UInt008
+  <dd>Уверенность в весе связи: 0 - абсолютно не уверен, 255 - уверен на 99.9%.
+<dt><i>CountUse</i>: UInt016
+  <dd>Сколько записей об использовании есть TAIUse (128 записей x 16 bytes = 2k)
+<dt><i>Use</i>: Pointer
+  <dd>Указатель на место в памяти, где располагается массив записей об использовании этой ассоциации.
+</dl>
+
+<p><font size=2>
+<hr>&copy; AIKernel 2003-2011
+<br>20.10.2009 - 09.04.2011
+</font>
+</body>
+</html>

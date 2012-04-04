@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Искусственный Разум">
+<title>ИИ от Prof - TAIUse</title>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+
+<h1>TAIUse</h1>
+<i>Данные об использовании ассоциации(фрейма)</i>
+
+<font face="Courier New, Courier, mono">
+<p>TAIUse = <b>record</b>
+<br>&nbsp;&nbsp;Time: TDateTime064;
+<br>&nbsp;&nbsp;TypeUse: UInt032;
+<br>&nbsp;&nbsp;Result: TAIResult;
+<br>&nbsp;&nbsp;CountFreims: UInt032;
+<br>&nbsp;&nbsp;Reliance: UInt008;
+<br>&nbsp;&nbsp;Reserved1: UInt008;
+<br>&nbsp;&nbsp;Reserved2: UInt016;
+<br>&nbsp;&nbsp;Reserved3: UInt032;
+<br>&nbsp;&nbsp;Reserved4: UInt032;
+<br><b>end</b>;
+</font>
+
+<p><b>Описание</b>
+<br>Размер: 32 байта
+
+<dl>
+<dt><b>Параметры</b>
+<dt>Time: TDateTime064
+  <dd>Дата и время использования ассоциации(фрейма)
+<dt>TypeUse: UInt032
+  <dd>Как был использован:
+  <br>1-присутствовал рядом
+  <br>2-использовался для рассмотрения(решения) вопроса(задания)
+  <br>3-был запущен(только для метода)
+  <br>4-был изменен}
+<dt>Result: TAIResult
+  <dd>Результат от использования
+<dt>CountFreims: UInt032
+  <dd>Количество фреймов в ПО для этого использования (сам массив располагается дальше)
+<dt>Reliance: UInt008
+  <dd>Увереность в том, что результат повторится при наличии тех же условий
+<dt>Reserved1: UInt008
+<dt>Reserved2: UInt016
+<dt>Reserved3: UInt032
+<dt>Reserved4: UInt032
+</dl>
+
+<p><font size=2>
+<hr>&copy; AIKernel 2003-2011
+<br>05.12.2008 - 09.04.2011
+</font>
+</body>
+</html>

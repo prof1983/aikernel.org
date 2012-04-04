@@ -1,0 +1,246 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Искусственный Разум">
+<title>ИИ от Prof - UAIFreim</title>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+
+<h1>UAIFreim</h1>
+<p class="aut"><a href="../about/about016.html">Prof</a> 
+<p class="inf">Описание модуля UAIFreim. Краткое описание функций модуля UAIFrim версии 0.0.0.12 от 06.11.2009.
+
+<pre>
+<b>function</b> aiDomainClose: TError; {Закрывает ПО}
+
+<b>function</b> aiDomainCreate: TError; {Создает ПО}
+
+(*<b>function</b> aiDomainFreimGetByIndex( {Возвращает фрейм по индексу}
+  Index: UInt032;               {in}{Индекс фрейма}
+  Freim: PAIFreim2              {out}{Указатель на фрейм}
+  ): TError;*)
+
+<b>function</b> aiDomainFreimsCount( {Возвращает количество фреймов в ПО}
+  Count: PUInt032               {out}{Указатель на количество фреймов}
+  ): TError;
+
+(*<b>function</b> aiFreimRun( {Выполнить ф-действие}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  Value: PChar                  {in}{Указатель на параметр}
+  ): TError;*)
+
+(*<b>function</b> aiFreimWordOpen( {Открывает/создает слово S и возвращает его идентификатор}
+  S: PChar;                     {in}{Содержимое слова}
+  Index: PInt032                {out}{Указатель на идентификатор}
+  ): TError;*)
+
+<b>function</b> aiKnowlegeByHtml( {Выделяет знания из специально подготовленого html файла}
+  {Source: THandle032;}
+  FileName: PChar               {in}{Имя файла}
+  ): TError;
+
+<b>function</b> aiResultAdd( {Добавляет решение (изменяет активность, если решение уже присутствует)}
+  HFreim: THandle064;           {in}{Идентификатор фрейма-решения}
+  Activ: Int032                 {in}{Активность}
+  ): TError;
+
+<b>function</b> aiResultAddFromFreim( {Добавляет в список ответов все ассоциированные фреймы}
+  HFreim: THandle064            {in}{Идентификатор фрейма}
+  ): TError;
+
+<b>function</b> aiResultAddFromStr( {Добавляет в список ответов все ассоциированные фреймы}
+  Str: PChar                    {in}{Строка, по которой будут искаться нужные фреймы}
+  ): TError;
+
+<b>function</b> aiResultClear: TError; {Очищает список ответов}
+
+<b>function</b> aiResultClose: TError; {Освобождает список ответов}
+
+<b>function</b> aiResultCreate: TError; {Инициализирует список ответов}
+
+<b>function</b> aiResultMaxStrGet( {Возвращает текст фрейма с максимальной активностью из Results}
+  P: PChar;                     {out}{Указатель на последовательность символов}{=nil}
+  Size: PUInt032                {in/out}{Указатель на размер выделеной памяти(in)/размер нужной памяти(out)}
+  ): TError;
+
+<b>function</b> aiSourceAssociationFreimsCreate( {Связывает 2 фрейма между собой}
+  H1: THandle064;               {in}{Идентификатор первого фрейма}
+  H2: THandle064;               {in}{Идентификатор второго фрейма}
+  AssociationTyp: TAIAssociationType {in}{Тип ассоциации}
+  ): TError;
+
+<b>function</b> aiSourceAssociationFreimsCreate2( {Связывает 2 фрейма между собой}
+  H1: THandle064;               {in}{Идентификатор первого фрейма}
+  H2: THandle064;               {in}{Идентификатор второго фрейма}
+  ATyp1: TAIAssociationType;    {in}{Тип ассоциации H1 с H2}
+  ATyp2: TAIAssociationType     {in}{Тип ассоциации H2 с H1}
+  ): TError;
+
+<b>function</b> aiSourceClose: TError; {Закрывает БЗ}
+
+<b>function</b> aiSourceCheck: TError; {Проверяет и исправляет ошибки в БЗ}
+
+<b>function</b> aiSourceCreate: TError; {Создает БЗ}
+
+<b>function</b> aiSourceFreimAssociationCountGet( {Возвращает колличество ассоциаций в фрейме}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  Count: PUInt032               {out}{Указатель на колличество ассоциаций}
+  ): TError;
+
+<b>function</b> aiSourceFreimAssociationCreate( {Создает ассоциацию}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  Associat: PAIAssociation2     {in}{Указатель на ассоциацию}
+  ): TError;
+
+<b>function</b> aiSourceFreimAssociationGet( {Возвращает указаную ассоциацию}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  Index: UInt032;               {in}{Индекс ассоциации}
+  Associat: PAIAssociation2     {out}{Указатель на ассоциацию}
+  ): TError;
+
+<b>function</b> aiSourceFreimAssociationOpen( {Открывает/создает ассоциацию}
+  HFreim: THandle064;           {in}{Идентификатор фрейма, в котором создается ассоциация}
+  Associat: PAIAssociation2     {in}{Указатель на ассоциацию}
+  ): TError;
+
+<b>function</b> aiSourceFreimAssociationUseGet( {Возвращает запись использования ассоциации}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  IndexAssociat: UInt032;       {in}{Индекс ассоциации}
+  IndexUse: UInt032;            {in}{Индекс записи использования}
+  Use: PAIUse                   {out}{Указатель на запись использования}
+  ): TError;
+
+<b>function</b> aiSourceFreimCreate( {Создает фрейм}
+  HFreim: PHandle064;           {out}{Указатель на идентификатор фрейма}
+  Freim: PAIFreim2              {in}{Указатель на фрейм}
+  ): TError;
+
+<b>function</b> aiSourceFreimDataCountGet( {Возвращает размер данных фрейма}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  Count: PUInt032               {out}{Указатель на размер данных}
+  ): TError;
+
+<b>function</b> aiSourceFreimDataGet( {Возвращает копию данных фрейма}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  Data: Pointer;                {out}{Указатель на данные}
+  Size: UInt032                 {in}{Размер выделеной памяти для записи. Если меньше, чем надо - Error}
+  ): TError;
+
+<b>function</b> aiSourceFreimGet( {Возвращает фрейм из БЗ}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  Freim: PAIFreim2              {out}{Указатель на фрейм}
+  ): TError;
+
+<b>function</b> aiSourceFreimGetByIndex( {Возвращает фрейм из БЗ по индексу}
+  Index: UInt032;               {in}{Индекс фрейма}
+  Freim: PAIFreim2              {out}{Указатель на фрейм}
+  ): TError;
+
+<b>function</b> aiSourceFreimHOpen( {Ищет/создает ф-заголовок и возвращает его Handle}
+  HFreim: PHandle064;           {out}{Указатель на идентификатор фрейма}
+  Str: PChar;                   {in}{Название заголовка ф-заголовка}
+  Ind: UInt032                  {in}{Индекс заголовка &lt;h1>, &lt;h2>}
+  ): TError;
+
+<b>function</b> aiSourceFreimKeyOpen( {Ищет/создает ф-ключевое слово и возвращает его Handle}
+  HFreim: PHandle064;           {out}{Указатель на идентификатор}
+  St: PChar                     {in}{Текст ключевого слова(выражения)}
+  ): TError;
+
+<b>function</b> aiSourceFreimOpen( {Ищет/создает фрейм}
+  HFreim: PHandle064;           {out}{Указатель на идентификатор фрейма}{=nil}
+  Freim: PAIFreim2              {in}{Указатель на фрейм}
+  ): TError;
+
+<b>function</b> aiSourceFreimsCount( {Возвращает колличество фреймов}
+  Count: PUInt032               {out}{Указатель на количество фреймов}
+  ): TError;
+
+<b>function</b> aiSourceFreimSearch( {Ищет и возвращает идентификатор фрейма, Ищет по строке и типу}
+  HFreim: PHandle064;           {out}{Указатель на идентификатор}
+  Str: PChar;                   {in}{Строка для сравнения}
+  TypeF: TAIFreimType           {in}{Тип фрейма}
+  ): TError;
+
+<b>function</b> aiSourceFreimSearchIndByStr( {Ищет и возвращает индекс фрейма, строка которого = Str}
+  Str: PChar;                   {in}{Строка для сравнения}
+  Ind: PUInt032                 {out}{Указатель на индекс}
+  ): TError;
+
+<b>function</b> aiSourceFreimStrCreate( {Создает фрейм со строкой Str}
+  HFreim: PHandle064;           {out}{Указатель на идентификатор фрейма}{=nil}
+  Str: PChar                    {in}{Строка}
+  ): TError;
+
+<b>function</b> aiSourceFreimStrOpen( {Ищет/создает ф-строку(1) и возвращает Handle}
+  HFreim: PHandle064;           {out}{Указатель на идентификатор фрейма}{=nil}
+  Str: PChar                    {in}{Строка}
+  ): TError;
+
+(*<b>function</b> aiSourceFreimUseDateTimeGetByIndex( {Возвращает дату/время последнего использования фрейма}
+  I: UInt032;                   {in}{Индекс фрейма}
+  T: PDateTime064               {out}{Указатель на дату/время последнего использования}
+  ): TError;*)
+
+<b>function</b> aiSourceFreimUseGet( {Возвращает запись использования фрейма}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  Index: UInt032;               {in}{Индекс использования}
+  Use: PUInt032                 {out}{Указатель на запись использования}
+  ): TError;
+
+<b>function</b> aiSourceFreimUseSet( {Устанавливает время последнего использования}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  T: TDateTime064               {in}{Новая дата/время}
+  ): TError;
+
+(*<b>function</b> aiSourceFreimUseSetByIndex( {Устанавливает время последнего использования}
+  I: UInt032;                   {in}{Индекс фрейма}
+  T: TDateTime064               {in}{Новая дата/время}
+  ): TError;*)
+
+(*<b>function</b> aiSourceLoad1( {Загружает БЗ из файла (старая версия)}
+  FileName: String              {in}{Имя файла}
+  ): TError;*)
+
+<b>function</b> aiSourceLoad2( {Загружает БЗ из файла}
+  FileName: String              {in}{Имя файла}
+  ): TError;
+
+(*<b>function</b> aiSourceSave( {Сохраняет БЗ в файле}
+  FileName: String              {in}{Имя файла}
+  ): TError;*)
+
+<b>function</b> aiSourceSave2( {Сохраняет БЗ в файле}
+  FileName: PChar               {in}{Имя файла}
+  ): TError;
+
+(*<b>function</b> aiTest: TError;*)
+
+<b>function</b> aiTest2: TError;
+
+<b>function</b> aiTreeCreateToFile( {Создать дерево ассоциаций и записать его в файл. Так же можно создавать ассоциации со случайными фреймами (ф случае, если мало ассоциаций)}
+  HFreim: THandle064;           {in}{Идентификатор фрейма}
+  LevelCount: UInt032;          {in}{Число уровней для асоциаций}
+  FileName: PChar;              {in}{Имя файла для вывода}
+  ACountMin: UInt032            {in}{Колличество минимального количества ассоциаций для каждого фрейма на следующем уровне}
+  ): TError;
+</pre>
+
+<h2>v 0.0.0.1</h2>
+<ul>
+<li><a href="ai011.html"><b>function</b> _AIDomainClose</a> 
+<li><a href="ai012.html"><b>function</b> _AIDomainCreate</a> 
+<li><a href="ai013.html"><b>function</b> _AIFreimCreate</a> 
+<li><a href="ai014.html"><b>function</b> _AIFreimGet</a> 
+</ul>
+
+<!---p><a href="units.rar">Скачать исходники (Delphi)</a>  (11,6 kb)--->
+<p><font size=2>
+<hr>&copy; AIKernel 2003-2011
+<br>09.11.2009 - 09.04.2011
+</font>
+</body>
+</html>

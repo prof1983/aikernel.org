@@ -1,0 +1,19 @@
+body {background-color:F8F8FF; color:#000000}
+A:link {color:#000000}
+A:visited {color:#404040}
+A:active {color:#707070}
+A:hover {color:#909090}
+h1 {font-size:120%}
+h2 {font-size:110%}
+h3 {font-size:100%}
+h4 {font-size:95%}
+h5 {font-size:92%}
+h6 {font-size:90%; font-style:obligue}
+i.blue {color:#3030FF}
+i.green {color:#30FF30}
+i.red {color:#FF3030}
+p {text-align:justify; font-size:90%}
+p.inf {text-align:justify; font-style:oblique; font-size:90%}
+p.aut {text-align:right; font-size:90%}
+p.pic {text-align:center; font-size:90%; font-weight:bold}
+li {text-align:justify; font-size:90%}
