@@ -1,0 +1,36 @@
+http://ai.obrazec.ru/forum/viewtopic.php?p=28716#p28716
+[quote="daner"]Простите, но разговор идет на уровне: Решили мы делать платформу для автомобиля, давайте давайте для начала договоримся какого цвета будет эта платформа.[/quote]Думаю, что разговор пока еще идет на уровне, когда нет даже решения о создании какой-либо платформы. Есть только общее желание что-то сделать, чтобы получить ИР. Но в какую сторону нужно двигаться - единого мнения пока нет.
+
+[quote="daner"]Можно делать SDK, а можно делать платформу для интеграции различных решений. Если первое, то до того как решать на каком языке это все реализовывать, стоит решить, какие именно инструменты (почему и для чего) в этот SDK вообще будут входить. Если второе, то язык вообще дело десятое и начать стоит с протоколов взаимодействуя всевозможных модулей (хотя опять таки, начать стоит в первую очередь с того, какие модули вообще могут быть интегрированы).[/quote]
+Лично я пытаюсь продумать базовый API, набор утилит, SDK и т.д. для широкого круга различных "модулей". Вообще хотелось бы разработать платформу для возможности присоединения абсолютно любых "модулей" которые потребуются или могут потребоваться для создания ИР. Пока собираю мнения разных людей по этому поводу.
+На счет языка реализации, лично для себя я решил, что "модули" должны быть написаны на компилируемом языке. Какой именно будет язык (Си, C++, Pascal, Asm) - это уже не так важно. При этом, наверное, можно будет сделать так, чтобы "модуль" мог обращаться к каким-то внешним программам и сервисам, к внешним БД и хранилищам. А так же, при желании, можно будет в "модуль" запихнуть реализацию на интерпретируемом языке вместе с интерпретатором или виртуальной машиной (например JUA, JNI, Perl интерпретатор и др.). Главное обеспечить доступ к функционалу данного "модуля" для остальной системы.
+
+Я вижу примерно такой минимальный базовый API (Pascal):
+[code]function Runtime_Modules_AddModule(Module: AModule): AInteger;
+function Runtime_Modules_DeleteModuleByIndex(Index: AInteger): AInteger;
+function Runtime_Modules_DeleteModuleByName(const Name: AString): AInteger;
+function Runtime_Modules_GetModuleByIndex(Index: AInteger; Module: AModule): AInteger;
+function Runtime_Modules_GetModuleByName(const Name: AString; Module: AModule): AInteger;
+function Runtime_Modules_InitModuleByName(const Name: AString): AInteger;
+function Runtime_Init: AInteger;
+function Runtime_Done: AInteger;
+function Runtime_Run: AInteger;[/code]
+Где AModule - это указатель на структуру, в которой записаны основные параметры, идентифицирующие модуль. Например так:
+[code]type
+  AModule = Pointer; // Указатель на AModuleRec
+type
+  AModuleRec = packed record // 8x4=32 bytes
+    Version: AVersion; // Версия реализации модуля
+    Name: AString; // Уникальное наименование модуля.
+    Init: AInitProc; // Указатель на функцию, для инициализации модуля
+    Done: ADoneProc; // Указатель на функцию, для завершения работы модуля
+    Reserved04: AInteger; // Зарезервировано
+    Reserved05: AInteger; // Зарезервировано
+    Reserved06: AInteger; // Зарезервировано
+    Reserved07: AInteger; // Зарезервировано
+  end;[/code]
+Для достижения уникальности наименования модуля, модуль можно именовать например так: "AIKernel.ExampleModule1" или "org.aikernel.example_module_1"
+
+Функции получения информации о модуле записаны так[code]function Runtime_Modules_GetModuleByIndex(Index: AInteger; Module: AModule): AInteger;
+function Runtime_Modules_GetModuleByName(const Name: AString; Module: AModule): AInteger;[/code]а не так[code]function Runtime_Modules_GetModuleByIndex(Index: AInteger): AModule;
+function Runtime_Modules_GetModuleByName(const Name: AString): AModule;[/code]для того, чтобы не передавать информацию копированием и, таким образом, не давать возможности ее испортить (заменить наименование модуля и др).

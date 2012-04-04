@@ -1,0 +1,483 @@
+AIAssistant 1.1.0
+
+Open AIMAIN.GDB - Ok
+Open USER.GDB - Ok
+TRUE
+
+Command: (class-superclass-tree-select SUMO #Horse)
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #Horse
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Livestock
+Record 2
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #Livestock
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #DomesticAnimal
+Record 2
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #DomesticAnimal
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Animal
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #Animal
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Organism
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen36
+Ontology SUMO
+Subject #Organism
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Agent
+Record 2
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen36
+Ontology SUMO
+Subject #Agent
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Object
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen36
+Ontology SUMO
+Subject #Object
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Physical
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen36
+Ontology SUMO
+Subject #Physical
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Entity
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen36
+Ontology SUMO
+Subject #Entity
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object http://www.w3.org/2002/07/owl#Thing
+Record 1
+
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Entity , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Physical , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Object , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Agent , Count: 1
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #Organism
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #OrganicObject
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #OrganicObject
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #CorpuscularObject
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #CorpuscularObject
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #SelfConnectedObject
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #SelfConnectedObject
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Object
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #Object
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Physical
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #Physical
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Entity
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen32
+Ontology SUMO
+Subject #Entity
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object http://www.w3.org/2002/07/owl#Thing
+Record 1
+
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Entity , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Physical , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Object , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #SelfConnectedObject , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #CorpuscularObject , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #OrganicObject , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Organism , Count: 2
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Animal , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #DomesticAnimal , Count: 1
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #Livestock
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #AnimalAgriculturalProduct
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #AnimalAgriculturalProduct
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #AgriculturalProduct
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #AgriculturalProduct
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Product
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #Product
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Artifact
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #Artifact
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #CorpuscularObject
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #CorpuscularObject
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #SelfConnectedObject
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #SelfConnectedObject
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Object
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #Object
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Physical
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #Physical
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Entity
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen30
+Ontology SUMO
+Subject #Entity
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object http://www.w3.org/2002/07/owl#Thing
+Record 1
+
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Entity , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Physical , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Object , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #SelfConnectedObject , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #CorpuscularObject , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Artifact , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Product , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #AgriculturalProduct , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #AnimalAgriculturalProduct , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Livestock , Count: 2
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #Horse
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #HoofedMammal
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #HoofedMammal
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Mammal
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #Mammal
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #WarmBloodedVertebrate
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #WarmBloodedVertebrate
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Vertebrate
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #Vertebrate
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Animal
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #Animal
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Organism
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen62
+Ontology SUMO
+Subject #Organism
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Agent
+Record 2
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen62
+Ontology SUMO
+Subject #Agent
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Object
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen62
+Ontology SUMO
+Subject #Object
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Physical
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen62
+Ontology SUMO
+Subject #Physical
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Entity
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen62
+Ontology SUMO
+Subject #Entity
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object http://www.w3.org/2002/07/owl#Thing
+Record 1
+
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Entity , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Physical , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Object , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Agent , Count: 1
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #Organism
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #OrganicObject
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #OrganicObject
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #CorpuscularObject
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #CorpuscularObject
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #SelfConnectedObject
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #SelfConnectedObject
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Object
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #Object
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Physical
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #Physical
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object #Entity
+Record 1
+
+Result-query-onto-class-superclass-tree-select:
+Key gen27
+Thread gen28
+Ontology SUMO
+Subject #Entity
+Predicate http://www.w3.org/2000/01/rdf-schema#subClassOf
+Object http://www.w3.org/2002/07/owl#Thing
+Record 1
+
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Entity , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Physical , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Object , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #SelfConnectedObject , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #CorpuscularObject , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #OrganicObject , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Organism , Count: 2
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Animal , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Vertebrate , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #WarmBloodedVertebrate , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Mammal , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #HoofedMammal , Count: 1
+Result-query-onto-class-superclass-tree-select: class-superclass-all-select:
+ key gen27 , Subject: #Horse , Count: 2
