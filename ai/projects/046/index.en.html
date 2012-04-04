@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AI - 3store</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+
+<body>
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+
+<h1>3store</h1>
+
+<p>3store is an RDF "triple store", written in C and backed by MySQL and Berkeley DB. It is an optimisation and port of an older triple store (WebKBC).
+It provides access to the RDF data via RDQL or SPARQL over HTTP, on the command line or via a C API.</p>
+
+<ul>
+  <li>Language: C</li>
+  <li>License: General Public License</li>
+  <li>Last Update: 2009-07-17</li>
+</ul>
+
+
+<h2>About</h2>
+
+<p>3Store: MySQL based triple store, currently holding over 30 million RDF triples used by a range of Knowledgeable Services
+developed within the AKT project. Also used by a number of external projects and companies.</p>
+
+
+<h2>What's the Problem?</h2>
+
+<p>Many Semantic Web applications require large quantities of RDF triples to perform their reasoning over.</p>
+
+<p>Current RDF database technology only scales to hundreds of thousands or maybe a few million triples, and from our experience in the AKT project we know that many interesting Knowledge Bases can quickly grow to tens of millions of triples before they become truly interesting.</p>
+
+
+<h2>Towards a Solution</h2>
+
+<p>3store is a core C library that uses MySQL to store its raw RDF data and caches.</p>
+
+<p>The library offers OKBC and RDQL query interfaces, over HTTP (via an Apache web server module), or directly though the C library.</p>
+
+<p>The server software itself does not expose any interfaces directly to the user, but it can be queried by a number of services, including a column based view and a direct RDF browser.</p>
+
+<p>3store is distributed under the Gnu General Public License, and is available from Sourceforge.</p>
+
+
+<h2>Semantic representation</h2>
+
+<p>View in the AKT Triplestore Browser or as RDF.</p>
+
+<p>Also available in DOAP RDF (Description Of A Project)</p>
+
+
+<h2>Источники</h2>
+<ul>
+  <li><a href="http://sourceforge.net/projects/threestore/">http://sourceforge.net/projects/threestore/</a></li>
+  <li><a href="http://threestore.sourceforge.net/">http://threestore.sourceforge.net/</a></li>
+  <li><a href="http://www.aktors.org/technologies/3store/">http://www.aktors.org/technologies/3store/</a></li>
+</ul>
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AIKernel 2011
+<br>11.07.2011 - 11.07.2011
+</font>
+</body>
+</html>
