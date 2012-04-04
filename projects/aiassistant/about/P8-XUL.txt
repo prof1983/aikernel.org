@@ -1,5 +1,0 @@
-XUL
-
-Смотрите http://ru.wikipedia.org/wiki/XUL
-
-Статья XUL приложения (XPI) - http://slackware.tomsk.ru/docs/?p=xul
