@@ -1,19 +1,7 @@
 body {background-color:F0FFF0; color:#000000}
-A:link {color:#000050}
-A:visited {color:#404090}
-A:active {color:#7070C0}
-A:hover {color:#9090F0}
-h1 {font-size:150%}
-h2 {font-size:130%}
-h3 {font-size:110%}
-h4 {font-size:100%}
-h5 {font-size:90%}
-h6 {font-size:90%; font-style:obligue}
-i.blue {color:#3030FF}
-i.green {color:#30FF30}
-i.red {color:#FF3030}
-p {text-align:justify; font-size:90%}
-p.inf {text-align:justify; font-style:oblique; font-size:90%}
-p.aut {text-align:right; font-size:90%}
-p.pic {text-align:center; font-size:90%; font-weight:bold}
-li {text-align:justify; font-size:90%}
+a:link {color:#000050}
+a:visited {color:#404090}
+a:active {color:#7070C0}
+a:hover {color:#9090F0}
+p {text-align:justify}
+li {text-align:justify}
