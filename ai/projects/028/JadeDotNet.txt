@@ -1,0 +1,286 @@
+University of Utah <http://www.utah.edu> 	
+
+Search	
+
+School of Computing
+
+Agent Research Group - .net and JADE/LEAP
+
+Where We Started
+
+We (the Agent Research Group <index.html>) recently discovered that
+Steffen  Rusitschka from Siemens (/Steffen.Rusitschka@mchp.siemens.de/
+<mailto:(Steffen.Rusitschka@mchp.siemens.de>/) /had ported the LEAP
+version of JADE to .NET.  We received the .bat file that would compile
+JADE/LEAP into a .dll using Visual J#.  This works pretty well because
+the pJava version of LEAP uses a version of Java that is 1.1.x.  This is
+compatible with Visual J# and is thus would allow LEAP to be used as a
+portability mechanism to bridge between the .NET world and the JADE
+agent world.
+
+Problems
+
+The buildNET.bat file required that we place it in the top-level leap
+directory and also place the vjs compiler on the PATH.  Having
+accomplished this, we set about to build the system.  The first problem
+was that vjs would not compile the whole system.  The errors that we
+received were:
+
+           
+src\icp\jicp\share\jade\imtp\leap\JICP\JICPMServer.java(256,11): error
+VJS1363: Cannot access class 'jade.imtp.leap.LEAPSerializationException'
+
+           
+src\icp\jicp\j2se\jade\imtp\leap\JICP\JICPServer.java(205,13): error
+VJS1363: Cannot access class 'jade.imtp.leap.LEAPSerializationException'
+
+After some rooting around we found that the compiler was complaining
+because LEAPSerializationException was not visible.  The solution was to
+make the class public.  So, we simply added public before the class
+definition on line 49 of the file
+(src\imtp\leap\jade\imtp\leap\LEAPSerializationException.java).  This
+allowed the file to properly compile.  The second part of the .bat file
+was to copy the vjslib.dll file to the lib directory.  Since we are not
+using the .net SDK, but instead are using Visual Studio, this caused an
+error and we ignored it.  Note - as with pjava, there are two files that
+will not compile under Visual J#.  The .bat file renames them before
+doing the compilation and then renames them back when finished. 
+
+Visual Studio Project for the Jade .dll
+
+To make this process a bit more Visual Studio friendly, we created a VS
+solution which will build the dll file.  The .bat file works by using
+the /recurse compiler command line argument which will recursively
+compile all of the files in a directory.  We made the solution work the
+same way.  The one problem is that we have yet to figure a way to
+exclude the 2 files that won't compile.  So, what we have done is to
+rename by hand before compiling the system.  [NOTE - one idea is to
+explicitly import those directories ourselves and exclude them, then
+removing the directory from the /recurse.  Unfortunately that is a LOT
+of files.  Another solution is to see why they won't compile and see if
+we can fix them.]
+
+How to Start Jade
+
+So, the next problem was how to start the system.  Normally we would say
+java jade.Boot ...  There might be a better solution, but what we did
+was to create a project (runJadeLeapDotNet) that simply had the
+Boot.java file as its only file.  We added references to the
+jadeleapdotnet.dll file (and later on, for every agent that we call, we
+had to add a reference so it could find the associated .dll file). 
+Anyway, we set this as the startup project to run when executing the
+system, did a build, and viola the system started up.  Leap uses a 
+property file to specify command line arguments (this defaults to
+leap.properties), so we stored in the default file, which agents to
+start and the location of the main container.
+
+VJ# Sample Agent
+
+We then undertook the task of writing some agents using the DLL and then
+testing the system.  The intent was to write a simple agent that would
+"ping" one of the agentcities agents (in particular, our own SLC
+agentcities site).  The first problem with this model was that this
+version did not support the HTTP mtp protocol.  We spent some time
+trying to get it to compile, but gave up. Mostly this was because the
+JADE add-on for HTTP requires a sax parser and we couldn't find one with
+the same interface (it probably exists within Windows, but we couldn't
+find it).  A second solution was to run a J2SE version of JADE/LEAP as a
+main container and have it include the http MTP.  We did this.  However,
+our local VJ# agent could not connect with the main container.  After
+some debugging, we discovered that the
+jade.imtp.leap.FullCommandDispatcher was failing in send function.  It
+could not find the jicp transport in the HashTable.  It tried to look
+into the HashTable using the string jicp and that was not found.  It
+turns out that earlier in the file, in the addicp function (around line
+146) it stores the string jicp which has been turned into a class which
+is CaseInsensitiveString.  For some reason, the HashTable would not
+properly call the equals function if the object that it was comparing
+was different than the object that is being placed into the table.  We
+could not determine if this was because HashTable is not working
+properly or CaseInsensitiveString was not working properly or what.  Our
+solution was to change the icps.get call (around line 310) to turn its
+string argument into a CaseInsensitiveString.  After this change, we
+were able to fire up our .NET agent system as a container and connect to
+a separate main container.  The VJ# agent then successfully ran,
+including sending a ping to a remote (using HTTP-MTP) and received the
+alive message.  Note - one little trick, we had to add the
+JadeLeapDotNet.dll as a referenced object for the project
+
+VC# Sample Agent
+
+Being on a roll, we decided to create another agent identical to the VJ#
+version that was written in C#.  Having never coded in C# this was a bit
+of a learning experience, but we got it working in pretty short order. 
+The only thing that we couldn't figure out how to do was to create an
+anonymous embedded class (in VJ# we did: addBehaviour(new
+CyclicBehaviour () { ... but we couldn't figure out how to do the same
+thing in VC#).  We ended up creating a behaviour as a separate class
+(but still embedded within the sample agent file).  Again, once we got
+it to compile, it worked flawlessly.  Note - as with VJ#, we had to add
+a reference to the Jade dll and we also had to add a reference to the
+VJ# support dll (vjslib.dll).
+
+VC++ Sample Agent
+
+So, at this point, we decided, why not create a VC++ agent as well. 
+Then we could use our solutions as a guideline for others who might want
+to write agents in several different languages.  We were experts in C++,
+but had not yet written in managed C++.  We started by doing a new
+project, choosing VC++ managed class library.  The first problem was how
+to link in the various libraries.  This was solved when we learned about
+the #using directive.  With #using, you can specify .dll's that you wish
+to link into your program.  You may provide a full path, or just a name
+and put the full path with the /AI command option.  The location to find
+the #using libraries is specified under the C++ project properties under
+C/C++->General->Resolve #using references.  Simply click on the ... and
+fill in each location of where you can find the files.  The project for
+this has hardwired paths for our machine, so you will have to edit this
+for the proper location of your files.  Another thing that we found
+different was the use of :: instead of . for walking the package
+hierarchy.  They have basically mapped packages into namespaces.  Again,
+the code is almost identical to the other versions.  One problem that we
+initially had was to utilize 'cout' for printing messages.  This caused
+a type problem because the strings were "managed by the gc" and not the
+same as strings used in unmanaged C++.  So, instead of using cout, we
+simply used the Console.writeLine command and all is happy.
+
+Links to Useful Files
+
+If you wish to utilize this code and start to write agents in the .NET
+framework, here are some files that will help you.  We will work with
+the JADE/LEAP folks to get our code changes into the next release of
+LEAP to make the process totally painless.  Until then, you can use the
+following files to help get you started:
+
+    *
+
+      LEAPSerializationException.java
+      <JADEDotNet/LEAPSerializationException.java> - the version with
+      the public class specification to allow the .dll to compile.
+
+    *
+
+      buildNET.bat <JADEDotNet/buildNET.bat> - the original batch file
+      for creating the JADE/Leap dll.  Don't forget to put the vjs
+      command on your path and to store this file in your leap top-level
+      directory (with the other build files).  You will notice at the
+      top of the batch file it says to do a build with merge and
+      unmerge, please do this.
+
+    *
+
+      JadeLeapDotNet.dll <JADEDotNet/JadeLeapDotNet.dll> - the compiled
+      dll file (so you don't have to buld it if you don't want to). 
+      Note, this is using the 2.1 version of Leap.
+
+    *
+
+      FullCommandDispatcher.java <JADEDotNet/FullCommandDispatcher.java>
+      - the fixed extraction of the mtp from the HashTable.
+
+    *
+
+      leapnet.zip <JADEDotNet/leapnet.zip> - all of the Visual Studio
+      files for the sample agents and building the jade dll file.  Note
+      - leapnet.sln is the solution that includes the running jade code
+      and in the JadeLeapDotNet.sln file is the Vis Studio solution for
+      building the .dll file.  The solutions are set up to generate the
+      various code files into the leapnet\lib directory.  If you decide
+      to do a "start" in the leapnet solution, you need to go and edit
+      the leap.properties file to adhere to your current situation.  The
+      one that it reads by default is in the
+      leapnet\RunJadeBootDotNet\bin\Debug directory.
+
+    *
+
+      runmain.bat <JADEDotNet/runmain.bat> which will start up a Jade
+      running the main container so you can make the .NET agents connect
+      with the main (it allows you to have a gui, sniffer, etc. running
+      in the main).
+
+    *
+
+      http.jar <JADEDotNet/http.jar> and crimson.jar
+      <JADEDotNet/crimson.jar> - used so you can have http access (built
+      from the jade add-on)
+
+How to Get Started
+
+   1.
+
+      Get Jade and Leap
+
+   2.
+
+      Connect to the leap directory and build the j2se version (you can
+      use this so you can run a main container with more stuff - like
+      the RMA and http mtp - buildLEAP.bat
+
+   3.
+
+      Copy the new version of LEAPSerializeionException.java to its
+      location - src\imtp\leap\jade\imtp\leap
+
+   4.
+
+      Copy the new version of FullCommandDispatcher.java to the same
+      directory
+
+   5.
+
+      If you want to use the batch file, then find vjs's location and
+      put it on your PATH; run buildNET.bat (ignoring the errors about
+      vjslib.dll)
+
+   6.
+
+      If you want to use the Visual Studio version, then first rename
+      the two files
+      src\kernel\standard\jade\core\RealNotificationManager.java and
+      src\kernel\standard\jade\core\FullResourceManager.java to
+      something without a .java on the end; fire up Visual Studio and
+      load the JadeLeapDotNet.sln solution file; then do a build
+
+   7.
+
+      Note - the batch file currently puts the .dll into the top-level
+      .lib directory, while all of the Visual Studio programs put their
+      files into the leapnet\lib directory.
+
+   8.
+
+      Copy http.jar and crimson.jar to whichever .lib directory you
+      chose above and edit the runmain.bat (in the leapnet top-level
+      directory) file to point to the appropriate location for these files
+
+   9.
+
+      Edit the leap.properties file (again in the leapnet top-level
+      directory) with the appropriate values (like the hostname and
+      whatever else you want). Start the main container - runmain.bat
+
+  10.
+
+      Run visual studio and load in the leapnet.sln solution file.  Edit
+      the leap.properties file in the
+      leapnet\RunJadeBootDotNet\bin\Debug to have your values, then do a
+      build solution and finally start the debugger.  This should fire
+      up the various agents and each one will send a ping to a site.
+
+FIX - ToString in aclmessage should be toString.
+
+Support
+
+This work is currently supported by Microsoft Research
+<http://research.microsoft.com>.
+
+ 
+
+------------------------------------------------------------------------
+
+School of Computing • 50 S. Central Campus Dr. Rm. 3190 • Salt Lake
+City, UT 84112
+801-581-8224 • Send comments to webmaster@cs.utah.edu
+<mailto:webmaster@cs.utah.edu>
+Disclaimer <http://www.utah.edu/disclaimer/disclaimer_home.html>
+
