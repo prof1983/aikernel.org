@@ -1,0 +1,154 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AIKernel - Redis</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+
+<body>
+
+<h1>Redis</h1>
+
+<p>Redis is an open source, advanced key-value store.
+It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.</p>
+
+<p>You can run atomic operations on these types, like appending to a string;
+incrementing the value in a hash; pushing to a list; computing set intersection, union and difference;
+or getting the member with highest ranking in a sorted set.</p>
+
+<p>In order to achieve its outstanding performance, Redis works with an in-memory dataset.
+Depending on your use case, you can persist it either by dumping the dataset to disk every once in a while, or by appending each command to a log.</p>
+
+<p>Redis also supports trivial-to-setup master-slave replication, with very fast non-blocking first synchronization,
+auto-reconnection on net split and so forth.</p>
+
+<p>Other features include a simple check-and-set mechanism, pub/sub and configuration settings to make Redis behave like a cache.</p>
+
+<p>You can use Redis from most programming languages out there.</p>
+
+<p>Redis is written in ANSI C and works in most POSIX systems like Linux, *BSD, OS X and Solaris without external dependencies.
+There is no official support for Windows builds, although you may have some options.</p>
+
+
+<h2>Что такое Redis?</h2>
+
+<p>Redis — это высокопроизводительное нереляционное распределённое хранилище данных.</p>
+
+<p>Redis представляет собой словарь, в котором каждый ключ связан со своим значением.
+Для примера можно установить ключ surname_1992 со значением Smith.
+От многих других хранилищ типа "ключ-значение" Redis отличается тем, что каждое значение имеет свой тип.
+Поддерживаются следующие типы:</p>
+
+<ul>
+  <li>Строки (String)</li>
+  <li>Списки (List)</li>
+  <li>Множества (Set)</li>
+  <li>Упорядоченные множества</li>
+  <li>Хэши</li>
+</ul>
+
+<p>Для каждого типа определены свои наборы операций (команд), которые могут быть применены к значениям этого типа.</p>
+
+<p>Множества (неупорядоченные наборы строк) так же являются очень гибким типом данных.
+Можно добавлять и удалять элементы, после чего требовать у сервера вычислить пересечение, объединение или разницу нескольких множеств.</p>
+
+<p>Каждая команда выполняется на стороне сервера в качестве атомарной операции.
+Полный список команд применимых к конкретным типам данных приведён в соответствующем разделе.</p>
+
+<p>Другими словами, вы можете рассматривать Redis, как сервер структурированных данных (data structures server).
+Пользователю предоставляется интерфейс для доступа к абстрактным типам данных,
+снимая с него заботу за реализацию конкретных структур и алгоритмов.
+И алгоритмы и структуры в Redis подобраны таким образом, чтобы обеспечить лучшую производительность.</p>
+
+<p>Все данные во время работы целиком загружаются в память,
+но в тоже время они сохраняются на диске. После перезапуска сервера они снова загружаются в память.</p>
+
+<p>Есть два вида поддержки сохранности данных. Первый называется snapshotting.
+В этом режиме данные записываются на диск асинхронно через некоторые промежутки времени.
+При запуске сервера данные загружаются из дампа.
+Redis может быть настроен для сохранения данных, как через некоторое количество секунд, так и после определённого числа внесённых изменений.
+Например, после 1000 запросов и более 60 секунд с момента последней записи.</p>
+
+<p>Из-за того, что данные записываются асинхронно, при сбое в системе последние несколько запросов могут быть утеряны.
+Это допустимо во многих случаях, но всё же не во всех.</p>
+
+<p>Во избежание подобного, Redis поддерживает другой, безопасный режим, называемый Append Only File (AOF).
+При нём каждая команда, изменяющая данные, дописывается в файл ASAP.
+Эти команды заново выполняются при перезапуске сервера и восстанавливают, таким образом, утраченные данные.
+AOF поддерживает очень удобную функцию: сервер может восстановить append-only файл в фоновом неблокирующем режиме.</p>
+
+<p>API доступно для следующих языков:</p>
+
+<ul>
+  <li>Ruby</li>
+  <li>Python</li>
+  <li>PHP</li>
+  <li>Erlang</li>
+  <li>Tcl</li>
+  <li>Perl</li>
+  <li>Lua</li>
+  <li>Java</li>
+</ul>
+
+<p>Тесты производительности можно увидеть тут - 
+<a href="http://code.google.com/p/redis/wiki/Benchmarks">http://code.google.com/p/redis/wiki/Benchmarks</a></p>
+
+
+<h2>Лицензия (License)</h2>
+
+<p>BSD License</p>
+
+
+<h2>Установка</h2>
+
+<p>Redis официально устанавливается только на *nix, но есть не официальные сборки для Windows.
+Скачать такую можно здесь - http://code.google.com/p/redisdb-win32/</p>
+
+<p>Список версий можно посмотреть здесь - http://code.google.com/p/redis/downloads/list</p>
+
+<p>Установка на *nix проходит посредством сборки под систему.</p>
+
+<p>Для начала скачиваем архив
+<br>wget http://redis.googlecode.com/files/redis-2.2.0-rc4.tar.gz</p>
+
+<p>Распаковываем и запускаем сборку
+<br>tar xvzf redis-2.2.0-rc4.tar.gz
+<br>cd redis-2.2.0-rc4
+<br>make</p>
+
+<p>Не забываем про - make test</p>
+
+<p>Теперь можно запустить Redis
+<br>./redis-server</p>
+
+<p>Он запуститься без конфигурационного файла.
+По умолчнию Redis выводит свои логи в стандартный поток вывода, так что вы можете удостовериться, что всё работает правильно.
+В дальнейшем это можно изменить.</p>
+
+
+<p></p>
+
+<ul>
+  <li><a href="http://redis.io/">http://redis.io/</a></li>
+  <li><a href="http://code.google.com/p/redis/">http://code.google.com/p/redis/</a></li>
+  <li><a href="http://no-sql.ru/viewforum.php?f=19">Redis</a></li>
+  <li><a href="http://no-sql.ru/viewtopic.php?f=19&t=16">Что такое Redis?</a></li>
+  <li><a href="http://no-sql.ru/viewtopic.php?f=19&t=15">Установка Redis</a></li>
+  <li>
+    <a href="http://code.google.com/p/redisdb-win32/">http://code.google.com/p/redisdb-win32/</a> - 
+    Win32 port of Redis DB key-value server. Using Cygwin to compile server and tools (tkl test script not working at now).
+  </li>
+</ul>
+
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AIKernel 2005-2011
+<br>17.05.2011 - 17.05.2011
+</font>
+</body>
+</html>
