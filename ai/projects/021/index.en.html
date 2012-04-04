@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="en">
+<meta name="Keywords" content="AI, Artificial Intelligence, Artificial Reason, Robot, Robots">
+<title>AI - CLIPS</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+
+<body>
+<p><b>en</b> <a href="index.ru.html">ru</a></p>
+
+
+<h1>CLIPS</h1>
+
+<p>CLIPS Rule Based Programming Language</p>
+
+<p>CLIPS is a forward-chaining rule-based programming language written in C that also provides procedural and object-oriented programming facilities.</p>
+
+<p><a href="http://sourceforge.net/projects/clipsrules">http://sourceforge.net/projects/clipsrules</a></p>
+
+<ul>
+  <li><a href="http://ru.wikipedia.org/wiki/CLIPS">http://ru.wikipedia.org/wiki/CLIPS</a></li>
+  <li><a href="http://ru.wikipedia.org/wiki/FuzzyCLIPS">http://ru.wikipedia.org/wiki/FuzzyCLIPS</a></li>
+  <li><a href="http://clipsrules.sourceforge.net/">http://clipsrules.sourceforge.net/</a></li>
+</ul>
+
+
+<p>CLIPS, (от англ. C Language Integrated Production System) — программная среда для разработки экспертных систем.
+Синтаксис и название предложены Чарльзом Форги (Charles Forgy) в OPS (Official Production System).
+Первые версии CLIPS разрабатывались с 1984 года в Космическом центре Джонсона (Johnson Space Center),
+NASA (как альтернатива существовавшей тогда системе ART*Inference),
+пока в начале 1990-х не было приостановлено финансирование, и NASA вынудили купить коммерческие продукты.</p>
+
+<p>Вероятно, CLIPS является наиболее широко используемой инструментальной средой для разработки экспертных систем благодаря своей скорости,
+эффективности и бесплатности. Несмотря на то, что теперь она является общественным достоянием,
+она до сих пор обновляется и поддерживается своим изначальным автором, Гэри Райли (Gary Riley).</p>
+
+<p>CLIPS включает полноценный объектно-ориентированный язык COOL для написания экспертных систем.
+Хотя она написана на языке Си, её интерфейс намного ближе к языку программирования LISP.
+Расширения можно создавать на языке Си, кроме того, можно интегрировать CLIPS в программы на языке Си.</p>
+
+<p>Как и другие экспертные системы, CLIPS имеет дело с правилами и фактами.
+Различные факты могут сделать правило применимым. Применимое правило затем допускается (assert).
+Факты и правила создаются предварительным объявлением, как показано в примере:</p>
+
+<pre>
+(deffacts trouble_shooting
+    (car_problem (name ignition_key) (status on))
+    (car_problem (name engine) (status wont_start))
+    (car_problem (name headlights) (status work))
+ )
+(defrule rule1
+    (car_problem (name ignition_key) (status on))
+    (car_problem (name engine) (status wont_start))
+     =>
+    (assert (car_problem (name starter) (status faulty))
+ )
+</pre>
+
+
+<h2>Documentation</h2>
+<ul>
+  <li>
+    <a href="../../files/clips/bpg.pdf">CLIPS 6.24 Basic Programming Guide</a>
+  </li>
+  <li>
+    <a href="../../files/clips/apg.pdf">CLIPS 6.24 Advanced Programming Guide</a>
+  </li>
+  <li>
+    <a href="../../files/clips/ig.pdf">CLIPS 6.24 Interfaces Guide</a>
+  </li>
+  <li>
+    <a href="../../files/clips/usrguide.pdf">CLIPS 6.20 User's Guide</a>
+  </li>
+  <li>
+    <a href="../../files/clips/arch5-1.pdf">CLIPS 5.1 Architecture Manual</a>
+  </li>
+  <li>
+    <a href="../../files/clips/3CCP.pdf">Third CLIPS Conference Proceedings</a>
+  </li>
+  <li>
+    <a href="../../files/clips/abstract.pdf">CLIPS Application Abstracts</a>
+  </li>
+</ul>
+
+<p><a href="../../files/clips/clips.zip">Скачать CLIPS</a></p>
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AIKernel 2011
+<br>09.05.2011 - 09.05.2011
+</font>
+</body>
+</html>

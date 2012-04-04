@@ -1,0 +1,216 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AI - CLIPS</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+
+<body>
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+
+<h1>CLIPS</h1>
+
+<p>CLIPS Rule Based Programming Language</p>
+
+<p>CLIPS is a forward-chaining rule-based programming language written in C that also provides procedural and object-oriented programming facilities.</p>
+
+<p><a href="http://sourceforge.net/projects/clipsrules">http://sourceforge.net/projects/clipsrules</a></p>
+
+<ul>
+  <li><a href="http://ru.wikipedia.org/wiki/CLIPS">http://ru.wikipedia.org/wiki/CLIPS</a></li>
+  <li>
+    <a href="http://ru.wikipedia.org/wiki/FuzzyCLIPS">http://ru.wikipedia.org/wiki/FuzzyCLIPS</a>
+    <br><a href="http://awesom.eu/~cygal/archives/2010/04/22/fuzzyclips_downloads/index.html">http://awesom.eu/~cygal/archives/2010/04/22/fuzzyclips_downloads/index.html</a>
+  </li>
+  <li><a href="http://clipsrules.sourceforge.net/">http://clipsrules.sourceforge.net/</a></li>
+</ul>
+
+
+<p>CLIPS, (от англ. C Language Integrated Production System) — программная среда для разработки экспертных систем.
+Синтаксис и название предложены Чарльзом Форги (Charles Forgy) в OPS (Official Production System).
+Первые версии CLIPS разрабатывались с 1984 года в Космическом центре Джонсона (Johnson Space Center),
+NASA (как альтернатива существовавшей тогда системе ART*Inference),
+пока в начале 1990-х не было приостановлено финансирование, и NASA вынудили купить коммерческие продукты.</p>
+
+<p>Вероятно, CLIPS является наиболее широко используемой инструментальной средой для разработки экспертных систем благодаря своей скорости,
+эффективности и бесплатности. Несмотря на то, что теперь она является общественным достоянием,
+она до сих пор обновляется и поддерживается своим изначальным автором, Гэри Райли (Gary Riley).</p>
+
+<p>CLIPS включает полноценный объектно-ориентированный язык COOL для написания экспертных систем.
+Хотя она написана на языке Си, её интерфейс намного ближе к языку программирования LISP.
+Расширения можно создавать на языке Си, кроме того, можно интегрировать CLIPS в программы на языке Си.</p>
+
+<p>Как и другие экспертные системы, CLIPS имеет дело с правилами и фактами.
+Различные факты могут сделать правило применимым. Применимое правило затем допускается (assert).
+Факты и правила создаются предварительным объявлением, как показано в примере:</p>
+
+<pre>
+(deffacts trouble_shooting
+    (car_problem (name ignition_key) (status on))
+    (car_problem (name engine) (status wont_start))
+    (car_problem (name headlights) (status work))
+ )
+(defrule rule1
+    (car_problem (name ignition_key) (status on))
+    (car_problem (name engine) (status wont_start))
+     =>
+    (assert (car_problem (name starter) (status faulty))
+ )
+</pre>
+
+
+
+<!---
+CLIPS
+http://www.ghg.net/clips/CLIPS.html
+http://www.ghg.net/clips/Download.html
+http://www.ghg.net/clips/download/
+http://sourceforge.net/projects/mtclips/ - MultiThreaded CLIPS
+
+What is CLIPS?
+
+CLIPS is a productive development and delivery expert system tool which provides a complete environment for the construction of rule and/or object based expert systems. Created in 1985, CLIPS is now widely used throughout the government, industry, and academia. Its key features are:
+Knowledge Representation: CLIPS provides a cohesive tool for handling a wide variety of knowledge with support for three different programming paradigms: rule-based, object-oriented and procedural. Rule-based programming allows knowledge to be represented as heuristics, or "rules of thumb," which specify a set of actions to be performed for a given situation. Object-oriented programming allows complex systems to be modeled as modular components (which can be easily reused to model other systems or to create new components). The procedural programming capabilities provided by CLIPS are similar to capabilities found in languages such as C, Java, Ada, and LISP. 
+Portability: CLIPS is written in C for portability and speed and has been installed on many different operating systems without code changes. Operating systems on which CLIPS has been tested include Windows 95/98/NT, MacOS X, and Unix. CLIPS can be ported to any system which has an ANSI compliant C or C++ compiler. CLIPS comes with all source code which can be modified or tailored to meet a user's specific needs. 
+Integration/Extensibility: CLIPS can be embedded within procedural code, called as a subroutine, and integrated with languages such as C, Java, FORTRAN and ADA. CLIPS can be easily extended by a user through the use of several well-defined protocols. 
+Interactive Development: The standard version of CLIPS provides an interactive, text oriented development environment, including debugging aids, on-line help, and an integrated editor. Interfaces providing features such as pulldown menus, integrated editors, and multiple windows have been developed for the MacOS, Windows 95/98/NT, and X Window environments. 
+Verification/Validation: CLIPS includes a number of features to support the verification and validation of expert systems including support for modular design and partitioning of a knowledge base, static and dynamic constraint checking of slot values and function arguments, and semantic analysis of rule patterns to determine if inconsistencies could prevent a rule from firing or generate an error. 
+Fully Documented: CLIPS comes with extensive documentation including a Reference Manual and a User's Guide. 
+Low Cost: CLIPS is maintained as public domain software. 
+ What are Expert Systems?
+
+Conventional programming languages, such as FORTRAN and C, are designed and optimized for the procedural manipulation of data (such as numbers and arrays). Humans, however, often solve complex problems using very abstract, symbolic approaches which are not well suited for implementation in conventional languages. Although abstract information can be modeled in these languages, considerable programming effort is required to transform the information to a format usable with procedural programming paradigms.
+
+One of the results of research in the area of artificial intelligence has been the development of techniques which allow the modeling of information at higher levels of abstraction. These techniques are embodied in languages or tools which allow programs to be built that closely resemble human logic in their implementation and are therefore easier to develop and maintain. These programs, which emulate human expertise in well defined problem domains, are called expert systems. The availability of expert system tools, such as CLIPS, has greatly reduced the effort and cost involved in developing an expert system.
+
+Rule-based programming is one of the most commonly used techniques for developing expert systems. In this programming paradigm, rules are used to represent heuristics, or "rules of thumb," which specify a set of actions to be performed for a given situation. A rule is composed of an if portion and a then portion. The if portion of a rule is a series of patterns which specify the facts (or data) which cause the rule to be applicable. The process of matching facts to patterns is called pattern matching. The expert system tool provides a mechanism, called the inference engine, which automatically matches facts against patterns and determines which rules are applicable. The if portion of a rule can actually be thought of as the whenever portion of a rule since pattern matching always occurs whenever changes are made to facts. The then portion of a rule is the set of actions to be executed when the rule is applicable. The actions of applicable rules are executed when the inference engine is instructed to begin execution. The inference engine selects a rule and then the actions of the selected rule are executed (which may affect the list of applicable rules by adding or removing facts). The inference engine then selects another rule and executes its actions. This process continues until no applicable rules remain.
+ The History of CLIPS
+
+The origins of the C Language Integrated Production System (CLIPS) date back to 1984 at NASA's Johnson Space Center. At this time, the Artificial Intelligence Section had developed over a dozen prototype expert systems applications using state-of-the-art hardware and software. However, despite extensive demonstrations of the potential of expert systems, few of these applications were put into regular use. This failure to provide expert systems technology within NASA's operational computing constraints could largely be traced to the use of LISP as the base language for nearly all expert system software tools at that time. In particular, three problems hindered the use of LISP based expert system tools within NASA: the low availability of LISP on a wide variety of conventional computers, the high cost of state-of-the-art LISP tools and hardware, and the poor integration of LISP with other languages (making embedded applications difficult).
+
+The Artificial Intelligence Section felt that the use of a conventional language, such as C, would eliminate most of these problems, and initially looked to the expert system tool vendors to provide an expert system tool written using a conventional language. Although a number of tool vendors started converting their tools to run in C, the cost of each tool was still very high, most were restricted to a small variety of computers, and the projected availability times were discouraging. To meet all of its needs in a timely and cost effective manner, it became evident that the Artificial Intelligence Section would have to develop its own C based expert system tool.
+
+The prototype version of CLIPS was developed in the spring of 1985 in a little over two months. Particular attention was given to making the tool compatible with expert systems under development at that time by the Artificial Intelligence Section. Thus, the syntax of CLIPS was made to very closely resemble the syntax of a subset of the ART expert system tool developed by Inference Corporation. Although originally modelled from ART, CLIPS was developed entirely without assistance from Inference or access to the ART source code.
+
+The original intent for CLIPS was to gain useful insight and knowledge about the construction of expert system tools and to lay the groundwork for the construction of a replacement tool for the commercial tools currently being used. Version 1.0 demonstrated the feasibility of the project concept. After additional development, it became apparent that CLIPS would be a low cost expert system tool ideal for the purposes of training. Another year of development and internal use went into CLIPS improving its portability, performance, functionality, and supporting documentation. Version 3.0 of CLIPS was made available to groups outside of NASA in the summer of 1986.
+
+Further enhancements transformed CLIPS from a training tool into a tool useful for the development and delivery of expert systems as well. Versions 4.0 and 4.1 of CLIPS, released respectively in the summer and fall of 1987, featured greatly improved performance, external language integration, and delivery capabilities. Version 4.2 of CLIPS, released in the summer of 1988, was a complete rewrite of CLIPS for code modularity. Also included with this release were an architecture manual providing a detailed description of the CLIPS software architecture and a utility program for aiding in the verification and validation of rule-based programs. Version 4.3 of CLIPS, released in the summer of 1989, added still more functionality.
+
+Originally, the primary representation methodology in CLIPS was a forward chaining rule language based on the Rete algorithm (hence the Production System part of the CLIPS acronym). Version 5.0 of CLIPS, released in the spring of 1991, introduced two new programming paradigms: procedural programming (as found in languages such as C and Ada;) and object-oriented programming (as found in languages such as the Common Lisp Object System and Smalltalk). The object-oriented programming language provided within CLIPS is called the CLIPS Object-Oriented Language (COOL). Version 5.1 of CLIPS, released in the fall of 1991, was primarily a software maintenance upgrade required to support the newly developed and/or enhanced X Window, MS-DOS, and Macintosh interfaces. Version 6.0, released in the Spring of 1993, added fully integrated object/rule pattern matching and support features for rule-based software engineering. Version 6.1 of CLIPS, released in 1998, removed support for older non-ANSI C Compilers and added support for C++ compilers. Commands to profile the time spent in constructs and user-defined functions were also added. Version 6.2, released in the Spring of 2002, added support for multiple environments into which programs can be loaded and improved Windows 95/98/NT and MacOS development interfaces.
+
+CLIPS is now maintained independently from NASA as public domain software.
+
+Because of its portability, extensibility, capabilities, and low-cost, CLIPS has received widespread acceptance throughout the government, industry, and academia. The development of CLIPS has helped to improve the ability to deliver expert system technology throughout the public and private sectors for a wide range of applications and diverse computing environments.
+
+As with any large project, CLIPS is the result of the efforts of numerous people. The primary contributors have been: Robert Savely, who conceived the project and provided overall direction and support; Chris Culbert, who managed the project and wrote the original CLIPS Reference Manual; Gary Riley, who designed and developed the rule-based portion of CLIPS, co-authored the CLIPS Reference Manual, and developed the Macintosh interface for CLIPS; Brian Donnell, who designed and developed the CLIPS Object Oriented Language (COOL) and co-authored the CLIPS Reference Manual; Bebe Ly, who developed the X Window interface for CLIPS; Chris Ortiz, who developed the original Windows 95 interface for CLIPS; Dr. Joseph Giarratano of the University of Houston-Clear Lake, who wrote the CLIPS User's Guide; and Frank Lopez, who designed and developed CLIPS version 1.0 and wrote the CLIPS 1.0 User's Guide.
+
+Many other individuals contributed to the design, development, review, and general support of CLIPS, including: Jack Aldridge, Carla Armstrong, Paul Baffes, Ann Baker, Stephen Baudendistel, Les Berke, Tom Blinn, Marlon Boarnet, Dan Bochsler, Bob Brown, Barry Cameron, Tim Cleghorn, Major Paul Condit, Major Steve Cross, Andy Cunningham, Dan Danley, Mark Engelberg, Kirt Fields, Ken Freeman, Kevin Greiner, Ervin Grice, Sharon Hecht, Patti Herrick, Mark Hoffman, Grace Hua, Gordon Johnson, Phillip Johnston, Sam Juliano, Ed Lineberry, Bowen Loftin, Linda Martin, Daniel McCoy, Terry McGregor, Becky McGuire, Scott Meadows, C. J. Melebeck, Paul Mitchell, Steve Mueller, Bill Paseman, Cynthia Rathjen, Eric Raymond, Reza Razavipour, Marsha Renals, Monica Rua, Tim Saito, Michael Sullivan, Gregg Swietek, Eric Taylor, James Villarreal, Lui Wang, Bob Way, Jim Wescott, Charlie Wheeler, and Wes White.
+----------------------------------------------------
+Version 6.24 of CLIPS
+
+CLIPS version 6.24 is currently available in the CLIPS Download Area. It contains the following fixes and enhancements:
+
+Allowed Classes Constraint Attribute - The allowed-classes constraint attribute allows a slot containing an instance value to be restricted to the specified list of classes
+
+New Functions and Commands - Several new functions and commands have been added. They are: 
+deftemplate-slot-allowed-values
+deftemplate-slot-cardinality
+deftemplate-slot-defaultp
+deftemplate-slot-default-value
+deftemplate-slot-existp
+deftemplate-slot-multip
+deftemplate-slot-names
+deftemplate-slot-range
+deftemplate-slot-singlep
+deftemplate-slot-type
+get-char
+get-region
+ppfact
+read-number
+set-locale
+slot-allowed-classes
+
+Command and Function Changes - The following function has been enhanced:
+format: The formatting of printed numbers can be changed to use a native locale with the set-locale function. The documentation has been updated to include the effect of the precision argument on the d, g, o, and x format flags.
+
+Behavior Changes - The following changes have been made to behavior:
+The message displayed when a construct is redefined and compilations are being watched is now more prominent.
+
+Bug Fixes - The following bugs are fixed by the 6.24 release:
+The DescribeClass macros were incorrectly defined.
+The sort function leaks memory when called with a multifield value of length zero.
+Link error occurred for the SlotExistError function when OBJECT_SYSTEM is set to 0 in setup.h.
+An error when calling the Eval function causes a subsequent call to DeallocateEnvironmentData to fail.
+Loading a binary instance file from a run-time program caused a bus error.
+Incorrect activations could occur with the exists CE.
+Compilation errors occurred when compiling CLIPS source as C++ files.
+The AssignFactSlotDefaults function did not correctly handle defaults for multifield slots.
+The slot-default-value function crashed when no default existed for a slot (the ?NONE value was specified).
+CLIPS crashed on AMD64 processor in the function used to generate hash values for integers.
+A syntax error was not generated for the last deffunction or defmethod in a file if it was missing the final closing right parenthesis.
+
+Compiler Support - The following compilers are now supported:
+Metrowerks CodeWarrior 9.6 for Mac OS X.
+Xcode 2.3 for Mac OS X.
+Microsoft Visual C++ .NET 2003 for Windows.
+-----------------------------------------------------------------
+CLIPS Download Area
+
+This is the primary site for obtaining the latest release of CLIPS. The current release is CLIPS 6.2 and is available in the the Download Area.
+CLIPS License Information
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+CLIPS is released as public domain software and as such you are under no obligation to pay for its use. However, if you derive commercial or monetary benefit from use of the software or just want to show support, please consider making a voluntary payment based on the worth of the software to you as compensation for the time and effort required to develop and maintain CLIPS. Payments can be made online at http://order.kagi.com/?JKT.
+Enter Download Area 
+CLIPS User Registration
+
+Please take a few minutes to register CLIPS by sending email to clipsYYYY@ghg.net where YYYY is the current year (for example, 2004). Include the words 'CLIPS REGISTRATION' in your subject line. Indicate your company/government/university affiliation (if any), what version of CLIPS you are using, the source of your copy (CLIPS web site, textbook, etc.), and any other information you'd like to provide about your use of CLIPS.
+Downloaded File Types
+Most of the documentation at this site is stored in Portable Document Format (PDF) which requires Adobe Acrobat Reader. This program can be downloaded from http://www.adobe.com/prodindex/acrobat/readstep.html. Compressed files at the CLIPS web set are stored in several formats: zip (primarily for PC users), sit.hqx (for MacOS users), and tar.Z (for Unix users). If your web browser does not automatically unzip any downloaded zip files, utilities for performing this task can be found at http://www.shareware.com/. Select the appropriate operating system and search for unzip. For sit.hqx files, select Macintosh and search for stuffit-expander. For Unix users, the Unix uncompress and tar commands should be used for extracting files from tar.Z archives. 
+Other Sources for Obtaining CLIPS
+
+Expert Systems: Principles and Programming, 3rd Edition, by Giarratano and Riley (ISBN 0-534-95053-1 from Thomson Learning) comes with a CD-ROM containing CLIPS 6.05 executables, source code, and documentation. The first half of the book is theory oriented and the second half covers rule-based programming using CLIPS.
+--->
+
+<h2>Documentation</h2>
+<ul>
+  <li>
+    <a href="../../files/clips/bpg.pdf">CLIPS 6.24 Basic Programming Guide</a>
+  </li>
+  <li>
+    <a href="../../files/clips/apg.pdf">CLIPS 6.24 Advanced Programming Guide</a>
+  </li>
+  <li>
+    <a href="../../files/clips/ig.pdf">CLIPS 6.24 Interfaces Guide</a>
+  </li>
+  <li>
+    <a href="../../files/clips/usrguide.pdf">CLIPS 6.20 User's Guide</a>
+  </li>
+  <li>
+    <a href="../../files/clips/arch5-1.pdf">CLIPS 5.1 Architecture Manual</a>
+  </li>
+  <li>
+    <a href="../../files/clips/3CCP.pdf">Third CLIPS Conference Proceedings</a>
+  </li>
+  <li>
+    <a href="../../files/clips/abstract.pdf">CLIPS Application Abstracts</a>
+  </li>
+</ul>
+
+<p><a href="../../files/clips/clips.zip">Скачать CLIPS</a></p>
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AIKernel 2011
+<br>09.05.2011 - 09.05.2011
+</font>
+</body>
+</html>
