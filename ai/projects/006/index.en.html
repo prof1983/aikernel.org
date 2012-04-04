@@ -1,0 +1,121 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<title>AI - C-Vision Starter Pack</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+
+<body>
+
+<h1>C-Vision Starter Pack</h1>
+<p>Набор начинающего разработчика систем компьютерного зрения</p>
+<p>Данная страничка предназначена для тех, кто хочет начать изучение/разработку систем компьютерного зрения. На ней собраны ссылки на софт, который понадобится вам в этом нелегком деле, небольшой туториал по установке всего этого, примеры программ, а также FAQ и много чего еще. Надеюсь это поможет вам в освоении такой интересной темы :)</p>
+
+<p>
+  <a href="http://club.roboclub.ru/pmwiki.php?n=CVisionStarterPack.Intro">http://club.roboclub.ru/pmwiki.php?n=CVisionStarterPack.Intro</a>
+  <br><a href="http://sourceforge.net/projects/opencvlibrary/">http://sourceforge.net/projects/opencvlibrary/</a>
+</p>
+
+<h3>Содержание</h3>
+<ol>
+<li>Что вам потребуется для запуска;</li>
+<li>Первый проект:
+  <ul>
+  Запускаем свой первый проект на "Open CV";
+  Как все это работает?;
+  </ul>
+</li>
+<li>Продолжаем:
+  Как добавить "Open CV" в свой проект под C++ Builder??;
+  Описание функций "Open CV"?;
+</li>
+<li>На закуску:
+  Полезные ссылки;
+</li>
+</ol>
+
+<p>Куда задавать вопросы: <a href="http://www.roboforum.ru/viewtopic.htm?p=2783">http://www.roboforum.ru/viewtopic.htm?p=2783</a></p>
+
+<h2>Файлы:</h2>
+<ul>
+<li>Библиотека "Open CV" (нам нужен файлик OpenCV_b4a.exe - 13'004Kb)
+  <br>http://sourceforge.net/project/showfiles.php?group_id=22870&package_id=16937
+<li>Пример #1 использования "Open CV" под Borland C++ Builder 6.0 (126Kb)
+  <br>http://www.kloss.ru/proj/OpenCV-Sample1.zip
+</ul>
+
+<h2>Что вам потребуется для запуска:</h2>
+<ol>
+<li>Собственно компьютер PC с установленной ОС "Windows 2000" или выше;
+<li>Если будет веб-камера с разрешение 640х480 - будет просто замечательно, иначе придется довольствоваться работой со скачанными рисунками и клипами;
+<li>Среда разработки Borland C++ Builder 6.0 и опыт работы в ней (ну не люблю я Visual Studio - и все тут!) - добывать придется самим;
+<li>Библиотека "Open CV" (Download);
+<li>Примеры использования библиотеки "Open CV" под Borland C++ Builder (Download);
+<li>Немного времени и терпения;
+</ol>
+
+<h2>Устанавливаем все и запускаем первый проект:</h2>
+<ol>
+<li>В произвольном порядке устанавливаем следующие компоненты:
+  <ul>
+  <li>Среду разработки Borland C++ Builder 6.0;
+  <li>Драйвера и прочий софт для веб-камеры, если таковая имеется;
+  <li>Библиотеку "Open CV";
+  </ul>
+<li>Перезапускаем компьютер;
+<li>Распаковываем примеры в нужный нам каталог;
+<li>Запускаем Borland C++ Builder;
+<li>Открываем файл проекта из каталога /Sample1 примеров и запускаем его;
+</ol>
+
+Все, вот это и есть простейший пример использования библиотеки Open CV, дальше мы попробуем рассмотреть как все это работает, как добавить в уже готовый ваш проект использование этой библиотеки и т.д. 
+
+<h2>Как это работает?</h2>
+<p>
+CvSize sz; sz.width=320; sz.height=240 
+Здесь мы создаем экземпляр структуры "Размер" (CvSize); 
+</p>
+
+<p>
+src=cvCreateImage(sz,IPL_DEPTH_8U,3); 
+Здесь мы создаем экземпляр объекта "Рисунок" (IplImage) размера определенного в структуре "Размер" sz; 
+</p>
+
+<p>
+capture = cvCaptureFromCAM( 0 ); 
+Здесь мы получаем объект отвечающий за видеозахват с камеры №0 (тип объекта - CvCapture); 
+</p>
+
+<p>
+mycvGetImage(Image1,src); 
+Здесь мы копируем информацию с изображения типа TImage в объект OpenCV типа IplImage специальной моей процедурой из пакета myCV; 
+</p>
+
+<p>
+cvSmooth(src,result,CV_GAUSSIAN,par1); 
+Здесь мы применяем к src фильтр "GAUSSIAN BLUR" с раиусом par1 и кладем результат в result; 
+</p>
+
+<p>
+mycvShowImage(Image1,result); 
+Здесь мы выводим информацию с объекта "Open CV" в типовое изображение типа TImage; 
+</p>
+
+<p>
+cvReleaseImage(&result); 
+Здесь мы освобождаем память и уничтожаем объект result типа IplImage; 
+</p>
+<!---
+http://wwp.icq.com/8668566#pager
+--->
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AIKernel 2005-2011
+<br>05.11.2006 - 27.04.2011
+</font>
+</body>
+</html>
