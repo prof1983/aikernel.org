@@ -1,0 +1,31 @@
+1 	[12.04.2011] <a href="http://www.opennet.ru/opennews/art.shtml?num=30205">Прогресс в сборке Qt с использованием Clang</a>
+2 	[07.04.2011] <a href="http://www.opennet.ru/opennews/art.shtml?num=30161">Релиз набора компиляторов LLVM 2.9</a>
+3 	[29.10.2010] <a href="http://www.opennet.ru/opennews/art.shtml?num=28461">Библиотека Qt успешно собрана компилятором Clang</a>
+4 	[26.10.2010] <a href="http://www.opennet.ru/opennews/art.shtml?num=28418">В Clang обеспечена возможность сборки Linux-ядра 2.6.36</a>
+5 	[10.06.2010] <a href="http://www.opennet.ru/opennews/art.shtml?num=26913">В состав базовой системы FreeBSD включен компилятор Clang</a>
+6 	[24.05.2010] <a href="http://www.opennet.ru/opennews/art.shtml?num=26705">Clang достиг уровня успешной пересборки комплекта C++-библиотек Boost</a>
+7 	[12.05.2010] <a href="http://www.opennet.ru/opennews/art.shtml?num=26560">Проект LLVM представил новую стандартную библиотеку С++</a>
+8 	[17.04.2010] <a href="http://www.opennet.ru/opennews/art.shtml?num=26275">Тестирование варианта FreeBSD, переведенного на компилятор Clang</a>
+9 	[06.04.2010] <a href="http://www.opennet.ru/opennews/art.shtml?num=26116">Обзор возможностей CLang по выявлению ошибок в программах</a>
+10 	[05.02.2010] <a href="http://www.opennet.ru/opennews/art.shtml?num=25305">Компилятор Clang преодолел барьер собственной пересборки</a>
+http://www.opennet.ru/cgi-bin/opennet/ks.cgi?mask=clang - OpenNet: Выборка по ключевым словам clang
+http://www.linux.org.ru/view-news.jsp?tag=clang
+
+14.05.2011 <a href="http://www.linux.org.ru/news/kernel/6259782">Статус готовности CLang к сборке ядра Linux</a>
+26.10.2010 <a href="http://www.linux.org.ru/news/kernel/5483615">Компилятор Clang теперь пригоден для сборки Linux-ядра</a>
+26.06.2010 <a href="http://www.linux.org.ru/news/opensource/5046040">Сообщено о возможности clang собрать себя на платформе ARM</a>
+01.06.2010 <a href="http://www.linux.org.ru/news/opensource/4951935">Dovecot переходит на CLang</a>
+27.04.2010 <a href="http://www.linux.org.ru/news/opensource/4824500">LLVM 2.7</a>
+17.04.2010 <a href="http://www.linux.org.ru/news/bsd/4789332">ClangBSD самособирается - нужны тестеры</a>
+06.02.2010 <a href="http://www.linux.org.ru/news/opensource/4526354">Успешный бутстрап (bootstrap) Clang</a>
+25.10.2009 <a href="http://www.linux.org.ru/news/opensource/4169992">LLVM 2.6</a>
+12.05.2009 <a href="http://www.linux.org.ru/news/bsd/3696793">Проект FreeBSD намерен сменить GCC на LLVM+Clang</a>
+
+http://en.wikipedia.org/wiki/Clang
+
+<a href="http://unix66.ru/content/2354/">Сравнение производительности компиляторов GCC, Clang и LLVM-GCC</a>
+<a href="http://code.google.com/p/chromium/wiki/Clang">Notes on using Clang, the C language LLVM frontend.</a>
+
+LLDB (debugger)
+http://lldb.llvm.org/
+http://en.wikipedia.org/wiki/LLDB_%28debugger%29

@@ -1,0 +1,66 @@
+Low Level Virtual Machine
+http://llvm.org/
+http://ru.wikipedia.org/wiki/LLVM
+
+
+http://clang.llvm.org/get_started.html
+http://llvm.org/releases/
+http://www.cmake.org/cmake/resources/software.html
+http://llvm.org/releases/2.9/docs/index.html
+http://habrahabr.ru/blogs/programming/101838/#habracut
+
+
+http://www.thefreecountry.com/compilers/cpp.shtml
+
+
+
+
+
+
+
+Using Visual Studio
+
+The following details setting up for and building Clang on Windows using Visual Studio:
+
+    Get the required tools:
+        Subversion. Source code control program. Get it from: http://subversion.tigris.org/getting.html
+        cmake. This is used for generating Visual Studio solution and project files. Get it from: http://www.cmake.org/cmake/resources/software.html
+        Visual Studio 2005, 2008, or 2010
+        Python. This is needed only if you will be running the tests (which is essential, if you will be developing for clang). Get it from: http://www.python.org/download/
+        GnuWin32 tools These are also necessary for running the tests. (Note that the grep from MSYS or Cygwin doesn't work with the tests because of embedded double-quotes in the search strings. The GNU grep does work in this case.) Get them from http://getgnuwin32.sourceforge.net/.
+    Checkout LLVM:
+        svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm
+    Checkout Clang:
+        cd llvm\tools
+        svn co http://llvm.org/svn/llvm-project/cfe/trunk clang
+    Run cmake to generate the Visual Studio solution and project files:
+        cd ..\.. (back to where you started)
+        mkdir build (for building without polluting the source dir)
+        cd build
+        If you are using Visual Studio 2005: cmake -G "Visual Studio 8 2005" ..\llvm
+        Or if you are using Visual Studio 2008: cmake -G "Visual Studio 9 2008" ..\llvm
+        Or if you are using Visual Studio 2010: cmake -G "Visual Studio 10" ..\llvm
+        By default, cmake will target LLVM to X86. If you want all targets (needed if you want to run the LLVM tests), add the -DLLVM_TARGETS_TO_BUILD=all option to the cmake command line. Or specify a target from the LLVM_TARGETS_TO_BUILD definition in CMakeLists.txt.
+        See the LLVM CMake guide for more information on other configuration options for cmake.
+        The above, if successful, will have created an LLVM.sln file in the llvm directory. 
+    Build Clang:
+        Open LLVM.sln in Visual Studio.
+        Build the "clang" project for just the compiler driver and front end, or the "ALL_BUILD" project to build everything, including tools.
+    Try it out (assuming you added llvm/debug/bin to your path). (See the running examples from above.)
+    See Hacking on clang - Testing using Visual Studio on Windows for information on running regression tests on Windows.
+
+Note that once you have checked out both llvm and clang, to synchronize to the latest code base, use the svn update command in both the llvm and llvm\tools\clang directories, as they are separate repositories.
+
+
+
+
+
+ prof1983 (15:00:34 4/05/2011) 
+Xcode 4 has a streamlined new interface that integrates UI design, coding, testing, and debugging, all within a single window. The embedded Apple LLVM compiler underlines coding mistakes as you type, and is even smart enough to fix the problems for you automatically.
+Уже не GCC используют, а LLVM.
+ prof1983 (15:00:53 4/05/2011) 
+И еще: Процесс, описываемый на wiki.freebsd.org/BuildingFreeBSDWithClang, казалось, идет слишком медленно, или же совсем заглох. Однако недавно в рассылке появилось сообщение от Roman Divacky о том, что ClangBSD успешно собирает саму себя на tier 1 платформах (i386 и amd64).
+
+Вкратце ClangBSD — попытка собрать ядро и мир FreeBSD с помощью компилятора clang, который, в свою очередь, является фронтендом к LLVM. Как известно, FreeBSD до сих пор использует GCC версии 4.2.1, т.к. последующие версии сменили лицензию. Clang же имеет BSD-лицензию, а так же имеет много других вкусностей.
+http://itgator.ru/tag/llvm/
+http://itgator.ru/2010/04/17/bsdelniki-clangbsd-sobiraet-sebya/
