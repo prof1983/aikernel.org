@@ -1,0 +1,249 @@
+Портирование ПИ на *nix
+
+Сообщение L1AVon » 07 сен 2010, 16:59
+Меня интересуют сроки портирования пользовательского интерфейса на *nix системы. Почему открытая технология работает на закрытой системе? Интересует пока что часть проекта, выводящая куски базы знаний по запросам(хотя бы стандартным). Для отладки и совершенствования БЗ весьма желателен инструмент для её отображения.
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 09 сен 2010, 21:48
+Ну сроки не большие на первый взгляд.
+Чтобы запустить, надо сделать следующие вещи:
+* сделать синхронизацию потоков в sc-core для *nix;
+* собрать python-ogre под *nix
+
+В интерфейсе используется лишь одна библиотека работающая в Windows, и та является частью компонента, который можно не использовать. Это Hikari, используется для отображения Flash.
+
+Пока не стоит цель портировать на *nix. Хотя работы не так уж и много. Если оценить по времени, то это неделя или две. Если у вас есть желание, то можем обсудить это более подробно.
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 10 сен 2010, 14:36
+Да. Хотелось бы обсудить и попробовать помочь. Потому что хочется "поиграться" с базой на *nix в родном режиме. Если это не трудно для студента 3-го курса - можно разобраться.
+
+    Это Hikari, используется для отображения Flash.
+
+
+Если кроссплатформенность зависит от Hikari то не лучше ли посмотреть в сторону Moonlight (открытая и бесплатная программная реализация фреймворка веб-приложений Microsoft Silverlight). Он мощнее flash(поправьте, если ошибаюсь), и, по моему flash в обозримом будущем прикажет долго жить.
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 11 сен 2010, 12:20
+Дело в том, что технология обеспечивает поддержку и интеграцию большого числа компонентов. Вы можете добавить и свой. Это можно сравнить с линуксом, когда есть огромный репозиторий уже разработанных и поддерживаемых другими людьми библиотек и приложений, а конечный пользователь может выбирать из них нужные ему. Там при этом могут присутствовать библиотеки и приложения решающие одинаковые задачи, при этом реализованные по разному, что дает человеку альтернативу.
+Так и здесь flash это не цель. Просто один из компонентов, который позволяет просматривать какие-то мультимедийные вещи и не более того.
+
+Что касается обсуждения, то лучшим способом обсуждения мог бы быть форум, что-бы остальные люди могли следить за процессом, да и могут найтись люди, которых это тоже заинтересует. Но не исключен и разговор в живую, чтобы более детально рассказать что к чему.
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 11 сен 2010, 14:29
+Какую версию python-ogre вы используете(с каким исходником стоит поковыряться?)? Есть ли разница? Ogre-1.7.1-r1125 работает с технологией или нет?
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 11 сен 2010, 19:54
+мы используем версию 1.6, с 1.7 придется поковыряться. Там нужна поддержка MyGUI. Биндинг я делал специально для той версии, которая у нас, с тех пор его пока не поддерживаю, все исходники есть в проекте python-ogre.
+если соберете 1.7 с mygui, то и на нем заработает, разницы в интерфейсах, судя по changelog-ам Ogre, нет.
+
+Первое чтобы я порекомендовал - взять с репозитория python-ogre. Попытаться собрать, там есть на из Wiki инструкции по сборке, понадобится как минимум scons, py++, gccxml.
+После этого, если получится собрать, я расскажу что делать с mygui. Там уже огромная часть сделана, надо будет лишь взять новую версию исходников и возможно что-то подправить в биндинге, а возможно и ничего.
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 12 сен 2010, 11:01
+
+    взять с репозитория python-ogre.
+
+
+Какой репозиторий имеется ввиду?
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 12 сен 2010, 23:11
+svn репозиторий на sourceforge.net
+https://sourceforge.net/scm/?type=svn&group_id=186291
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 13 сен 2010, 10:31
+SVN я пробовал настраивать в прошлом году, но у меня не получилось. Дело в том, что у меня Proxy доступ(Общежитие 1). Пробовал специальные консольные утилиты и RapidSVN. Убил на это всё часов 10. Посоветуйте SVN клиенты, которые возможно настроить для работы через прокси.
+P.S.
+сейчас работаю под winAPI. Когда закончу - попробую и отпишусь.
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 14 сен 2010, 11:11
+вот вам страничка, читайте http://www.mikepot.com/1544.html
+
+DenisKoronchik
+
+
+Сообщение LazurkinDA » 01 окт 2010, 13:02
+Если у вас есть желание портировать sc-core на *nix, то подходите ко мне.
+
+LazurkinDA
+
+
+Сообщение L1AVon » 12 ноя 2010, 04:18
+Собрал python-ogre v1-6-4, но примеры не запускаются.
+На
+python-ogre/demos/ogre$ python Demo_Grass.py
+отвечает
+Traceback (most recent call last):
+File "Demo_Grass.py", line 32, in <module>
+import ogre.renderer.OGRE as ogre
+File "/usr/local/lib/python2.6/dist-packages/ogre/renderer/OGRE/__init__.py", line 10, in <module>
+from _ogre_ import *
+ImportError: dynamic module does not define init function (init_ogre_)
+В то же время/ogre/bin$ ./SampleBrowser работает нормально.
+Подозреваю что конфликт версий питона. Есть версии?
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 15 ноя 2010, 21:30
+хм... сложно сказать так с ходу. Скорее всего не находит функцию init_ogre в собранном биндинге (речь о библиотеке). В этой функции и производится инициализация биндинга. Надо посмотреть какие функции экспортируются из биндинга (динамическая библиотека).
+
+Samples Browser я так понимаю в с++ версии собранный?
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 16 ноя 2010, 02:12
+
+    Samples Browser я так понимаю в с++ версии собранный?
+
+
+
+Не совсем понимаю смысл вопроса. Собирал по инструкции на вики проекта. На указанном шаге случилась указанная ошибка.
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 16 ноя 2010, 16:33
+Sample Browser он откуда взялся? Это приложение написанное на Python или c++?
+Я просто не помню, что бы он был в Python. (кончено все могло изменится, давно не отслеживаю)
+
+DenisKoronchik
+
+
+Re: Портирование ПИ на *nix
+
+Сообщение L1AVon » 18 ноя 2010, 11:35
+
+    Это приложение написанное на Python или c++?
+
+
+Это С++.
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 18 ноя 2010, 12:34
+ну c++ само собой будет запускаться. Меня куда больше интересует биндинг. Проверьте наличие функции про которую я говорил
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 02 янв 2011, 04:18
+Python-Ogre собран и работает. Жду указаний по MyGui.
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 02 янв 2011, 21:06
+какая ревизия Python-Ogre? просто биндинг для майгуи в нем есть.
+Если одна из последних, то я его не поддерживал уже год. Может соберется, а может и нет. Во всяком случае MyGui 2.2 собирался
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 03 янв 2011, 01:14
+Собралась вот это ветка
+https://python-ogre.svn.sourceforge.net ... hes/v1-6-4 (https://python-ogre.svn.sourceforge.net/svnroot/python-ogre/branches/v1-6-4)
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 05 янв 2011, 16:10
+хорошо. там есть MyGUI попробуйте его собрать. Как только это получится, можно будет запускать на юниксе.
+
+будут вопросы по сборке - пишите.
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 15 фев 2011, 21:28
+Можно узнать смысл слова "там"? И если можно поподробнее.
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 16 фев 2011, 01:40
+в python-ogre
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 28 мар 2011, 16:30
+В инструкции (http://wiki.python-ogre.org/index.php/LinuxBuildV4) есть пункт "Building Additional Modules".
+Чтобы собрать mygui я так понимаю что нужно поступить аналагично, то есть подставлять mygui в те 5 шагов.
+
+На втором шаге у меня
+
+paval@paval-desktop:~/Projects/python-ogre$ python BuildModule.py -g mygui
+PythonOgre.BuildModule: INFO Building Source code for mygui
+PythonOgre.BuildModule: WARNING Task Failed
+
+в лог записывается следующее.
+
+03-28 16:06 PythonOgre.BuildModule INFO Building Source code for mygui
+03-28 16:06 PythonOgre.BuildModule DEBUG Spawning 'python generate_code.py' in '/home/paval/Projects/python-ogre/code_generators/mygui'
+03-28 16:06 PythonOgre.BuildModule WARNING Task Failed
+03-28 16:06 PythonOgre.BuildModule DEBUG /home/paval/Projects/python-ogre/code_generators/mygui/python_mygui.h
+
+03-28 16:06 PythonOgre.BuildModule DEBUG ../common_utils/__init__.py:7: DeprecationWarning: the md5 module is deprecated; use hashlib instead
+import md5
+Traceback (most recent call last):
+File "generate_code.py", line 527, in <module>
+generate_code()
+File "generate_code.py", line 429, in generate_code
+, cflags=environment.mygui.cflags
+File "/usr/local/lib/python2.6/dist-packages/pyplusplus/module_builder/boost_python_builder.py", line 95, in __init__
+, indexing_suite_version)
+File "/usr/local/lib/python2.6/dist-packages/pyplusplus/module_builder/boost_python_builder.py", line 138, in __parse_declarations
+decls = reader.read_files( files, compilation_mode )
+File "/usr/local/lib/python2.6/dist-packages/pygccxml/parser/project_reader.py", line 217, in read_files
+return self.__parse_file_by_file(files)
+File "/usr/local/lib/python2.6/dist-packages/pygccxml/parser/project_reader.py", line 238, in __parse_file_by_file
+, self.__decl_factory )
+File "/usr/local/lib/python2.6/dist-packages/pygccxml/parser/source_reader.py", line 88, in __init__
+self.__config.raise_on_wrong_settings()
+File "/usr/local/lib/python2.6/dist-packages/pygccxml/parser/config.py", line 173, in raise_on_wrong_settings
+super( gccxml_configuration_t, self ).raise_on_wrong_settings()
+File "/usr/local/lib/python2.6/dist-packages/pygccxml/parser/config.py", line 113, in raise_on_wrong_settings
+, self.include_paths )
+File "/usr/local/lib/python2.6/dist-packages/pygccxml/parser/config.py", line 112, in <lambda>
+map( lambda idir: self.__ensure_dir_exists( idir, 'include directory' )
+File "/usr/local/lib/python2.6/dist-packages/pygccxml/parser/config.py", line 104, in __ensure_dir_exists
+raise RuntimeError( '%s("%s") does not exist!' % ( meaning, dir_path ) )
+RuntimeError: include directory("/home/paval/Projects/root/usr/include/boost") does not exist!
+
+В чем может быть проблема? Или может я что-нибудь неправильно делаю?
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 29 мар 2011, 21:07
+include directory("/home/paval/Projects/root/usr/include/boost") does not exist!
+у вас пути настроены для буста?
+
+DenisKoronchik

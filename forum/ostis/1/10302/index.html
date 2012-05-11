@@ -1,0 +1,312 @@
+проблема переноса разработанных программ в новую систему
+
+
+Сообщение omfg » 11 май 2010, 20:57
+перенес свою поисковую программу на scp в новую срс. возникла следующая проблема:
+
+Код: выделить все
+    ...running begin...
+
+    ...find_str begin...
+
+    Processes hierarchy from father to son:
+            File "UNKNOWN", line "UNKNOWN",
+            File "../fs_repo_src/operation/set_run_scp_handler.m4scp", line 304, era
+    seEl
+            File "../fs_repo_src/operation/my3.m4scp", line 140, genElStr3
+            Error: Variable 'arcmet' haven't value
+    ...running end...
+
+
+
+программа ищет структуры данных по схожим методам. точка отправления-метод, результат-стр. данных с данным методом. перепроверил программу в старой студии-работает.
+
+код программы:
+
+Код: выделить все
+    #include "scp_keynodes.scsy"
+    #include "im_keynodes.scsy"
+
+
+    procedure(find_str,
+    [[
+    sheet_type = "/proc/agents/shell/keynode/SCgSheet";
+
+    met = "/seb/planimetry/метод*";
+    ls_beg = /"...find_str begin...\n"/;
+    del = /"...del findel...\n"/;
+    cr = /"...adding findel to res...\n"/;
+    ls_end = /"...find_str end...\n"/;
+    t = /"...doing smthn...\n"/;
+    newsetp = /"...printing new set...\n"/;
+    sheet_title = /"Message"/;
+    layout =c= /"logical"/;
+    ui_Output;
+    "MB_TITLE_QUERY_RESULT" = /"Результат запроса"/;
+       "MB_TEXT_NOT_FOUND" = /"Ошибка."/;
+       ui_information;
+    ]],
+    [
+    {
+    sheet,setin,
+    wnd,
+    result,fun,svjazka,copy,el,sv2,str,
+    arc,arcres,arc2,arcattr,arc3,arc4,arcmet,arc5,arcattr2,arc6,answer_reciever
+    }],
+    {[1_: in_: setin,
+    2_: in_: answer_reciever
+
+    ]
+    }
+    )
+
+    printNl([1_: ls_beg])
+
+    //#генерация результирующего множества
+
+    genEl([
+            1_: assign_: node_: result
+          ])
+
+    //#поиск входного элемента
+          
+    searchElStr3([
+                   1_: fixed_: node_: setin,
+                   2_: assign_: const_: pos_: arc_: arc,
+                   3_: assign_: node_: fun            
+    ])
+
+    genElStr3([ 1_: fixed_: result,
+    2_: assign_: const_: pos_: arc_: arcres,
+    3_: fixed_: fun
+    ])
+
+    //#поиск и копирывание узлов из которых идут дуги  к методам
+
+    searchSetStr3([
+                  1_: assign_: node_: svjazka,
+                2_: assign_: const_: pos_: arc_: arc2,
+             3_: fixed_: fun,   
+    set1_: assign_: copy         
+    ],yes,no)
+
+    label(no)
+
+    ui_messagebox([1_:ui_information, 2_:MB_TITLE_QUERY_RESULT, 3_:MB_TEXT_NOT_FOUND])
+
+    label(yes)
+
+    //#перебор скопированных узлов и поиск нужного
+
+    label(while)
+
+    searchElStr3([
+    1_: fixed_: copy,
+    2_: assign_: const_: pos_: arc2,
+    3_: assign_: node_: el
+    ],,iferr)
+
+
+    eraseElStr3([
+    1_: fixed_: copy,
+    2_: assign_: pos_: f_: arc2,
+    3_: fixed_: node_: el
+    ])
+
+    //#поиск 5 элементной конструкции(второй части ориентированной пары)
+
+    searchElStr5([
+    1_: assign_: node_: sv2,
+    2_: assign_: arc_: const_: pos_: arcattr,
+    3_: fixed_: node_: el,
+    4_: assign_: arc_: const_: pos_: arc4,
+    5_: fixed_: 2_
+
+    ],,err)
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  el])
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  sv2])
+
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  arcattr])
+
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  arc4])
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_: 2_])
+
+    //#поиск отношения
+
+    searchElStr3([
+    1_: fixed_: met,
+    2_: assign_: const_: pos_: arcmet,
+    3_: fixed_: sv2
+    ])
+
+    //#printEl([1_: arcmet])
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  arcmet])
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  met])
+
+    //#поиск 5 элементной конструкции(первой части ориентированной пары)
+
+    searchElStr5([
+    1_: fixed_: sv2,
+    2_: assign_: arc_: const_: pos_: arc5,
+    3_: assign_: node_: str,
+    4_: assign_: arc_: const_: pos_: arcattr2,
+    5_: fixed_: 1_
+
+    ],,err)
+
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  arc5])
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  str])
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  arcattr2])
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  1_])
+
+    searchElStr3([
+    1_: fixed_: el,
+    2_: assign_: const_: pos_: arc6,
+    3_: fixed_: fun
+    ])
+
+    genElStr3([
+    1_: fixed_: node_: result,
+    2_: assign_: arc_: const_: pos_: arcres,
+    3_: fixed_:  arc6],while)
+
+    label(iferr)
+
+    label(err)
+
+    //#ui_sheet_create([ 1_: assign_: const_: node_: wnd,
+       //#          2_:  fixed_: sheet_type,
+          //#       3_:  fixed_: sheet_title,
+             //#    4_:  fixed_: layout
+                //# ])
+     
+     
+     
+    //#ui_output([1_: fixed_: wnd, 2_: fixed_: result  ])
+    callReturn([
+       1_: fixed_: ui_Output,
+       2_: fixed_: {[
+          1_: answer_reciever,       // множество окон для вывода
+          2_: result                         // множество элементов, которые необходимо вывести (контур, который содержит выводимую конструкцию)
+       ]}
+    ], descr)
+
+    printNl([1_: ls_end])
+
+    return()
+
+    end
+
+
+в прикрепленом архиве 2 gwf на которых тестировалось
+У вас нет доступа для просмотра вложений в этом сообщении.
+
+omfg
+
+
+Сообщение omfg » 11 май 2010, 22:52
+попробывал с мин. кол-вом совпадений,т.е. 1 метод-1 структура-эффект тот же :(. еще раз убедился в работоспособности операции-в старой срс опять таки все ок
+
+omfg
+
+
+Сообщение DenisKoronchik » 11 май 2010, 23:47
+если падает при работе вашей программы, то это скорее всего проблемы вашей программы. Вы не учитываете возможности того, что каких-то параметров не найдено. Возможной причиной является неполнота БЗ, это может быть по причине, что у вас лежит файлик /seb/planimetry.scs. Если так, то следует перенести его содержимое в другой файл и подключить в сборщик с помощью правила inc.
+
+Воз можно причина в scp интерпретаторе. Для начало проверьте первое. А лучше отладьте программу.
+
+DenisKoronchik
+
+
+Сообщение omfg » 12 май 2010, 00:01
+
+    Denis Koronchik писал(а):если падает при работе вашей программы, то это скорее всего проблемы вашей программы. Вы не учитываете возможности того, что каких-то параметров не найдено. Возможной причиной является неполнота БЗ, это может быть по причине, что у вас лежит файлик /seb/planimetry.scs. Если так, то следует перенести его содержимое в другой файл и подключить в сборщик с помощью правила inc.
+
+    Воз можно причина в scp интерпретаторе. Для начало проверьте первое. А лучше отладьте программу.
+
+
+да в том-то и дело,что файл я удалил...
+
+omfg
+
+
+Сообщение DenisKoronchik » 12 май 2010, 00:25
+первое, проблема операции, что-то в вашей БЗ не так.
+
+Код: выделить все
+    searchElStr3([
+    1_: fixed_: met,
+    2_: assign_: const_: pos_: arcmet,
+    3_: fixed_: sv2
+    ])
+
+
+этот оператор не находит arcmet
+
+второе, всегда проверяйте найдено ли то что понадобиться дальше, ибо это приводит к неверной работе программы.
+
+DenisKoronchik
+
+
+Сообщение omfg » 12 май 2010, 21:18
+ну, начнем с того, что даже стандартными способами поиска не получалось находить конструкцию с отношением, спасибо Диме :) как оказалось надо было расписать отношение через атрибуты 1_ и 2_. во-вторых когда же все-таки удалось поискать необходимые мне узлы с помощью стандартных вопросов самой системы, то каково же было мое удивление, когда мне вывелись какие-то загадочные узлы :o , которые зачем-то необходимы новой системе :) так вот данный оператор, сначала находил узел, который естественно никак не относился к моей конструкции из-за чего программа и падала. Так что как оказалось программы из старой системы переносятся совсем не без проблем и не стоит в этом винить только разработчика программы. O0
+
+omfg
+
+
+Сообщение DenisKoronchik » 13 май 2010, 11:14
+Еще раз повторяю вина именно разработчика программы и никого другого.
+Ваши программы тестировались лишь на ваших базах знаний, а добавь туда еще что-то они уже неверно работают. Пишите их правильно и находите лишь то что вам нужно. Суть базы знаний в семантической сети сама по себе подразумевает, что каждый элемент может быть связан огромным количеством связей и отношений с другими элементами и это количество постоянно меняется, если вы это не учли в программе, то это просто глупо.
+
+DenisKoronchik
+
+
+Сообщение omfg » 13 май 2010, 20:45
+так программа-то разрабатывалась для другой версии системы :),как можно было это предвидеть ??? , тем более если б я был один такой :), ладно, спорить на эту тему можно вечно ;) важны были ответы на вопросы почему не работает и как исправить? вроде бы все разрулили, осталось пофиксить.
+з.ы. мир. никого не хотел обидеть.хотелось просто разобраться.
+
+omfg

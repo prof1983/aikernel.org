@@ -1,0 +1,79 @@
+Установка модуля sc-core
+
+Сообщение LazurkinDA » 16 мар 2010, 18:51
+Модуль sc-core - набор библиотек и программ, которые обеспечивают нижний уровень поддержки sc-систем.
+В него входят следующие библиотеки:
+[ul]
+[*]libTGF - библиотека для работы с бинарным представлением графов;
+[*]libSys - библиотека обеспечения переносимости на другие ОС;
+[*]libSC - библиотека моделирование sc-памяти;
+[*]libPM - библиотека scp-интерпретатора и навигационно-поисковой машины.
+[/ul]
+Адрес sc-core в svn (https://ostis.svn.sourceforge.net/svnroot/ostis/trunk/kpm/sc-core/)
+
+Пока есть возможность установки только из исходных текстов.
+
+Описание процесса установки sc-core (http://ostis.net/wiki/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B8_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_sc-%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%B8)
+
+Пример использования библиотеки libSC (https://ostis.svn.sourceforge.net/svnroot/ostis/trunk/kpm/sc-core/examples/wave_find_path/)
+
+
+Ожидаются вопросы и предложения.
+
+LazurkinDA
+
+
+Сообщение Burov Alexander » 18 апр 2010, 01:16
+После сборки с помощью cmake, VS 2010 выдает ошибку:
+
+    Error 5 error C2440: \'initializing\' : cannot convert from \'int\' to \'sc_addr \' C:\\Program Files\\Microsoft Visual Studio 10.0\\VC\\include\\utility 163
+
+
+
+В чем может быть причина?
+
+P.S. Прикладываю лог построения:
+
+Burov Alexander
+
+
+Сообщение DenisKoronchik » 18 апр 2010, 14:06
+ну по идее это должен быть варнинг, но в 10-й студии сделали ошибкой.
+Два варианта:
+- пользоваться студией 2008, 2005 или 2003. (настоятельно рекомендуется)
+- явно привести int к sc_addr
+а этот кусок кода думаю мы перепишем, ибо так лучше не делать
+
+DenisKoronchik
+
+
+Сообщение LazurkinDA » 18 апр 2010, 16:50
+Протестирую процесс сборки на 2010.
+
+LazurkinDA
+
+
+Сообщение LazurkinDA » 24 апр 2010, 00:21
+Поправил. Теперь собирается в MS VS 10.
+
+LazurkinDA
+
+
+Сообщение Gr1N » 25 апр 2010, 00:33
+Здавствуйте, собрал sc-core, попробовал откомпилить пример который там есть, но не получилось, выдает следующие варнинги, что не так делаю?
+
+Gr1N
+
+
+Сообщение DenisKoronchik » 25 апр 2010, 23:50
+вы читайте внимательно вам же компилятор пишет.
+\\my_test.cpp(494): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add \'#include \"StdAfx.h\"\' to your source?
+в файлик my_test.cpp добавьте в начале инклуд #include \"StdAfx.h\"
+
+DenisKoronchik
+
+
+Сообщение Gr1N » 26 апр 2010, 16:48
+точно, что-то я ступил, спасибо
+
+Gr1N

@@ -1,0 +1,140 @@
+Установка компонентов ядра ПИ
+
+Сообщение DenisKoronchik » 16 мар 2010, 19:05
+Подробная инструкция находится по ссылке (http://www.ostis.net/wiki/%D0%9F%D0%BE%D0%B4%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_630).
+В данном разделе форума пишем пожелания и замечания по данной теме.
+
+DenisKoronchik
+
+
+Сообщение skif » 13 апр 2010, 21:36
+Когда распаковываю архив PythonOgre16.7z и устанавливаю Ogre, то нету пути PythonOgre\\demos\\ogre. Что делать?
+
+skif
+
+
+Сообщение DenisKoronchik » 16 апр 2010, 11:38
+В данном случае архив выложенный на нашем сервере не содержит примеров, для уменьшения размера.
+Если вам нужны примеры, то их можно скачать по ссылке (http://www.ostis.net/download/PythonOgre16_Demos.7z) (64 мб)
+
+DenisKoronchik
+
+
+Сообщение Yauhen » 26 апр 2010, 12:52
+Поставил Python 2.6.2c1
+Затем установил Python-Ogre-1.6.1-r845-py252, попутно обновил себе ДиректХ
+Затем распаковл в директорию огра апдейт Python-Ogre-1.6.1-r940-py26-update
+Запустил python setup.py install в папке огра, операция прошла успешно
+При попытке запуска примера из PythonOgre/demos/ogre ругается как показано ниже:
+
+Код: выделить все
+    c:\\PythonOgre\\demos\\ogre>Demo_Basic.py
+    Traceback (most recent call last):
+      File \"c:\\PythonOgre\\demos\\ogre\\Demo_Basic.py\", line 19, in <module>
+        import ogre.renderer.OGRE as ogre
+      File \"C:\\Python26\\lib\\site-packages\\ogre\\renderer\\OGRE\\__init__.py\", line 10, in <module>
+        from _ogre_ import *
+    AttributeError: \'Boost.Python.StaticProperty\' object attribute \'__doc__\' is read-only
+
+
+
+Точно так же ругается при попытке запуска SRS.
+Есть какие соображения?)
+Целую ночь спишь... А то не спишь... То так, то этак. Раз на раз не приходится.
+
+Yauhen
+
+
+Сообщение LazurkinDA » 26 апр 2010, 21:18
+Yauhen писал(а):
+
+    Поставил Python 2.6.2c1
+
+
+
+Запусти python.exe из консоли и покажи вывод (точно ли там 2.6.2). Такое вываливается в 2.6.3 и старше.
+
+LazurkinDA
+
+
+Сообщение Yauhen » 26 апр 2010, 22:50
+упс))) спасибо)
+2.6.4 стоит)
+Целую ночь спишь... А то не спишь... То так, то этак. Раз на раз не приходится.
+
+Yauhen
+
+
+Сообщение _klim_ » 04 май 2010, 02:10
+
+    Поставил Python 2.6.2c1
+    Затем установил Python-Ogre-1.6.1-r845-py252, попутно обновил себе ДиректХ
+    Затем распаковл в директорию огра апдейт Python-Ogre-1.6.1-r940-py26-update
+    Запустил python setup.py install в папке огра
+
+
+После при попытке запуска студии выдает ошибку:
+
+    Traceback (most recent call last):
+    File "c:\pyui\pyui\engine\srs\srs.py", line 27, in <module>
+    import srs_engine.core as core
+    ImportError: No module named srs_engine.core
+
+
+Где я накосячил, есть идеи ?
+
+_klim_
+
+
+Сообщение DenisKoronchik » 04 май 2010, 13:15
+для начала покажите структуру ваших папок.
+
+DenisKoronchik
+
+
+Сообщение _klim_ » 04 май 2010, 18:46
+а все уже, разобрался сам :)
+
+_klim_
+
+
+Сообщение L1AVon » 07 дек 2010, 21:43
+Вот попала ко мне, так называемая, студия 0.4 "собранная".
+При запуске выдаёт вот это.
+
+C:\KURS_PROGECT\ostis_4\system>python start.py
+Traceback (most recent call last):
+File "start.py", line 33, in <module>
+import suit.core.kernel
+ImportError: No module named suit.core.kernel
+
+Из-за чего может быть?
+
+L1AVon
+
+
+Сообщение DenisKoronchik » 07 дек 2010, 23:06
+ну начнем с того, что вы подразумеваете собранная?
+* Вам скорее всего попали в руки исходники, которые любой может скачать с svn.
+* для того чтобы они заработали необходимо установить sc_core и suit.
+инструкция по ссылке http://www.ostis.net/wiki/%D0%9F%D0%BE% ... %D1%82_630 (http://www.ostis.net/wiki/%D0%9F%D0%BE%D0%B4%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82_630)
+
+DenisKoronchik
+
+
+Сообщение L1AVon » 08 дек 2010, 13:57
+
+    * для того чтобы они заработали необходимо установить sc_core и suit.
+
+
+
+Спасибо. заработало на VirtualBox.
+Кому интересно - вот ссылка http://habrahabr.ru/blogs/linux/63534/.
+
+L1AVon
+
+
+Сообщение andrey bezrukov » 01 май 2011, 22:17
+Написал статью на эту тему: http://andrey.bezrukov.me/?p=311. Надеюсь, кому-нибудь будет полезно.
+
+andrey bezrukov

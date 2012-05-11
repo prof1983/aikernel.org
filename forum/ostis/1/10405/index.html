@@ -1,0 +1,71 @@
+Ошибка при выводе scg-конструкции пользователю
+
+Сообщение ZhitkoVA » 12 мар 2010, 14:11
+С scg-окна приходят не все элементы.
+Описание события:
+
+Код: выделить все
+    descr_user_cmd = {
+       Descr_user_cmd_nl_ui_test_nsm = {
+          class_: user_cmd_nl_ui_test_nsm = \"nl_ui_test_nsm_ui\",
+          prm_: {
+             1_: const_: \"/operation/nl_ui_test_nsm/nl_ui_test_nsm_ui\",
+             2_: ui_cmd_desc_window_content,
+             3_: ui_cmd_desc_curr_window,
+             4_: ui_cmd_desc_answer_reciever         
+          },
+          eventListener_: start_scp_program
+       }
+    };
+
+
+Указывается ui_cmd_desc_window_content.
+
+Код scp-программы:
+
+Код: выделить все
+    procedure(nl_ui_test_nsm_ui,
+    [[
+       ui_Output;      // процедура вывода конструкций пользователю
+    ]],
+    [{
+       sheet_content, sheet, answer_reciever,
+       result_set, descr
+    }],
+    {[
+       1_: in_: sheet_content,
+       2_: in_: sheet,
+       3_: in_: answer_reciever
+    ]}
+    )   
+
+    varAssign([1_: assign_: result_set, 2_: fixed_: sheet_content])
+       
+    callReturn([
+       1_: fixed_: ui_Output,
+       2_: fixed_: {[
+          1_: answer_reciever,
+          2_: result_set
+       ]}
+       ], descr)
+       
+    return()
+    end
+
+
+Выводим то что получили.
+
+Пример исходного состояния:
+Изображение
+http://www.fotohost.by/show/492b1b991e11fb9fc700fd5dd2619dd7
+
+Результат работы:
+Изображение
+www.fotohost.by/show/482eecaa98993d0a4c4b071365ef414f
+
+ZhitkoVA
+
+
+Сообщение DenisKoronchik » 12 мар 2010, 14:24
+В дальнейшем найденые ошибки пишем на sourceforge (https://sourceforge.net/projects/ostis/support).
+Там есть Bug Tracking System
