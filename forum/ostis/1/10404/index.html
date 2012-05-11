@@ -1,0 +1,63 @@
+Проблема с созданием нового сегмента
+
+Сообщение Yauhen » 10 май 2010, 14:07
+Захотелось мне отделить мне мой сегментичек по путю /seb/music
+В сорцах создал папку /seb/music туда закинул свои gwf-ки. Собрал репозиторий:
+
+Код: выделить все
+    D:\Workspace\Eclipse\pyui\src\repo>music_build.py
+    Adding gwf files to test segment
+    ../fs_repo_src
+    Generating scg file '../fs_repo_src\seb/music.scg' from '../fs_repo_src\seb/music'
+    scanning ../fs_repo_src\seb/music
+    ../fs_repo_src\seb/music.scg -> ../fs_repo_src\seb/music
+    adding file music\first_octave.gwf
+    Building repository
+    parsing ../fs_repo_src/seb\music\first_octave.gwf
+    preparing for building
+    Find 0 errors
+
+
+Посмотрел в репозиторий:
+Изображение
+
+А при запуске срс питончик ругается:
+
+Код: выделить все
+      File "D:\Workspace\Eclipse\pyui\src\components\music\music_keynodes.py", line 12, in Music_object
+        tone = session.find_keynode_full_uri(u"/seb/music/тон")
+      File "D:\Workspace\Eclipse\pyui\src\pm\mthread_session.py", line 317, in find_keynode_full_uri
+        res = self.find_el_full_uri(_uri)
+      File "D:\Workspace\Eclipse\pyui\src\pm\mthread_session.py", line 275, in find_el_full_uri
+        if seg is None: raise RuntimeError("Can't find segment '%s'" % segUri)
+    RuntimeError: Can't find segment '/seb/music'
+
+
+
+Может о существовании сегмента еще где-то надо указывать?
+Если все закинуть в папку planimetry и обращаться по пути /seb/planimetry/ , то все нормально.
+
+Yauhen
+
+
+Сообщение DenisKoronchik » 10 май 2010, 14:26
+да его надо октрыть, для это го в music_keynodes.py вначале добавьте
+
+Код: выделить все
+    import core
+
+    session = core.Kernel.session()
+
+    session.open_segment("/seb/music")
+
+
+
+Для примера смотрите srs_engine.keynodes.py
+
+DenisKoronchik
+
+
+Сообщение Yauhen » 10 май 2010, 16:14
+Спасибо. Теперь работает :)
+
+Yauhen

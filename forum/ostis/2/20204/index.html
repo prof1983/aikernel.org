@@ -1,0 +1,30 @@
+[ Solved] Invalid CRC
+
+Сообщение DenisKoronchik » 24 июн 2011, 00:08
+При использовании новой модели памяти ревизия 947. Возникает следующуя ошибка при загрузке репозитория:
+Start sc-memory from path: "../repo/bin"
+
+Код: выделить все
+    Internal error!
+
+    invalid CRC
+    aborting at file /home/denis/develop/sc_core/libsc/libsc/unix_fs_storage.cpp line 408
+
+
+
+Дело происходит по ubuntu 11, 32-bit
+
+Если попытаться просмотреть собранный репозиторий с помощью dumptgf, то получаем следующую ошибку:
+
+Код: выделить все
+    ./dumptgf bin/info
+    "dumptgf" error: tgf_stream_in_process_all:invalid CRC
+
+DenisKoronchik
+
+
+Сообщение DenisKoronchik » 28 июн 2011, 19:32
+На текущий момент проблема решена частично. Чтобы все заработало, необходимо отключить при компиляции под линуксом флаги оптимизации -o2 или -o3.
+Проблема заключается в том, что при включенных флагах компилятор не выравнивает структуры до размера кратного 4-м байтам.
+
+DenisKoronchik
