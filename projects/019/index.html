@@ -1,14 +1,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-<meta http-equiv="Content-Language" content="en">
-<meta name="Keywords" content="AI, Artificial Intelligence, Artificial Reason, Robot, Robots">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
 <title>AI - SUMO</title>
 <link rel="stylesheet" type="text/css" href="../../styles.css">
 </head>
 
 <body>
-<p><b>en</b> <a href="index.ru.html">ru</a></p>
+<p><a href="index.en.html">en</a> <b>ru</b></p>
 
 
 <h1>SUMO</h1>
@@ -30,7 +30,7 @@ Engineers). SUMO не предназначена для решения какой-либо конкретной задачи и пре
 и Абстрактное. К категории Абстрактного в онтологии SUMO относятся такие понятия как Количество, 
 Атрибут,  НаборИлиКласс,  Отношение,  Суждение,  Граф и  ЭлементГрафа.  Физическое  разделяется на 
 Объекты, Процессы и  НосителиСодержания  (ContentBearingPhysical). В онтологии SUMO допускается 
-множественное наследование  [8].</p>
+множественное наследование [8].</p>
 
 <p>Изначально SUMO разрабатывалась на диалекте языка KIF, в настоящее время выполнен ее перевод 
 на OWL. Разработана полная система соответствий понятий SUMO с лексическими единицами WordNET 
@@ -41,28 +41,204 @@ Engineers). SUMO не предназначена для решения какой-либо конкретной задачи и пре
 
 <p>Источник: <a href="http://www.infosoc.ru/2007/thes/part4/Pivovarova_Rubashkin.pdf">http://www.infosoc.ru/2007/thes/part4/Pivovarova_Rubashkin.pdf</a></p>
 
+
+<h2>Иерархия классов онтологии SUMO</h2>
+<p>Subclass Hierarchy Tree</p>
+
+<pre>
+entity
++ physical
+| + object
+| | + self connected object
+| | | + substance
+| | | + corpuscular object
+| | | + content bearing object
+| | | + food
+| | + region
+| | | * hole
+| | | * astronomical body
+| | | + geographic area
+| | + collection
+| | | + group
+| | + agent
+| |   + sentient agent
+| |   + geopolitical area
+| |   + organism
+| |   + group
+| + process
+|   + dual object process
+|   | * substituting
+|   | + transaction
+|   | * comparing
+|   | * attaching
+|   | * detaching
+|   | + combining
+|   | + separating
+|   + intentional process
+|   | + intentional psychological process
+|   | + recreation or exercise
+|   | + organizational process
+|   | + guiding
+|   | + keeping
+|   | * maintaining
+|   | + repairing
+|   | + poking
+|   | + content development
+|   | + making
+|   | + searching
+|   | + social interaction
+|   | * maneuver
+|   + motion
+|   | + body motion
+|   | * direction change
+|   | + transfer
+|   | * transportation
+|   | + radiating
+|   + internal change
+|   | + biological process
+|   | + quantity change
+|   | + damaging
+|   | + chemical process
+|   | + surface change
+|   | + creation
+|   | + state change
+|   * shape change
++ abstract
+  + quantity
+  | + number
+  | | + real number
+  | | * imaginary number
+  | | * complex number
+  | + physical quantity
+  |   + constant quantity
+  |   + function quantity
+  |   + unit of measure
+  + attribute
+  | + internal attribute
+  | | + physical state
+  | | + perceptual attribute
+  | | + shape attribute
+  | | + saturation attribute
+  | | + breakability attribute
+  | | + biological attribute
+  | + relational attribute
+  |   + truth value
+  |   + positional attribute
+  |   + time zone
+  |   + social role
+  |   + normative attribute
+  + set or class
+  | + class
+  |   + inheritable relation
+  |     + single valued relation
+  |     + binary relation
+  |     + case role
+  |     + probability relation
+  |     + spatial relation
+  |     + temporal relation
+  |     + intentional relation
+  |     + propositional attitude
+  |     + object attitude
+  |     + ternary relation
+  |     + quaternary relation
+  |     + quintary relation
+  |     + predicate
+  |     + function
+  |     + unary function
+  |     + binary function
+  |     * ternary function
+  |     + quaternary function
+  |     + binary predicate
+  |     + ternary predicate
+  |     * quaternary predicate
+  |     * quintary predicate
+  |     + relation extended to quantities
+  | + set
+  | | * finite set
+  | | * null set
+  | * pairwise disjoint class
+  | * mutually disjoint class
+  + relation
+  | + single valued relation
+  | + total valued relation
+  | * partial valued relation
+  | + binary relation
+  | + probability relation
+  | + spatial relation
+  | + temporal relation
+  | + ternary relation
+  | + quaternary relation
+  | + quintary relation
+  | + list
+  | + predicate
+  | + variable arity relation
+  | + relation extended to quantities
+  + proposition
+  | * field of study
+  | + procedure
+  + graph
+  | + directed graph
+  | * tree
+  | * multi graph
+  | * pseudo graph
+  + graph element
+    * graph node
+    + graph arc
+</pre>
+
+<p>Источник: <a href="http://virtual.cvut.cz/kifb/en/toc/229.html">http://virtual.cvut.cz/kifb/en/toc/229.html</a></p>
+
+
+<h2>Ссылки</h2>
 <ul>
   <li>
-    <a href="../../doc/131/index.ru.html">Онтология</a>
-  </li>
-  <li>
-    <a href="http://www.ontologyportal.org/">http://www.ontologyportal.org/</a>
+    <b>The SUMO main page</b>
+    <br><a href="http://www.ontologyportal.org/">http://www.ontologyportal.org/</a>
   </li>
   <li>
     <b>Suggested Upper Merged Ontology</b>
     <br><a href="http://en.wikipedia.org/wiki/SUMO_class">http://en.wikipedia.org/wiki/SUMO_class</a>
   </li>
   <li>
+    <a href="http://protege.stanford.edu/ontologies/sumoOntology/sumo_ontology.html">http://protege.stanford.edu/ontologies/sumoOntology/sumo_ontology.html</a>
+  </li>
+  <li>
     <b>Home page of the IEEE Standard Upper Ontology working group</b>
     <br><a href="http://suo.ieee.org/">http://suo.ieee.org/</a>
   </li>
   <li>
-    <b>Sigma</b> - reasoning system for SUMO
-    <br><a href="http://sigmakee.sourceforge.net/">http://sigmakee.sourceforge.net/</a>
+    <a href="http://suo.ieee.org/SUO/SUMO/">http://suo.ieee.org/SUO/SUMO/</a>
   </li>
   <li>
     <b>Graphical representation of the SUMO class hierarchy (very large)</b>
     <br><a href="http://www.ontologyportal.org/images/SUMOclasses.gif">http://www.ontologyportal.org/images/SUMOclasses.gif</a>
+  </li>
+</ul>
+
+<h2>Проекты, в которых предполагается использование онтологии SUMO</h2>
+<ul>
+  <li>
+    <a href="http://aikernel.org/projects/aiassistant/about/about11.ru.html">AIAssistant: Текущее состояние проекта</a>
+  </li>
+  <li>
+    <a href="http://aikernel.org/ai/projects/017/index.ru.html">Robosonic EX</a>
+  </li>
+</ul>
+
+<h2>Разное</h2>
+<ul>
+  <li>
+    <a href="../../doc/131/index.ru.html">Онтология</a>
+  </li>
+  <li>
+    <a href="http://aikernel.org/ai/categories/001/index.ru.html">Категория Онтологии</a>
+  </li>
+  <li>
+    <a href="http://virtual.cvut.cz/kifb/en/toc/229.html">http://virtual.cvut.cz/kifb/en/toc/229.html</a> - Иерархия классов онтологии SUMO. 
+  </li>
+  <li>
+    <b>Sigma</b> - reasoning system for SUMO
+    <br><a href="http://sigmakee.sourceforge.net/">http://sigmakee.sourceforge.net/</a>
   </li>
   <li>
     <b>WordNet</b>
@@ -73,20 +249,14 @@ Engineers). SUMO не предназначена для решения какой-либо конкретной задачи и пре
     <b>RussNet</b>
     <br><a href="http://project.phil.pu.ru/RussNet/index_ru.shtml">http://project.phil.pu.ru/RussNet/index_ru.shtml</a>
   </li>
-  <li>
-    <a href="http://suo.ieee.org/SUO/SUMO/">http://suo.ieee.org/SUO/SUMO/</a>
-  </li>
-  <li>
-    <a href="http://protege.stanford.edu/ontologies/sumoOntology/sumo_ontology.html">http://protege.stanford.edu/ontologies/sumoOntology/sumo_ontology.html</a>
-  </li>
 </ul>
 
 
 <!--- If you add a new language here, please advise prof1983@yandex.ru --->
 
 <p><font size=2>
-<hr>&copy; AIKernel 2011
-<br>09.05.2011 - 09.05.2011
+<hr>&copy; AiKernel 2011-2012
+<br>09.05.2011 - 12.05.2012
 </font>
 </body>
 </html>
