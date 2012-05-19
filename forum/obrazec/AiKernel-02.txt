@@ -1,0 +1,38 @@
+ Заголовок сообщения: Единые правила индексации HTML с онтологией
+СообщениеДобавлено: 04 июн 2011, 23:00 
+
+[quote="Prof1983"]Приветствую всех.
+
+Обнаружил вот такую новость:
+[quote][b]Google, Microsoft и Yahoo предлагают вебмастерам единые правила индексации[/b]
+
+Компании Google, Yahoo и Microsoft объединили свои усилия в рамках проекта, имеющего своей целью улучшение индексации интернет-содержимого, а также структурированных корпоративных данных. Компании говорят, что намерены использовать технологии СУБД для разметки HTML, чтобы можно было быстрее и качественнее индексировать интернет-контент.
+
+Три компании в рамках сотрудничества создали проект Schema.org, где изложены описания наборов тэгов, которые, как надеются авторы проекта, помогут вебмастерам специальным образом маркировать контент, чтобы тот быстрее и качественнее индексировался. "Schema.org имеет своей целью стать единым ресурсом для авторов сайтов, желающих создавать сайты с качественным индексированием", - говорится в блоге Google.
+
+Сейчас на Schema.org авторы новой системы предлагают около сотни различных HTML-тэгов для разных категорий сайтов, таких как развлекательные, официальные, новостные и другие, а также для тематической организации.[/quote]Источник: http://www.cybersecurity.ru/news/124502.html
+
+Примечательно в этой новости то, что дополнительные теги для индексации записываются так:
+[quote]<div>
+ <h1>Avatar</h1>
+ <span>Director: James Cameron (born August 16, 1954)</span>
+ <span>Science fiction</span>
+ <a href="../movies/avatar-theatrical-trailer.html">Trailer</a>
+</div>[/quote][quote]<div [b]itemscope[/b]>
+  <h1>Avatar</h1>
+  <span>Director: James Cameron (born August 16, 1954) </span>
+  <span>Science fiction</span>
+  <a href="../movies/avatar-theatrical-trailer.html">Trailer</a>
+</div>[/quote][quote]<div itemscope [b]itemtype="http://schema.org/Movie"[/b]>
+  <h1>Avatar</h1>
+  <span>Director: James Cameron (born August 16, 1954)</span>
+  <span>Science fiction</span>
+  <a href="../movies/avatar-theatrical-trailer.html">Trailer</a>
+</div>[/quote][quote]<div itemscope itemtype ="http://schema.org/Movie">
+  <h1 [b]itemprop="name"[/b]>Avatar</h1>
+  <span>Director: <span itemprop="director">James Cameron</span> (born August 16, 1954)</span>
+  <span [b]itemprop="genre"[/b]>Science fiction</span>
+  <a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer">Trailer</a>
+</div>[/quote]
+То есть, дополнительные теги добавляют дополнительную онтолгическую информацию о содержимом соответствующего блока.[/quote]
+
