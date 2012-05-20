@@ -1,6 +1,3 @@
-<html>
-<body>
-
 Заголовок сообщения: Новый проект AIKernel
 СообщениеДобавлено: 18 окт 2010, 12:30
 
@@ -1336,58 +1333,5 @@ DocumAssistant-0.3.1
 
 [quote="Prof1983"][quote="victorst"]http://www.ontologyportal.org/[/quote]Это основной сайт.
 Еще вот тут некоторую информацию выложил http://aikernel.org/ai/categories/001/index.ru.html[/quote]
-
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
