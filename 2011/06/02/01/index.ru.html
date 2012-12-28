@@ -1,0 +1,100 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Выбор метода вызова процедур</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!--- header begin --->
+<table border="0" width="100%">
+<tr><td>
+<!--- header end --->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Выбор метода вызова процедур</h1>
+
+<p>
+Задался вопросом какой метод вызова выбрать для функций внешних и внутренних модулей (fastcall, cdecl, stdcall, pascal, safecall)?
+<br/>Для этого написал небольшую тестовую программку (TestCall).
+</p>
+
+<p>
+Тестирование скорости работы разных методов вызова функций внутри программы
+<a href="http://aikernel.org/files/TestCall.zip">aikernel.org/files/TestCall.zip</a>
+</p>
+
+<p>...</p>
+
+
+<p>Протестировал скорость вызова разными методами (cdecl, stdcall, safecall, register) более сложную функцию и пришел к выводу, что различий по времени нет. Разница составляет несколько процентов, что я считаю не существенным. Поэтому для внешних (экспортируемых) функций модуля принимаю метод вызова stdcall. А внутри модулей можно реализовать как будет удобнее.</p>
+
+
+<p>
+Обсуждение:
+<br/><a href="http://www.project-ai.org/forum/viewtopic.php?t=7">project-ai.org/forum/viewtopic.php?t=7</a>
+<br/><a href="http://ai.obrazec.ru/forum/viewtopic.php?t=2325">ai.obrazec.ru/forum/viewtopic.php?t=2325</a>
+</p>
+
+
+
+<!--- footer begin --->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!--- footer end --->
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>02.06.2011 - 28.12.2012
+</font></p>
+</body>
+</html>
