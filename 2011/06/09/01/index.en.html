@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - DocumAssistant-0.3.1</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!--- header begin --->
+<table border="0" width="100%">
+<tr><td>
+<!--- header end --->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>DocumAssistant-0.3.1</h1>
+
+<p>Решил выложить на общее обозрение DocumAssistant. Программа пока ничего не делает. Выкладываю в качестве отчета о проделанной работе и для обсуждения архитектуры построения программы.</p>
+
+<p>Архитектура такая: Runtime + модули. Где модули - это набор реализованных функций, которые располагаются или в составе основной программы (монолит) или в отдельных библиотеках (DLL, плагинах).</p>
+
+
+<p>В версии 0.3.1 добавил в модулях фукции с передачей строковых параметров с использованием типа AString_Type. Так же сделал обертку основных функций в try-except-end.</p>
+
+<p>Немного добавил функционала в модули Entities (доступ к БД) и Documents (доступ к документам). Документы здесь - это записи в БД имеющие определенную структуру.</p>
+
+<p>На выходных хочу заняться рассмотрением онтологии SUMO и начать вводить в БД в виде сущностей новые онтологические элементы. Напомню, что сущность в моем понимании - это простая запись в виде последовательности байтов + уникальный идентификатор + идентификатор описания структуры данной записи.</p>
+
+<p>Сущность я записываю в таком виде (файл AEntities0.pas):
+<br/>Код:
+<pre>
+type
+  AEntity_Type = packed record
+    Id: AEntityId;     // Уникальный идентификатор сущности // Сущность (номер записи в базе знаний)
+    Typ: AEntityId;    // Тип сущности // Тип сущности (является идентификатором, указывающем на элемент описания этого типа)
+    Data: Pointer;     // Данные сущности
+    DataSize: Integer; // Размер данных
+  end;
+</pre>
+</p>
+
+<p>
+Еще хочу попробовать подключить CLIPS в виде отдельного модуля. Вроде бы особых сложностей с этим возникнуть не должно. Подготовил необходимые файлы и информацию здесь:
+<a href="http://aikernel.org/ai/projects/021/index.ru.html">aikernel.org/ai/projects/021/index.ru.html</a>
+<br/>Если кто-то заинтересуется, то может попробовать собрать clips.dll и подключить его к своей программе.
+<br/>Основной источник данной теме и по исходникам CLIPS здесь:
+<a href="http://sourceforge.net/projects/clipsrules">sourceforge.net/projects/clipsrules</a>
+</p>
+
+<p>
+<a href="http://aikernel.org/projects/documassistant/index.ru.html">Страничка проекта DocumAssistant</a>
+<br/>Сама программа:
+<a href="http://aikernel.org/files/documassistant.zip">aikernel.org/files/documassistant.zip</a> [699 KiB]
+<br/>Обсуждение: <a href="http://www.project-ai.org/forum/viewtopic.php?t=10">project-ai.org/forum/viewtopic.php?t=10</a>
+</p>
+
+
+
+<!--- footer begin --->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!--- footer end --->
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>09.06.2011 - 28.12.2012
+</font></p>
+</body>
+</html>
