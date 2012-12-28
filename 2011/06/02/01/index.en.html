@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Передача строковых параметров</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!--- header begin --->
+<table border="0" width="100%">
+<tr><td>
+<!--- header end --->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Передача строковых параметров</h1>
+
+<p>При реализации AIKernel столкнулся с проблемой передачи строк в виде параметров между модулями. Есть несколько вариантов: char* (PChar), string (класс Си++), string (массив символов с указанием длины). Но строки в разных компиляторах реализованы по разному. Кроме PChar, но при использование PChar не очень удобное и могут возникать проблемы, если в строке присутствуют нулевые символы.</p>
+
+<p>...</p>
+
+<p>
+Я решил пока реализовать передачу строк между модулей с помощью указателя на структуру AString_Type. При этом внутреннее содержание пока не раскрываю, а вместо этого будут реализованы примерно такие функции (Pascal):
+<br/>Код:
+<pre>
+type
+  AString = ^AString_Type; // Указатель. Можно записать и так: AString = Pointer;
+
+function A_String_New(S: AString): AString; stdcall;
+function A_String_NewC(S: PChar; Len: AInteger): AString; stdcall; // Ansi
+function A_String_NewU(S: PChar; Size: ASize): AString; stdcall; // UTF-8
+</pre>
+</p>
+
+<p>
+А работу со строками реализовать внутри одного из основных модулей в виде примерно таких функций:
+<br/>Код:
+<pre>
+function A_System_String_Length(S: AString): AInteger; stdcall;
+function A_System_String_Compare(Str1, Str2: AString): AInteger; stdcall;
+function A_System_String_CompareA(Str1, Str2: AString; IgnoreCase: ABoolean): AInteger; stdcall;
+function A_System_String_Concat(Str1, Str2: AString): AString; stdcall;
+function A_System_String_ConcatA(Str1, Str2, Str3: AString): AString; stdcall;
+function A_System_String_IndexOfCh(S: AString; Ch: AChar): AInteger; stdcall;
+function A_System_String_IndexOfStr(S, Str: AString): AInteger; stdcall;
+function A_System_String_LastIndexOfCh(S: AString; Ch: AChar): AInteger; stdcall;
+function A_System_String_LastIndexOfStr(S, Str: AString): AInteger; stdcall;
+</pre>
+</p>
+
+<p>
+Реализовать для начала основные. А за тем, по мере необходимости добавлять еще функций.
+<br/>А для использования строки преобразовывать примерно так:
+<br/>Код:
+<pre>
+function String_ToWideString(S: AString): WideString; stdcall;
+</pre>
+</p>
+
+
+<p>
+Обсуждение: <a href="http://www.project-ai.org/forum/viewtopic.php?t=6">project-ai.org/forum/viewtopic.php?t=6</a>
+</p>
+
+
+
+<!--- footer begin --->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!--- footer end --->
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>02.06.2011 - 28.12.2012
+</font></p>
+</body>
+</html>
