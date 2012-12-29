@@ -1,0 +1,314 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Triplestore - Часть2</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!-- header begin -->
+<table border="0" width="100%">
+<tr><td>
+<!-- header end -->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Triplestore - Часть2</h1>
+
+<p>И так, реализаций много. Нужно принять решение какой использовать или же вообще стоит написать свой собственный движок для работы с триплетами (СУБД/СУБЗ). Писать самому очень долго и не понятно зачем тратить время, если это уже все вроде реализовано. Поэтому рассмотрим подробнее существующие реализации.</p>
+
+<p>Отмечу, что меня лично больше всего интересует язык Pascal, но на Pascal реализаций БД триплетов я не нашел, поэтому рассматриваем наиболее крупные проекты написанные языках на Си и Java с целью сделать обертку или переписать на Pascal. Крупные проекты я определил очень просто: выбрал те, для описания которых есть отдельная страничка на википедии.</p>
+
+<p>
+У меня получился такой список:
+<br/>Jena
+<br/>Mulgara
+<br/>Redland
+<br/>Sesame
+<br/>Soprano
+<br/>StrixDB
+<br/>Virtuoso
+</p>
+
+<p>
+<b>-- Jena --</b>
+<br/>Language: Java
+<br/>License: BSD License
+<br/>Homepage:
+<a href="http://jena.sourceforge.net/">jena.sourceforge.net</a>
+<br/><a href="http://en.wikipedia.org/wiki/Jena_(framework)">en.wikipedia.org/wiki/Jena_(framework)</a>
+<br/><a href="http://openjena.org/wiki/TDB">openjena.org/wiki/TDB</a>
+</p>
+
+<p>
+<b>-- Mulgara --</b>
+<br/>Language: Java
+<br/>License: Mulgara is licensed under the Open Software License v3.0. New code is being contributed using the Apache 2.0 license.
+<br/>Homepage:
+<a href="http://www.mulgara.org/">mulgara.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Mulgara_(software)">en.wikipedia.org/wiki/Mulgara_(software)</a>
+<br/>Mulgara is a scalable RDF database written entirely in Java.
+</p>
+
+<p>
+<b>-- Redland --</b>
+<br/>Language: C
+<br/>License: Apache License V2.0, GNU General Public License (GPL), GNU Library or Lesser General Public License (LGPL)
+<br/>Homepage:
+<a href="http://librdf.org/">librdf.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Redland_RDF_Application_Framework">en.wikipedia.org/wiki/Redland_RDF_Application_Framework</a>
+</p>
+
+<p>
+<b>-- Sesame --</b>
+<br/>Language: Java
+<br/>License: BSD-style license
+<br/>Homepage:
+<a href="http://www.openrdf.org/">openrdf.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Sesame_(framework)">en.wikipedia.org/wiki/Sesame_(framework)</a>
+</p>
+
+<p>
+<b>-- Soprano --</b>
+<br/>Language: C++
+<br/>Homepage:
+<a href="http://soprano.sourceforge.net/">soprano.sourceforge.net</a>
+<br/><a href="http://en.wikipedia.org/wiki/Soprano_(KDE)">en.wikipedia.org/wiki/Soprano_(KDE)</a>
+</p>
+
+<p>
+<b>-- StrixDB --</b>
+<br/>Language: C++/Lua
+<br/>Homepage:
+<a href="http://www.strixdb.com/">strixdb.com</a>
+<br/><a href="http://en.wikipedia.org/wiki/StrixDB">en.wikipedia.org/wiki/StrixDB</a>
+</p>
+
+<p>
+<b>-- Virtuoso --</b>
+<br/>Language: C
+<br/>License: GPLv2 and proprietary
+<br/>Homepage:
+<a href="http://virtuoso.openlinksw.com/">virtuoso.openlinksw.com</a>
+<br/><a href="http://en.wikipedia.org/wiki/Virtuoso_Universal_Server">en.wikipedia.org/wiki/Virtuoso_Universal_Server</a>
+</p>
+
+<p>Рассмотрим их подробнее. Отмечу, что мне интересны только те варианты, которые так или иначе могут быть использованы в проектах AiKernel и AReason.</p>
+
+
+<h3>Jena</h3>
+
+<p>
+Language: Java
+<br/>License: BSD License
+</p>
+
+<p>
+<a href="http://jena.sourceforge.net/">jena.sourceforge.net</a>
+<br/><a href="http://sourceforge.net/projects/jena/">sourceforge.net/projects/jena</a>
+<br/><a href="http://en.wikipedia.org/wiki/Jena_(framework)">en.wikipedia.org/wiki/Jena_(framework)</a>
+<br/><a href="http://openjena.org/wiki/TDB">openjena.org/wiki/TDB</a>
+</p>
+
+<p>
+Jena is Java toolkit for developing semantic web applications based on W3C recommendations for RDF and OWL.
+<br/>It provides an RDF API; ARP, an RDF parser; SPARQL, the W3C RDF query language; an OWL API; and rule-based inference for RDFS and OWL.
+</p>
+
+
+<h3>Mulgara</h3>
+
+<p>
+Language: Java
+<br/>License: Mulgara is licensed under the Open Software License v3.0. New code is being contributed using the Apache 2.0 license.
+</p>
+
+<p>
+<a href="http://www.mulgara.org/">mulgara.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Mulgara_(software)">en.wikipedia.org/wiki/Mulgara_(software)</a>
+<br/><a href="http://docs.mulgara.org/">docs.mulgara.org</a>
+</p>
+
+<p>Mulgara is a scalable RDF database written entirely in Java.</p>
+
+<p>The Mulgara Semantic Store is an Open Source, massively scalable, transaction-safe, purpose-built database for the storage and retrieval of metadata.</p>
+
+<p>
+--- wikipedia.org ---
+<br/>Mulgara is a triplestore and fork of the original Kowari project.
+<br/>It is Open Source, scalable, and transaction-safe.
+<br/>Mulgara instances can be queried via the iTQL query language and the SPARQL query language.
+</p>
+
+
+<h3>Redland</h3>
+
+<p>
+Language: C
+<br/>License: Apache License V2.0, GNU General Public License (GPL), GNU Library or Lesser General Public License (LGPL)
+<br/>Last Update: 2010-09-25
+</p>
+
+<p>
+<a href="http://librdf.org/">librdf.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Redland_RDF_Application_Framework">en.wikipedia.org/wiki/Redland_RDF_Application_Framework</a>
+</p>
+
+<p>
+Redland is a set of object-based, modular and portable C RDF libraries providing RDF APIs for the graph,
+triple storage (librdf), RDF/XML parsing and serializing (Raptor), SPARQL RDF querying (Rasqal).
+Language APIs in Perl, PHP, Python, Ruby and others.
+</p>
+
+<p>Programming Languages: C, Python, Perl, Ruby, PHP</p>
+
+<p>
+License: All Redland packages are free software / open source software and released under the LGPL 2.1, GPL 2 or Apache 2 licenses as alternatives.
+<br/>See the individual package license files for full details and any exceptions.
+</p>
+
+<p>
+--- wikipedia.org ---
+<br/>-- Redland RDF Application Framework --
+</p>
+
+<p>Redland is a set of free software libraries written in C that provide support for the Resource Description Framework (RDF), created by Dave Beckett (a former resident of Redland, Bristol).</p>
+
+<p>
+The packages that form Redland are:
+<ul>
+<li>Redland RDF Application Framework providing the C RDF API</li>
+<li>Raptor RDF Parser Toolkit for parsing and serializing RDF syntaxes (RDF/XML, N-Triples, Turtle, RSS tag soup, Atom)</li>
+<li>Rasqal RDF Query Library for executing RDF queries with RDQL and SPARQL</li>
+<li>Redland Language Bindings for APIs to Redland in C#, Java, Objective-C, Perl, PHP, Python, Ruby and Tcl</li>
+</ul>
+</p>
+
+<p>Redland is a mature set of libraries, in development since 2000 and closely conformant to the relevant W3C specifications.</p>
+
+
+<h3>Sesame</h3>
+
+<p>
+Language: Java
+<br/>License: BSD-style license
+</p>
+
+<p>
+<a href="http://www.openrdf.org/">openrdf.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Sesame_(framework)">en.wikipedia.org/wiki/Sesame_(framework)</a>
+</p>
+
+<p>
+=== Sesame (framework) (wikipedia.org) ===
+<br/>
+<br/>Sesame is an open-source framework for querying and analyzing RDF data.
+<br/>It was created, and is still being maintained, by the Dutch software company Aduna.
+<br/>It was originally developed as part of the "On-To-Knowledge", a semantic web project that ran from 1999 to 2002.
+<br/>It contains a triplestore.
+</p>
+
+
+<h3>Soprano</h3>
+
+<p>Не стал рассматривать, т.к. сделать обертку для Pascal будет проблематично.</p>
+
+
+<h3>StrixDB</h3>
+
+<p>Не стал рассматривать по той же причине, что и Soprano.</p>
+
+
+<h3>Virtuoso</h3>
+
+<p>Не стал рассматривать по причине не свободной лицензии (GPL).</p>
+
+
+<h2>Выводы</h2>
+
+<p>И так, как можно видеть почти все (рассмотренные) свободные проекты реализованы на Java. Java использовать напрямую из Pascal не получится. Это возможно только или с использованием JNI или компиляция java в код виртуальной машины LLVM + добавление скомпилированных .o файлов и потом генерация x86 кода. Но это долго, сложно и не факт что получится.</p>
+
+<p>Но есть один проект, который можно использовать относительно свободно (под лицензией Appache 2.0) - это Redland. Но тут надо более подробнее изучить саму лицензию Appache, чтобы в будущем не возникли проблемы.</p>
+
+<p>Из всего этого я сделал такой вывод: стоит или использовать Redland и написать для него небольшую обертку на Pascal или брать за образец како-то другой проект (например Jena-TDB) и писать все с нуля. Лично я за использование <b>Redland</b>. Но окончательное решение, если оно и будет, то только после рассмотрения самих исходников проектов.</p>
+
+<p>P.S.1. Боюсь, что в итоге, потом, окажется что вообще все надо было сделать намного проще, без всяких заморочек. Но у меня есть только то понимание, какое есть. Другого пока нет.</p>
+
+<p>P.S.2. Еще замечание про быстродействие. Дело в том, что достичь самого лучшего быстродействия можно только используя низкоуровневое программирование (язык Си). Хотя часто зависит от конкретного программиста. Тем не менее тесты показывают преимущество языка Си.
+"<a href="http://www.opennet.ru/opennews/art.shtml?num=31114">Проект по тестированию эффективности языков программирования</a>".
+
+<p>P.S.3. Вот тут немного есть про использование OWL и RDF:
+<br/><a href="http://www.intuit.ru/department/expert/ontoth/3/">intuit.ru/department/expert/ontoth/3</a> - Лекция: Области применения онтологий.
+<br/><a href="http://bigc.ru/theory/km/onto_technologies.php">bigc.ru/theory/km/onto_technologies.php</a> - Технологии применения онтологий
+<br/>
+<br/>Еще про онтологии тут:
+<a href="http://www.project-ai.org/forum/viewtopic.php?p=184#p184">project-ai.org/forum/viewtopic.php?p=184#p184</a>
+<br/>
+<br/>Отмечу, что RDF и OWL - это форма запись триплетов в виде XML документа. А сами знания представлены именно набором триплетов.
+</p>
+
+
+
+<p>Обсуждение: <a href="http://www.project-ai.org/forum/viewtopic.php?t=61">project-ai.org/forum/viewtopic.php?t=61</a></p>
+
+
+
+<!-- footer begin -->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!-- footer end -->
+
+
+<!-- If you add a new language here, please advise prof1983@yandex.ru -->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>08.07.2011 - 29.12.2012
+</font></p>
+</body>
+</html>
