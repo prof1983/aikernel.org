@@ -1,0 +1,349 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Triplestore</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!-- header begin -->
+<table border="0" width="100%">
+<tr><td>
+<!-- header end -->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Triplestore</h1>
+
+<p>Появилась задача как-то хранить знания. После многочисленных обсуждений пришли к мнению, что знания удобно хранить и использовать в виде онтологий. При этом, онтологии можно записывать всевозможными видами (N3, RDF, OWL, и др). Для быстрого доступа к онтологии ее можно загружать целиком в оперативную память (в виде объектов, или структур, или массива или еще как-нибудь).</p>
+
+<p>
+Возникает проблема ограниченности ресурсов (ОЗУ). БЗ большая, а оперативка маленькая.
+<br/>Возникает задача хранить БЗ (Базу Знаний) на HDD и, по необходимости, быстро подгружать необходимые "знания".
+<br/>Наиболее компактным и удобным для использования во время выполнения является запись онтологии в виде триплетов.
+</p>
+
+<p>
+Для обработки БД триплетов существует много разных реализаций.
+<br/>Вот некоторые из них:
+</p>
+
+<p>
+<b>-- 3store --</b>
+<br/>Language: C
+<br/>Homepage:
+<a href="http://www.aktors.org/technologies/3store/">aktors.org/technologies/3store</a>
+</p>
+
+<p>
+<b>-- 4store --</b>
+<br/>Language: C
+<br/>Homepage:
+<a href="http://www.4store.org/">4store.org</a>
+</p>
+
+<p>
+<b>-- 5store --</b>
+<br/>Language: C
+<br/>Homepage:
+<a href="http://4store.org/trac/wiki/5store">4store.org/trac/wiki/5store</a>
+</p>
+
+<p>
+<b>-- AllegroGraph --</b>
+<br/>Language: Common Lisp
+<br/>Homepage:
+<a href="http://www.franz.com/agraph/allegrograph/">franz.com/agraph/allegrograph</a>
+<br/><a href="http://en.wikipedia.org/wiki/AllegroGraph">en.wikipedia.org/wiki/AllegroGraph</a>
+</p>
+
+<p>
+<b>-- ARC --</b>
+<br/>Language: PHP
+<br/>Homepage:
+<a href="http://arc.semsol.org/">arc.semsol.org</a>
+</p>
+
+<p>
+<b>-- Bigdata --</b>
+<br/>Language: Java
+<br/>Homepage:
+<a href="http://www.bigdata.com/">bigdata.com</a>
+</p>
+
+<p>
+<b>-- BigOWLIM --</b>
+<br/>Language: Java
+<br/>Homepage:
+<a href="http://www.ontotext.com/owlim/">ontotext.com/owlim</a>
+</p>
+
+<p>
+<b>-- Jena --</b>
+<br/>Language: Java
+<br/>License: BSD License
+<br/>Homepage:
+<a href="http://jena.sourceforge.net/">jena.sourceforge.net</a>
+<br/><a href="http://en.wikipedia.org/wiki/Jena_(framework)">en.wikipedia.org/wiki/Jena_(framework)</a>
+<br/><a href="http://openjena.org/wiki/TDB">openjena.org/wiki/TDB</a>
+</p>
+
+<p>
+<b>-- Mulgara --</b>
+<br/>Language: Java
+<br/>License: Mulgara is licensed under the Open Software License v3.0. New code is being contributed using the Apache 2.0 license.
+<br/>Homepage:
+<a href="http://www.mulgara.org/">mulgara.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Mulgara_(software)">en.wikipedia.org/wiki/Mulgara_(software)</a>
+<br/>Mulgara is a scalable RDF database written entirely in Java.
+</p>
+
+<p>
+<b>-- OpenAnzo --</b>
+<br/>Language: Java
+<br/>Homepage:
+<a href="http://www.openanzo.org/">openanzo.org</a>
+</p>
+
+<p>
+<b>-- OntoBroker --</b>
+<br/>Language: Java
+<br/>Homepage:
+<a href="http://www.ontoprise.de/en/home/products/ontobroker/">ontoprise.de/en/home/products/ontobroker</a>
+</p>
+
+<p>
+<b>-- Parliament --</b>
+<br/>Language: Java/C++
+<br/>Homepage:
+<a href="http://parliament.semwebcentral.org/">parliament.semwebcentral.org</a>
+</p>
+
+<p>
+<b>-- Pointrel System --</b>
+<br/>Language: Java/Python
+<br/>Homepage:
+<a href="http://sourceforge.net/projects/pointrel/">sourceforge.net/projects/pointrel</a>
+</p>
+
+<p>
+<b>-- RAP --</b>
+<br/>Language: PHP
+<br/>Homepage:
+<a href="http://www4.wiwiss.fu-berlin.de/bizer/rdfapi/">www4.wiwiss.fu-berlin.de/bizer/rdfapi</a>
+</p>
+
+<p>
+<b>-- RDF::Core --</b>
+<br/>Language: Perl
+<br/>Homepage:
+<a href="http://search.cpan.org/dist/RDF-Core/">search.cpan.org/dist/RDF-Core</a>
+</p>
+
+<p>
+<b>-- RDF::Trine --</b>
+<br/>Language: Perl
+<br/>Homepage:
+<a href="http://www.perlrdf.org/">perlrdf.org</a>
+</p>
+
+<p>
+<b>-- RDF-3X --</b>
+<br/>Language: C++
+<br/>Homepage:
+<a href="http://www.mpi-inf.mpg.de/~neumann/rdf3x/">mpi-inf.mpg.de/~neumann/rdf3x</a>
+</p>
+
+<p>
+<b>-- RDFBroker --</b>
+<br/>Language: Java
+<br/>Homepage:
+<a href="http://rdfbroker.opendfki.de/">rdfbroker.opendfki.de</a>
+</p>
+
+<p>
+<b>-- Redland --</b>
+<br/>Language: C
+<br/>License: Apache License V2.0, GNU General Public License (GPL), GNU Library or Lesser General Public License (LGPL)
+<br/>Homepage:
+<a href="http://librdf.org/">librdf.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Redland_RDF_Application_Framework">en.wikipedia.org/wiki/Redland_RDF_Application_Framework</a>
+</p>
+
+<p>
+<b>-- RedStore --</b>
+<br/>Language: C
+<br/>Homepage:
+<a href="http://www.aelius.com/njh/redstore/">aelius.com/njh/redstore</a>
+</p>
+
+<p>
+<b>-- Semantics Platform --</b>
+<br/>Language: C#
+<br/>Homepage:
+<a href="http://www.intellidimension.com/">intellidimension.com</a>
+</p>
+
+<p>
+<b>-- SemWeb-DotNet --</b>
+<br/>Language: C#
+<br/>Homepage:
+<a href="http://razor.occams.info/code/semweb/">razor.occams.info/code/semweb</a>
+</p>
+
+<p>
+<b>-- Sesame --</b>
+<br/>Language: Java
+<br/>License: BSD-style license
+<br/>Homepage:
+<a href="http://www.openrdf.org/">openrdf.org</a>
+<br/><a href="http://en.wikipedia.org/wiki/Sesame_(framework)">en.wikipedia.org/wiki/Sesame_(framework)</a>
+</p>
+
+<p>
+<b>-- Soprano --</b>
+<br/>Language: C++
+<br/>Homepage:
+<a href="http://soprano.sourceforge.net/">soprano.sourceforge.net</a>
+<br/><a href="http://en.wikipedia.org/wiki/Soprano_(KDE)">en.wikipedia.org/wiki/Soprano_(KDE)</a>
+</p>
+
+<p>
+<b>-- StrixDB --</b>
+<br/>Language: C++/Lua
+<br/>Homepage:
+<a href="http://www.strixdb.com/">strixdb.com</a>
+<br/><a href="http://en.wikipedia.org/wiki/StrixDB">en.wikipedia.org/wiki/StrixDB</a>
+</p>
+
+<p>
+<b>-- SwiftOWLIM --</b>
+<br/>Language: Java
+<br/>Homepage:
+<a href="http://www.ontotext.com/owlim/">ontotext.com/owlim</a>
+</p>
+
+<p>
+<b>-- Virtuoso --</b>
+<br/>Language: C
+<br/>License: GPLv2[1] and proprietary
+<br/>Homepage:
+<a href="http://virtuoso.openlinksw.com/">virtuoso.openlinksw.com</a>
+<br/><a href="http://en.wikipedia.org/wiki/Virtuoso_Universal_Server">en.wikipedia.org/wiki/Virtuoso_Universal_Server</a>
+</p>
+
+<p>
+<b>-- YARS --</b>
+<br/>Language: Java
+<br/>Homepage:
+<a href="http://sw.deri.org/2004/06/yars/">sw.deri.org/2004/06/yars</a>
+</p>
+
+<p>
+<b>-- Smart-M3 --</b>
+<br/>Language: Python/Java/C/C#
+<br/><a href="http://en.wikipedia.org/wiki/Smart-M3">en.wikipedia.org/wiki/Smart-M3</a>
+</p>
+
+<p>
+Список взят отсюда:
+<a href="http://en.wikipedia.org/wiki/Triplestore">en.wikipedia.org/wiki/Triplestore</a>
+</p>
+
+<p>Вот описание на англ.</p>
+
+<blockquote>
+<b>Triplestore</b>
+
+<p>A triplestore is a purpose-built database for the storage and retrieval of Resource Description Framework (RDF) metadata.</p>
+
+<p>
+Much like a relational database, one stores information in a triplestore and retrieves it via a query language.
+<br/>Unlike a relational database, a triplestore is optimized for the storage and retrieval of many short statements called triples,
+<br/>in the form of subject-predicate-object, like "Bob is 35" or "Bob knows Fred".
+</p>
+
+<p>
+Some triplestores can store billions of triples.
+<br/>The performance of a particular triplestore can be measured with the Lehigh University Benchmark (LUBM),
+<br/>or with real data from UniProt.
+</p>
+
+<p>Implementation</p>
+
+<p>
+Some triplestores have been built as database engines from scratch,
+<br/>while others have been built on top of existing commercial relational database engines (i.e. SQL-based).
+<br/>Like the early development of OLAP databases,
+<br/>this intermediate approach allowed large and powerful database engines to be constructed for
+<br/>little programming effort in the initial phases of triplestore development.
+<br/>Long-term though it seems likely that native triplestores will have the advantage for performance.
+<br/>A difficulty with implementing triplestores over SQL is that although "triples" may thus be "stored",
+<br/>implementing efficient querying of a graph-based RDF model (i.e. mapping from SPARQL) onto SQL queries is difficult.
+</p>
+</blockquote>
+
+
+<p>Обсуждение: <a href="http://www.project-ai.org/forum/viewtopic.php?t=61">project-ai.org/forum/viewtopic.php?t=61</a></p>
+
+
+
+<!-- footer begin -->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!-- footer end -->
+
+
+<!-- If you add a new language here, please advise prof1983@yandex.ru -->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>08.07.2011 - 29.12.2012
+</font></p>
+</body>
+</html>
