@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Язык программирования Go</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!-- header begin -->
+<table border="0" width="100%">
+<tr><td>
+<!-- header end -->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Язык программирования Go</h1>
+
+<p>Сегодня познакомился с языком программирования Go. Он мне очень понравился. Подумываю о том, чтобы его сделать основным в проекте AiKernel и AReason. На сколько я понял он лишен недостатков Си, но при этом сохранил все его достоинства. Плюс добавлены возможности для программирования параллельных (кажется так правильно называется) программ.</p>
+
+<p>В общем всем рекомендую ознакомиться.</p>
+
+<p>
+<b>Ссылки по теме:</b>
+<br/><a href="http://golang.org/">golang.org</a> - основной сайт проекта
+<br/><a href="http://golanguage.ru/">golanguage.ru</a> - русскоязычный сайт
+<br/><a href="http://code.google.com/p/go/">code.google.com/p/go</a> - исходники, бинарники и пр.
+</p>
+
+<p>
+<b>Книги</b>
+<br/><a href="http://golanguage.ru/tutorial">golanguage.ru/tutorial</a> - Учебник
+<br/><a href="http://bit.ly/hPZpuY">Programming in Go: Creating Applications for the 21st Century</a>
+<br/><a href="http://www.diesel-ebooks.com/item/9781469769165/Balbaert-Ivo-The-Way-to-Go-A-Thorough-Introduction-to-the-Go-Programming-Language/1.html">The Way to Go: A Thorough Introduction to the Go Programming Language</a>
+<br/><a href="http://miek.nl/downloads/2011/go.pdf">Learning Go</a> (<a href="http://www.miek.nl/projects/learninggo/index.html">исходники книги</a>)
+</p>
+
+<p>
+<b>IDE</b>
+<br/><a href="http://go-ide.com/">go-ide.com</a> - требует Java
+<br/><a href="http://code.google.com/p/golangide/">code.google.com/p/golangide</a> - GoLiteIDE. Поддерживает сборку проектов через go tool.
+<br/><a href="http://code.google.com/p/goclipse/">code.google.com/p/goclipse</a> - Плагин для Eclipse
+<br/><a href="http://www.sublimetext.com/">SublimeText2</a>
+<br/><a href="http://ru.wikipedia.org/wiki/TextMate">TextMate</a> 1 (TextMate 2 пока что не поддерживает).
+<br/><a href="http://go-lang.cat-v.org/text-editors/">Список IDE для Go</a>
+</p>
+
+<p>
+<b>Статьи</b>
+<br/><a href="http://habrahabr.ru/post/142527/">TCP/IP proxy на Go</a>
+<br/><a href="http://bolknote.ru/2011/06/23/~3290#81">Google Go vs Си</a>
+<br/><a href="http://habrahabr.ru/post/141265/">Для тех, кто пишет на языке Go</a>
+<br/><a href="http://habrahabr.ru/post/141068/">Пишем веб-эмулятор терминала на Go, используя Websocket</a>
+<br/><a href="http://habrahabr.ru/post/140976/">Google выпустила финальную версию языка программирования Go 1</a>
+<br/><a href="http://www.opennet.ru/opennews/art.shtml?num=33476">Первый релиз языка программирования Go</a>
+<br/><a href="http://habrahabr.ru/post/137797/">Простой файловый хостинг на Google App Engine</a>
+<br/><a href="http://habrahabr.ru/post/137730/">Интерпретируем Go как Python, Ruby, Bash</a>
+<br/><a href="http://habrahabr.ru/post/133281/">Быстрый старт – программируем на Go под Windows — настройка Environment</a>
+<br/><a href="http://habrahabr.ru/post/126461/">Go Language. Небольшое клиент-серверное приложение</a>
+<br/><a href="http://habrahabr.ru/post/122095/">Веб-разработка на Go</a>
+<br/><a href="http://habrahabr.ru/post/118898/">Обработка ошибок в Go: Defer, Panic и Recover</a>
+<br/><a href="http://habrahabr.ru/post/117842/">Многопоточное программирование в Go</a>
+<br/><a href="http://habrahabr.ru/post/109862/">Язык Go. Пишем эмулятор CHIP-8</a>
+<br/><a href="http://habrahabr.ru/post/106000/">Язык Go не будет менять название: обсуждение закрыто</a>
+<br/><a href="http://habrahabr.ru/post/102523/">Язык Go с точки зрения PHP-разработчика</a>
+<br/><a href="http://habrahabr.ru/post/75012/">Язык программирования Go</a>
+<br/><a href="http://habrahabr.ru/post/74913/">Google Go = Python и C++</a>
+</p>
+
+<p>
+Здесь можно найти критику и недостатки Go:
+<a href="http://habrahabr.ru/post/129079/">Язык программирования Rust</a>
+<blockquote>
+По мнению разработчиков Rust, главная проблема Google Go — блокировка исполнения кода при сборке мусора, что делает невозможным использование Go в приложениях под высокой нагрузкой, имеющих ограничение на максимальное времени отклика. Некоторые программы на Go могут тратить больше времени на сборку мусора, чем на реальную работу (см. подробнее о тестировании C++/Java/Go/Scala). В Rust используется другой подход, что может приводить к утечкам памяти, но зато повышает производительность.
+</blockquote>
+</p>
+
+<p>Правда я не совсем понимаю почему пишется про сборку мусора, если Go не объектно-ориентированный язык. Или он считает созданные и не освобожденные структуры? В общем надо разбираться.</p>
+
+
+<p>Обсуждение: <a href="http://www.project-ai.org/forum/viewtopic.php?t=749">project-ai.org/forum/viewtopic.php?t=749</a></p>
+
+
+<!-- footer begin -->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!-- footer end -->
+
+
+<!-- If you add a new language here, please advise prof1983@yandex.ru -->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>31.03.2012 - 01.01.2013
+</font></p>
+</body>
+</html>
