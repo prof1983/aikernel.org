@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>AiKernel News</title>
+    <link>http://aikernel.org/</link>
+    <description>AiKernel news.</description>
+    <language>ru</language>
+    <managingEditor>prof1983@ya.ru</managingEditor>
+    <webMaster>prof1983@ya.ru</webMaster>
+
+    <item>
+      <title>Интересующимся мозгом/ИИ: ссылки на почитать</title>
+      <link>http://aikernel.org/2013/01/15/01/index.ru.html</link>
+      <pubDate>15 Jan 2013</pubDate>
+    </item>
+
+    <item>
+      <title>Реализация морфологического поиска на Kohana (библиотека phpMorphy)</title>
+      <link>http://aikernel.org/2013/01/14/02/index.ru.html</link>
+      <pubDate>14 Jan 2013</pubDate>
+    </item>
+
+    <item>
+      <title>Как и для чего мы сделали свой валидатор микроразметки</title>
+      <link>http://aikernel.org/2013/01/14/01/index.ru.html</link>
+      <pubDate>14 Jan 2013</pubDate>
+    </item>
+  </channel>
+</rss>
