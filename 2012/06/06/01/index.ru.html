@@ -1,0 +1,177 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, AGI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Основы подхода к построению универсального ИИ (AIDEUS)</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!-- header begin -->
+<table border="0" width="100%">
+<tr><td>
+<!-- header end -->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Основы подхода к построению универсального ИИ (AIDEUS)</h1>
+
+<h2>Основы подхода к построению универсального интеллекта. Часть 1</h2>
+
+<p>...</p>
+
+<p>
+Для обеспечения этого можно начать с некоторой идеализированной модели сильного ИИ, работающего в условиях бесконечных ресурсов.
+Поскольку действительно автономный искусственный интеллект должен создаваться как воплощенный
+интеллектуальный агент, необходимо разработать идеализированную модель такого агента, который бы гипотетически мог решать все те задачи, которые может решать человек.
+</p>
+
+<p>
+Попытки создания таких моделей имеются (наиболее известной является AIXI [Hutter, 2005]), и мы их позднее обсудим.
+Сейчас лишь отметим, что рассмотрение подобных моделей заставляет разных исследователей прийти к
+выводу, что именно алгоритмической полнотой обеспечивается универсальность интеллекта, и это
+свойство необходимо пытаться сохранить, по крайней мере, в пределе (см., напр., [Pankov, 2008]).
+</p>
+
+<p>
+Подробнее:
+<a href="http://habrahabr.ru/post/145309/">habrahabr.ru/post/145309</a>
+</p>
+
+<p>
+Интересная философская статья. Очень жаль, но в статье не описываются практические реализации ИИ.
+</p>
+
+<p>----</p>
+
+<p>
+Отдельно хочу отметить проект AIXI, упомянутый в этой статье.
+</p>
+
+<h2>AIXI</h2>
+
+<p>
+AIXI - одна из моделей ИИ, основнаная на теории алгоритмов.
+Он позиционируется как абсолютный ИИ, так как может извлечь макисмум информации из заданной последовательности данных.
+Однако он при этом невычислимый, то есть вычисление этого максимума потреюует бескончно много вычислительных операций.
+</p>
+
+<p>
+Грубо говоря, AIXI работает так: берётся теория сложности Кологорова и теория последователностей Соломона.
+она состоит втом, что сложность вычислятеся как программа для Тюринг машины.
+</p>
+
+<p>
+AIXI перебирает всё множество возможных тюринг машин, которые могут породить данную последовательность
+данных, умноженное на ожидемое вознаграждение в случае реализации продолжения данной
+последовтаельности в будущем, и умноженное на вероятностный коэффициент 2**(-т), где т - сложность (длина) этих тюринг машин.
+</p>
+
+<p>
+То есть он находит наиболее простой алгоритм будущего поведения, пророждающий максимальное вознаграждение.
+</p>
+
+<p>
+Этот множитель 2**(-t) резко отсекает сложные варианты в пользу более простых.
+</p>
+
+<p>
+В недавней статье предложен способ упрощения AIXI, где ограничивается горизонт поиска итд, в
+результате чего он становится вычислимым на домашнем компьютере для простых игр вроде
+крестики-нолики (но не их) или камень-ножницы-бумага.
+В этих играх он быстро находит максмально эффективный алгоритм, работая на домашнем компьютере и потребляя 1 Гб памяти.
+</p>
+
+<p>
+Сандерс это описал так: ...меня немного беспокоит, что AIXI-программы уже существуют и работают сегодня.
+Да, они очень слабые, но это похоже на то, как если бы кто-то сделал у себя в лаборатории маленькую безопасную чёрную дыру...
+</p>
+
+<p>
+I found the talk very enjoyable, and it was a bit unsettling to learn that there are AIXI-versions up and running today. Yes, they are weak and merely playing pac-man, but it was like hearing that somebody had actually made tiny, safe black holes in their lab. It was also exciting to hear just how much has been happening in the neuroscience/neural network world while I have been distracte
+</p>
+
+<p>
+сама статья здесь:
+<a href="http://arxiv.org/abs/0909.0801">arxiv.org/abs/0909.0801</a>
+</p>
+
+<p>
+Источник:
+<a href="http://turchin.livejournal.com/488550.html">turchin.livejournal.com/488550.html</a>
+</a>
+
+<p>
+Страница книги:
+<a href="http://www.hutter1.net/ai/aixigentle.htm">www.hutter1.net/ai/aixigentle.htm</a>
+<br/>
+Книга доступна в форматах LaTeX, PostScript, PDF.
+</p>
+
+<p>----</p>
+
+<p>
+Сайт проекта:
+<a href="http://aideus.ru/">aideus.ru</a>
+</p>
+
+<p>Обсуждение: <a href="http://www.project-ai.org/forum/viewtopic.php?t=801">project-ai.org/forum/viewtopic.php?t=801</a></p>
+
+<!-- footer begin -->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!-- footer end -->
+
+
+<!-- If you add a new language here, please advise prof1983@yandex.ru -->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>06.06.2012 - 16.01.2013
+</font></p>
+</body>
+</html>
