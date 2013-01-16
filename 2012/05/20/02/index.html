@@ -1,0 +1,145 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, AGI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Единые правила индексации HTML с онтологией</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!-- header begin -->
+<table border="0" width="100%">
+<tr><td>
+<!-- header end -->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Единые правила индексации HTML с онтологией</h1>
+
+<blockquote>
+
+<p>Google, Microsoft и Yahoo предлагают вебмастерам единые правила индексации</p>
+
+<p>Компании Google, Yahoo и Microsoft объединили свои усилия в рамках проекта, имеющего своей целью улучшение индексации интернет-содержимого, а также структурированных корпоративных данных. Компании говорят, что намерены использовать технологии СУБД для разметки HTML, чтобы можно было быстрее и качественнее индексировать интернет-контент.</p>
+
+<p>Три компании в рамках сотрудничества создали проект Schema.org, где изложены описания наборов тэгов, которые, как надеются авторы проекта, помогут вебмастерам специальным образом маркировать контент, чтобы тот быстрее и качественнее индексировался. "Schema.org имеет своей целью стать единым ресурсом для авторов сайтов, желающих создавать сайты с качественным индексированием", - говорится в блоге Google.</p>
+
+<p>Сейчас на Schema.org авторы новой системы предлагают около сотни различных HTML-тэгов для разных категорий сайтов, таких как развлекательные, официальные, новостные и другие, а также для тематической организации.</p>
+
+</blockquote>
+
+<p>
+Источник:
+<a href="http://www.cybersecurity.ru/news/124502.html">cybersecurity.ru/news/124502.html</a>
+</p>
+
+Примечательно в этой новости то, что дополнительные теги для индексации записываются так:
+
+<blockquote>
+<pre>
+&lt;div&gt;
+&lt;h1&gt;Avatar&lt;/h1&gt;
+&lt;span&gt;Director: James Cameron (born August 16, 1954)&lt;/span&gt;
+&lt;span&gt;Science fiction&lt;/span&gt;
+&lt;a href="../movies/avatar-theatrical-trailer.html">Trailer&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+&lt;div itemscope&gt;
+&lt;h1&gt;Avatar&lt;/h1&gt;
+&lt;span&gt;Director: James Cameron (born August 16, 1954)&lt;/span&gt;
+&lt;span&gt;Science fiction&lt;/span&gt;
+&lt;a href="../movies/avatar-theatrical-trailer.html">Trailer&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+&lt;div itemscope itemtype="http://schema.org/Movie"&gt;
+&lt;h1&gt;Avatar&lt;/h1&gt;
+&lt;span&gt;Director: James Cameron (born August 16, 1954)&lt;/span&gt;
+&lt;span&gt;Science fiction&lt;/span&gt;
+&lt;a href="../movies/avatar-theatrical-trailer.html"&gt;Trailer&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+&lt;div itemscope itemtype ="http://schema.org/Movie"&gt;
+&lt;h1 itemprop="name"&gt;Avatar&lt;/h1&gt;
+&lt;span>Director: &lt;span itemprop="director"&gt;James Cameron&lt;/span&gt; (born August 16, 1954)&lt;/span&gt;
+&lt;span itemprop="genre"&gt;Science fiction&lt;/span&gt;
+&lt;a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer"&gt;Trailer&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+</blockquote>
+
+<p>То есть, дополнительные теги добавляют дополнительную онтолгическую информацию о содержимом соответствующего блока.</p>
+
+<p>P.S. Это сообщение (от 04.06.2011) скопировано с <a href="http://ai.obrazec.ru/forum/viewtopic.php?t=2327">образца</a>, где я его размещал ранее. Скопирована в качестве резервной копии, на всякий случай.</p>
+
+<p>Обсуждение: <a href="http://www.project-ai.org/forum/viewtopic.php?t=786">project-ai.org/forum/viewtopic.php?t=786</a></p>
+
+<!-- footer begin -->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!-- footer end -->
+
+
+<!-- If you add a new language here, please advise prof1983@yandex.ru -->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>20.05.2012 - 16.01.2013
+</font></p>
+</body>
+</html>
