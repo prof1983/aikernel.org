@@ -1,0 +1,221 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, AGI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - OpenCyc-4.0</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!-- header begin -->
+<table border="0" width="100%">
+<tr><td>
+<!-- header end -->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>OpenCyc-4.0</h1>
+
+<p>
+Сегодня случайно обнаружил, что недавно (если быть точнее, то 2012-06-13) вышел OpenCyc-4.0
+</p>
+
+<p>
+Ссылки для скачивания:
+<br/>
+<a href="http://sourceforge.net/projects/opencyc/files/OpenCyc%204.0/opencyc-4.0-windows.zip/download">opencyc-4.0-windows.zip</a> (193.0 MB)
+<br/>
+<a href="http://sourceforge.net/projects/opencyc/files/OpenCyc%204.0/opencyc-4.0-linux.tgz/download">opencyc-4.0-linux.tgz</a> (191.5 MB)
+</p>
+
+<p>
+Cyc - проект по созданию объёмной онтологической базы знаний, позволяющей программам решать сложные задачи из области искусственного интеллекта на основе логического вывода и привлечения здравого смысла.
+</p>
+
+<p>
+Подробнее о том, что такое Cyc и OpenCyc можно прочитать в Википедии:
+<a href="http://ru.wikipedia.org/wiki/Cyc">Cyc</a>
+</p>
+
+<blockquote>
+<pre>
+=====================================================
+  Installation instructions for OpenCyc release 4.0
+=====================================================
+
+Welcome!
+
+Two OpenCyc 4.0 releases are available, one for Linux and one for
+Windows. (Since OpenCyc 4.0 is implemented in Java 1.6, the two
+installations differ primarily in their startup scripts.)
+
+OpenCyc requires 3G RAM under 64bit and about 1G of disk space.
+Running OpenCyc under 32bit is no longer supported.
+
+
+OpenCyc for Windows has been tested on
+
+  = Windows Server 2008
+  = Windows 7 Personal, Professional and Ultimate
+
+OpenCyc for Linux has been tested on
+
+  = SuSE 10.3 and OpenSuSE 11
+  = Ubuntu 12.04 Precise
+  = Debian 6.04
+
+
+This OpenCyc release has not been tested on Mac OS-X or on Solaris.
+However, other versions of Cyc are currently deployed on these
+architectures and as little work as adjusting the startup scripts may
+be all that is needed.
+
+
+OpenCyc 4.0 has been tested with the following Java implementations
+
+ (*) OpenJDK 1.6 IcedTea6 1.11.1
+ (*) OpenJDK 1.7 IcedTea7  2.1.1
+ (*) Oracle/Sun JDK 1.6 u32
+ (*) Oracle/Sun JDK 1.7 u4
+ (*) IBM Java 1.6 u10
+ (*) IBM Java 1.7 u3
+
+
+To view the full OpenCyc documentation: http://www.opencyc.org
+
+== Installation ==
+
+1. Create a directory to contain opencyc (call it something like
+   'opencyc'), copy the archive into that directory, then untar or
+   unzip the compressed archive.
+
+   For Linux:
+ 
+       tar -xvfz opencyc-4.0.tgz
+
+   For Windows:
+
+       unzip the zipped folder
+
+   This will create a directory named opencyc-4.0 under the directory
+   you created.
+
+2. Invoke the script to run OpenCyc.
+
+   For Linux:
+
+       cd opencyc-4.0/scripts
+       ./run-cyc.sh
+
+   For Windows:
+
+       Navigate to the directory opencyc-4.0\scripts
+       double-click the file run-cyc.bat
+
+   When OpenCyc is started, it loads the KB into memory; depending on the
+   amount of RAM on your system and the speed of your disk, this can take
+   between one and two minutes.
+
+   Once OpenCyc is running, you will see
+
+   CYC(1):
+
+   which is the SubL command prompt. Don't close the window containing
+   this prompt because it will kill the image.
+
+3. (optional)
+   You can enter SubL expressions such as (+ 1 2) or (genls #$Person)
+   or (all-genls #$Person) at the command line to verify Cyc's operation.
+ 
+4. At this point the cyc http server is running and you can access
+   Cyc directly via the local web browser.
+
+   http://localhost:3602/cgi-bin/cg?cb-start
+
+   To access from a remote machine, change 'localhost' to the IP name of the
+   machine running Cyc, e.g.
+
+   http://hamlet.mydomain.com:3602/cgi-bin/cg?cb-start
+
+   You can browse Cyc via the Guest account or perform updates by
+   logging on as CycAdministrator (the default).
+
+5. You can cleanly shut down the OpenCyc server by entering (halt-cyc-image)
+   at the SubL command prompt, CYC(N):
+</pre>
+</blockquote>
+
+<p>----</p>
+
+<p>
+Дополнительно хочу отметить аналогичные проекты:
+<br/>
+<a href="http://en.wikipedia.org/wiki/ThoughtTreasure">ThoughtTreasure</a> - открытая база знаний содержащая 27000 понятий и 51000 фактов.
+<br/>
+<a href="http://en.wikipedia.org/wiki/Open_Mind_Common_Sense">Open Mind Common Sense</a> - одна из крупнейших баз знаний, включает в себя данные о 700000 фактах.
+<br/>
+<a href="http://en.wikipedia.org/wiki/WordNet">WordNet</a> - БД семантических связей Английского языка. Включает данные о 150000 слов, 115000 синонимов и 207000 связях.
+</p>
+
+
+<p>Обсуждение: <a href="http://www.project-ai.org/forum/viewtopic.php?t=813">project-ai.org/forum/viewtopic.php?t=813</a></p>
+
+
+<!-- footer begin -->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!-- footer end -->
+
+
+<!-- If you add a new language here, please advise prof1983@yandex.ru -->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>28.06.2012 - 17.01.2013
+</font></p>
+</body>
+</html>
