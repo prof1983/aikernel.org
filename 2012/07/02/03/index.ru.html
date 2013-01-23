@@ -1,0 +1,204 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, AGI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Архитектура системы</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!--- header begin --->
+<table border="0" width="100%">
+<tr><td>
+<!--- header end --->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Архитектура системы</h1>
+
+<p>
+На днях мы обсуждали с Виктором создание системы ИИ, варианты возможной реализации ИР и пр.
+<br/>
+Сегодня я размышлял по этому поводу и нарисовал свое представление системы.
+</p>
+
+<p>
+<a href="http://itmages.ru/image/view/577449/99d1adb1"><img src="http://storage6.static.itmages.ru/i/12/0701/s_1341162614_3356215_99d1adb1c8.png"/></a>
+</p>
+
+<p>
+Поясню маленько:
+<br/>
+1. Простые смайлики - это пользователи, оранжевый - администраторы, красный - суперадмин (root).
+<br/>
+2. AiGod - здес я изобразил как отдельный агент задачей которого является контроль над системой.
+<br/>
+3. AiAssistant - это персональные помощники для пользователей.
+<br/>
+4. AiIndivid - это самостоятельные агенты (искуственные разумные существа). AiIndivid может иметь "тело" (в виде робота) или просто быть информационной единицей, без реального "тела".
+<br/>
+5. Отдельно могут находится другие агенты, которые присоединяются к ядру (AiCore) через какие-либо системы связи (например через TCP/IP).
+<br/>
+6. KnowledgeBase - это глобальная БЗ для всех агентов. Однако у каждого агента предполагается свое локальное хранилище знаний (онтология).
+<br/>
+На этом пока все. Подробные пояснения, если нужно, напишу позже.
+</p>
+
+<p>
+P.S. Эта схема близка к тому, что я писал ранее по структуре <a href="http://www.project-ai.org/forum/viewtopic.php?t=56">проекта AReason</a>.
+</p>
+
+
+<h2>02.07.2012</h2>
+
+<blockquote>
+<b>vchc:</b>
+<br/>
+Вот вы что-то делаете, но никому не понятно зачем вы это делаете. Если бы вы более подробно описывали причины ваших конкретных действий, возможно людям было бы проще всё понимать и можно было бы найти единомышленников. А так получается какая-то закрытая деятельность, в которой не разобраться со стороны.
+</blockquote>
+
+<p>
+Позволю себе ответить. Мы с Виктором общаемся довольно часто. Как миниму раз в неделю, в аське.
+За последние две недели даже провели небольшой мозговой штурм на тему совместного коммерческого проекта.
+По результатам разговора даже составили что-то вроде протокола.
+Если точнее то я подредактировал лог чата и получился "документ".
+</p>
+
+<p>
+Лично мне (почти) понятны цели и средства их достижения. Другое дело, что цель создания ИР очень призрачная и далекая.
+И если говорить о коммерческом проекте (и продукте), то об ИР не может быть и речи.
+Максимум, что можно себе позволить, исходя из наших имеющихся ресурсов - это создать небольшое web или desktop приложение с элементами ИИ.
+К сожалению, приблизительные оценки эффективности трудозатрат и вероятной прибыли довольно скромные.
+Поэтому в коммерческий проект создания системы с элементами ИИ, а тем более ИР пока ввязываться опасно.
+Опасность состоит в том, что затраты времени и сил будут довольно существенными, а закрытая деятельность не позволит свободно использовать эти наработки в дальнейшем, в других проектах.
+</p>
+
+<p>
+Но это мое личное мнение. Вполне возможно, что я ошибаюсь.
+</p>
+
+<p>
+Ранее мы уже обсуждали тему о том, что можно разделить большой проект создания системы ИИ (ИР) на открытую и закрытую части.
+В открытую, по идее, должно войти ядро и некоторые свободные имеющиеся программы.
+А в закрытую часть должны войти программы собственной разработки.
+В том числе персональные помощники, системы принятия решений, БЗ и т.д.
+Но все это пока повисло на этапе обсуждения. К консенсусу открытости/закрытости пока прийти не удалось.
+Я продолжаю разработку своих открытых проектов AiKernel и AReason.
+Виктор занимается разработкой своих закрытых проектов.
+Однако информацию по ним можно прочитать на форумах.
+В частности:
+<a href="http://ai.obrazec.ru/forum/viewtopic.php?t=790">Shareware проект AIAssistant</a>;
+<a href="http://ai.obrazec.ru/forum/viewtopic.php?t=2318">SkyNet</a>;
+<a href="http://ai.obrazec.ru/forum/viewtopic.php?t=2316">Neuronium</a> и др. (ссылки на старые темы обсуждения).
+<br/>
+Из нового:
+<a href="http://ai.obrazec.ru/forum/viewtopic.php?t=2365">AINIX</a> и другие.
+</p>
+
+<p>----</p>
+
+<p>
+Хочу добавить еще про архитектуру системы.
+Та картинка, которую я нарисовал вчера соотвествует той структуре, которую мы обсуждали ранее, в начале реализации проекта AIAssistant.
+По результатам обсуждения у меня получились такие картинки:
+</p>
+
+<p>
+<a href="http://aikernel.org/projects/aiassistant/doc/126/index.ru.html"><img src="http://aikernel.org/projects/aiassistant/doc/126/struct.gif"/></a>
+<br/>
+<a href="http://aikernel.org/projects/aiassistant/doc/126/index.ru.html">Структура AI системы</a>
+</p>
+
+<p>
+<a href="http://aikernel.org/projects/aiassistant/doc/127/index.ru.html"><img src="http://aikernel.org/projects/aiassistant/doc/127/aiassistant1.gif"/></a>
+<br/>
+<a href="http://aikernel.org/projects/aiassistant/doc/127/index.ru.html">Структура программы AIAssistant</a>
+</p>
+
+<p>
+<a href="http://aikernel.org/projects/aiassistant/doc/129/index.ru.html"><img src="http://aikernel.org/projects/aiassistant/doc/129/blackbox1.gif"/></a>
+<br/>
+<a href="http://aikernel.org/projects/aiassistant/doc/129/index.ru.html">Подход к созданию Искусственного Разума (ИР) в виде Черного Ящика (ЧЯ)</a>
+</p>
+
+<p>----</p>
+
+<p>
+Кстати, в разговоре как-то упоминал про техническое задание (ТЗ), но не смог его найти. Наконец-то нашел. :)
+</p>
+
+<p>
+Вот оно:
+<a href="http://aikernel.org/projects/aiassistant/about/about09.ru.html">Техническое задание</a>
+</p>
+
+<p>
+Располагается в разделе, посвященный проекту <a href="http://aikernel.org/projects/aiassistant/about/index.ru.html">AIAssistant</a> на сайте <a href="http://aikernel.org/">AiKernel.org</a>
+</p>
+
+
+<p>
+Обсуждение:
+<a href="http://www.project-ai.org/forum/viewtopic.php?t=814">project-ai.org/forum/viewtopic.php?t=814</a>
+</p>
+
+
+
+<!--- footer begin --->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!--- footer end --->
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>02.07.2012 - 23.01.2013
+</font></p>
+</body>
+</html>
