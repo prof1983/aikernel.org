@@ -1,0 +1,147 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, AGI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Компилирование CLIPS</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!--- header begin --->
+<table border="0" width="100%">
+<tr><td>
+<!--- header end --->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Компилирование CLIPS</h1>
+
+<p>
+На форуме aiportal был вопрос про CLIPS. На сколько я помню, у меня возникали трудности со сборкой CLIPS в виде библиотечки (DLL).
+В общем-то у меня так и не получилось его собрать из под Borland Builder, поэтому я бросил это занятие.
+Виктор писал, что ему удалось собрать библиотеку в VS.
+</p>
+
+<p>
+В общем, на форуме aiportal некто Dmitriy прокомментировал как собирать CLIPS.
+</p>
+
+<blockquote>
+Доброго дня. Делал интерфейс с помощью MS Visual C++ 2010 для эс на основе CLIPS следующим образом:
+
+<p>
+CLIPS - оффициальная страница:
+<br/>
+http://clipsrules.sourceforge.net/index.html
+</p>
+
+<p>
+Исходники и установщики среды разработки:
+<br/>
+http://sourceforge.net/projects/clipsru ... LIPS/6.24/
+</p>
+
+<p>
+Исходным файлам *.c меняем на расширение *.cpp
+</p>
+
+<p>
+Подключаем в проект все файлы, кроме main.cpp
+</p>
+
+<p>
+Для Microsoft Visual C++ в scanner.cpp и iofun.cpp закомментировать строки, на которые ругается компилятор (там где функция strtoll).
+Я знаю, что это не правильно, но просто не стал разбираться из-за нехватки времени.
+</p>
+
+<p>
+Некоторые команды в проекте:
+<br/>
+void *theEnv1;
+<br/>
+theEnv1 = CreateEnvironment(); //подключаем среду CLIPS
+</p>
+
+<pre>
+//попытка подключения файла с правилами
+if (EnvLoad(theEnv1, char_module)==0)
+{
+MessageBox::Show("Файл модуль не загружен");
+}
+
+//загрузка фактов из файла
+if (EnvLoadFacts(theEnv1, char_data)==0)
+{
+MessageBox::Show("Факты не загружены");
+}
+
+//Выполнение всех правил//
+Run(-1);
+</pre>
+</blockquote>
+
+<p>
+Обсуждение:
+<a href="http://www.project-ai.org/forum/viewtopic.php?t=831">project-ai.org/forum/viewtopic.php?t=831</a>
+</p>
+
+
+
+<!--- footer begin --->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!--- footer end --->
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>27.07.2012 - 13.02.2013
+</font></p>
+</body>
+</html>
