@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+<meta name="Keywords" content="AI, AGI, ИИ, Artificial Intelligence, Искусственный Интеллект, Artificial Reason, Искусственный Разум, Robot, Робот, Robots, Роботы">
+<title>AiKernel - Запускаем PyBrain на Python 3</title>
+<link rel="stylesheet" type="text/css" href="../../../../styles.css">
+</head>
+
+<body>
+
+
+<!--- header begin --->
+<table border="0" width="100%">
+<tr><td>
+<!--- header end --->
+
+
+<p><a href="index.en.html">en</a> <b>ru</b></p>
+
+<h1>Запускаем PyBrain на Python 3</h1>
+
+<p>
+Пришлось поработать напильником. Ошибочный импорт закомментировал, поправил пару названий функций… В общем ничего особо сложного даже для новичка.
+На ряде примеров столкнулся с неработоспособностью из-за отсутствия модулей matplotlib и pylab.
+Поискал, нашел в AUR'e (у меня стоит ArchLinux) пакет python-matplotlib-git, поставил. Благо его уже портировали на python3, но в список поддерживаемых пакетов он не входит. В других системах видимо придется ставить модуль вручную. Брать здесь.
+С pylab я особо не разбирался. Он входит в состав scipy. Поставил community/python-scipy версии 0.10 — еще часть примеров заработала.
+</p>
+
+<p>
+Таким образом за буквально пару часов удалось с минимальными усилиями портировать библиотеку до достаточно рабочего состояния. Спасибо 2to3!
+<br/>
+Вроде бы библиотека работоспособна, но:
+<br/>
+- не все примеры я смог прогнать на python3;
+<br/>
+- часть примеров работают с использованием рандома, поэтому их результаты невозможно сравнить с результатами на python2;
+<br/>
+- требуются еще тестирования разных частей и модулей pybrain.
+</p>
+
+<p>
+Подробнее:
+<a href="http://habrahabr.ru/post/148597/">habrahabr.ru/post/148597</a>
+</p>
+
+<p>
+Обсуждение:
+<a href="http://www.project-ai.org/forum/viewtopic.php?t=827">project-ai.org/forum/viewtopic.php?t=827</a>
+</p>
+
+
+
+<!--- footer begin --->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-728x90 */
+google_ad_slot = "5007116338";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td><td width="160">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2346392510564999";
+/* AiKernel-160x600 */
+google_ad_slot = "6113788957";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</td></tr>
+</table>
+
+<!--- footer end --->
+
+
+<!--- If you add a new language here, please advise prof1983@yandex.ru --->
+
+<p><font size=2>
+<hr>&copy; AiKernel 2010-2013
+<br>29.07.2012 - 13.02.2013
+</font></p>
+</body>
+</html>
