@@ -1,43 +1,42 @@
-a:active
-{
-  color:#7070C0
-}
-
-a:hover
-{
-  color:#9090F0
-}
-
 a:link
 {
-  color:#000050
+  color:#000000;
 }
 
 a:visited
 {
-  color:#404090
+  color:#404040;
+}
+
+a:active
+{
+  color:#707070;
+}
+
+a:hover
+{
+  color:#909090;
 }
 
 body
 {
   background-color:F0FFF0;
-  color:#000000
+  color:#000000;
 }
 
 li
 {
-  text-align:justify
+  text-align:justify;
 }
 
 p
 {
-  text-align:justify
+  text-align:justify;
 }
 
-table.main
-{
-  border:50
-  width:100%
+table.main{
+  min-width: 640px;
+  width:100%;
 }
 
 td.main
@@ -46,12 +45,11 @@ td.main
 
 td.right
 {
-  width:160
+  width:160;
 }
 
 tr.main
 {
-  border:1
   text-align:left;
   vertical-align:top;
 }
